@@ -8,6 +8,11 @@ const colors = [
   "blue",
   "rebeccapurple",
   "violet",
+  "lightblue",
+  "brown",
+  "chocolate",
+  "darkorchid",
+  "gold",
 ];
 function change() {
   document.body.style.background = colors[Math.floor(7 * Math.random())];
@@ -16,3 +21,23 @@ function change() {
 button.addEventListener("click", change);
 
 // console.log("Hello, World!", button, colors);
+console.log("Challenge:");
+console.log(
+  "1. Try writing pseudocode to describe some common tasks such as brushing your teeth or riding a bike:"
+);
+console.log(
+  "Answer: 1: get (toothbrush); 2: get (toothpaste); 3: open(toothpaste)&& put(toothepaste) on(brush); 4: add(water) on(brush); 5: for (2 minutes) brush (teeth) && moveToothbrush(circular-motion); 6:clean(toothbrush && mouth)"
+);
+console.log(
+  "2. Write pseudocode that will find the largest number in a list of numbers"
+);
+console.log(
+  "Answer: 1. get(listOfNumbers); 2:sort(numbers); 3:get max(numbers); 4: write (max)"
+);
+console.log(
+  "3. Try logging some different messages in the console using console.log"
+);
+console.log("Answer: all of the above!");
+console.log(
+  "4. Add some more colours to the array in the 'I can Code a Ranbow'"
+);
