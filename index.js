@@ -20,6 +20,11 @@ function change() {
 
 //add event listener for button
 button.addEventListener("click", change);
+{
+  //this is a block containing a comment and two statemets
+  const name = prompt("Please enter your name!");
+  alert("Hello there, " + name);
+}
 
 // console.log("Hello, World!", button, colors);
 
