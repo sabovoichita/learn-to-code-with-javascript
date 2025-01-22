@@ -18,10 +18,15 @@ function change() {
   document.body.style.background = colors[Math.floor(7 * Math.random())];
 }
 
+//add event listener for button
 button.addEventListener("click", change);
 
 // console.log("Hello, World!", button, colors);
-console.log("Challenge:");
+
+//this is a short comment
+
+//this is a large comment=>
+/*console.log("Challenge:");
 console.log(
   "1. Try writing pseudocode to describe some common tasks such as brushing your teeth or riding a bike:"
 );
@@ -40,4 +45,4 @@ console.log(
 console.log("Answer: all of the above!");
 console.log(
   "4. Add some more colours to the array in the 'I can Code a Ranbow'"
-);
+);*/
