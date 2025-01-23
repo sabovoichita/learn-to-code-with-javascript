@@ -336,9 +336,25 @@ console.log(
 
 //Converting Between Strings and Numbers
 //Number constructor
-console.log('Number("23") convert to =>', Number("23"));
-//if the string can't be converted to a number, NaN is returned
-console.log('Number("hello") convert to =>', Number("hello"));
-//String-to change a number literal into a string literal
-console.log("String(3) convert to =>", String(3));
+// console.log('Number("23") convert to =>', Number("23"));
+// //if the string can't be converted to a number, NaN is returned
+// console.log('Number("hello") convert to =>', Number("hello"));
+// //String-to change a number literal into a string literal
+// console.log("String(3) convert to =>", String(3));
 // const ageInYears = Number(prompt("How old are you (in years)?"));
+
+//Random numbers
+//Math.random() generates a number between 0(inclusive) and 1(inclusive)
+console.log("Math.random()", Math.random()); //0.97888268565043
+//Math.random() * 6 will return a random number between 0 and 6(not including)
+console.log("6 * Math.random()", 6 * Math.random()); //3.258344621372284
+//Math.ceil() rounds up the value to the next bigger integer
+console.log("Math.ceil(3.258344621372284)", Math.ceil(3.258344621372284)); // 4
+//To generate a random whole number from 1 to 6
+//Math.ceil(6 * Math.random())
+console.log("Math.ceil(6 * Math.random())", Math.ceil(6 * Math.random())); // 5
+//How many sides does a dice have?
+const sides = prompt("How many sides does a dice have?");
+alert("Press Enter or click close to roll the dice...");
+const number = Math.ceil(sides * Math.random());
+alert(`The dice landed on number ${number}`);
