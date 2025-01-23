@@ -80,8 +80,17 @@ const message = "HELLO THERE!";
 // );
 
 //ask the user for their name
-const name3 = prompt("Please enter your name");
+// const name3 = prompt("Please enter your name");
 //say Hello
-alert("Hello!");
+// alert("Hello!");
 //then personalize it
-alert(name3);
+// alert(name3);
+
+console.log(typeof 42);
+console.log(typeof "Twenty20");
+console.log(typeof "123");
+console.log(typeof -68);
+console.log(typeof true);
+console.log(typeof FALSE);
+console.log(typeof "true");
+console.log(typeof 0);
