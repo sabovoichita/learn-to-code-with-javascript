@@ -60,19 +60,19 @@ console.log(
 // const name1 = "JavaScript";
 // console.log(typeof name1);
 // name1 = "JS";
-let score = 0;
-score = 5;
-let score1;
-score1;
-// let $name;
-let _answer;
-let firstName;
-let address_line1;
-let firstNameAndLastName;
-let first_name_and_last_name;
+// let score = 0;
+// score = 5;
+// let score1;
+// score1;
+// // let $name;
+// let _answer;
+// let firstName;
+// let address_line1;
+// let firstNameAndLastName;
+// let first_name_and_last_name;
 
 // alert("Hello");
-const message = "HELLO THERE!";
+// const message = "HELLO THERE!";
 // alert(message);
 // const name2 = prompt("What is your name?");
 // const permision = confirm(
@@ -259,35 +259,54 @@ const message = "HELLO THERE!";
 
 //Numbers
 //Integers and Floats
-console.log(typeof 42);
-console.log(typeof 3.14159);
-//Numeric Literals = sequence of digits that form a decimal number and don't start with a leading zero
-console.log(3);
-console.log(-4.67);
-//Exponential Notation
-console.log(1e6); //1 multiplied by 10 to the power of 6
-console.log(2e3); //2 multiplied by 10 to the power of 3
-console.log(2.5e-3); //2.5 multiplied by 10 to the power of -3
-//When is a Number Not a Number(NaN)?
-//string multiplied to a number
-console.log("hello" * 5); //NaN
-//typeof NaN = number
-console.log(typeof NaN); //number
+// console.log(typeof 42);
+// console.log(typeof 3.14159);
+// //Numeric Literals = sequence of digits that form a decimal number and don't start with a leading zero
+// console.log(3);
+// console.log(-4.67);
+// //Exponential Notation
+// console.log(1e6); //1 multiplied by 10 to the power of 6
+// console.log(2e3); //2 multiplied by 10 to the power of 3
+// console.log(2.5e-3); //2.5 multiplied by 10 to the power of -3
+// //When is a Number Not a Number(NaN)?
+// //string multiplied to a number
+// console.log("hello" * 5); //NaN
+// //typeof NaN = number
+// console.log(typeof NaN); //number
 
 //Arithmetic operations
 //Addition
-console.log("5 + 4.3 = ", 5 + 4.3); // 9.3
-//Subtraction
-console.log("6 - 11 = ", 6 - 11); // -5
-//Multiplication
-console.log("6 * 7 = ", 6 * 7); // 42
-//Division
-console.log("3/7 = ", 3 / 7); // 0.42857142857142855
-//Exponentiation
-console.log("2**3 = ", 2 ** 3); // 8
-//Order matters:Exponentioation->Multiplication->Division->Addition->Subtraction
-console.log("(8 - 5) + 6 / 3 =", 8 - 5 + 6 / 3);
-//Remainder
-console.log("23 % 6 =", 23 % 6);
-//What day will be a million days from now on?
-console.log("1e6 % 7 =", 1e6 % 7); //1=>same day as tomorrow
+// console.log("5 + 4.3 = ", 5 + 4.3); // 9.3
+// //Subtraction
+// console.log("6 - 11 = ", 6 - 11); // -5
+// //Multiplication
+// console.log("6 * 7 = ", 6 * 7); // 42
+// //Division
+// console.log("3/7 = ", 3 / 7); // 0.42857142857142855
+// //Exponentiation
+// console.log("2**3 = ", 2 ** 3); // 8
+// //Order matters:Exponentioation->Multiplication->Division->Addition->Subtraction
+// console.log("(8 - 5) + 6 / 3 =", 8 - 5 + 6 / 3);
+// //Remainder
+// console.log("23 % 6 =", 23 % 6);
+// //What day will be a million days from now on?
+// console.log("1e6 % 7 =", 1e6 % 7); //1=>same day as tomorrow
+
+//Varying Variables
+let score = 0;
+console.log(score); // 0
+score = score + 10;
+console.log("score = score + 10; score =", score); //10
+//compound assignment operator
+score += 10;
+console.log("score += 10; score =", score); // 20
+score -= 5;
+console.log("score -= 5; score =", score); //15
+score *= 2;
+console.log("score *= 2; score =", score); // 30
+score /= 3;
+console.log("score /= 3; score =", score); // 10
+score **= 2;
+console.log("score **= 2; score =", score); // 100
+score %= 7;
+console.log("score %= 7; score =", score);
