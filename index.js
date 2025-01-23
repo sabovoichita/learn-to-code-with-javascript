@@ -124,7 +124,33 @@ const message = "HELLO THERE!";
 // console.log("This is a backslash: \\");
 
 //Find the Char
-console.log('console.log("Hello".charAt(1)")');
-console.log("Hello".charAt(1));
-console.log('"Hello"[0]');
-console.log("Hello"[0]);
+// console.log('console.log("Hello".charAt(1)")');
+// console.log("Hello".charAt(1));
+// console.log('"Hello"[0]');
+// console.log("Hello"[0]);
+
+//Finding Chars
+//indexOf() method
+console.log("Hello.indexOf('l'): ", "Hello".indexOf("l"));
+//if a character doesnt appear -1 will be returned
+console.log("Hello.indexOf('z'): ", "Hello".indexOf("z"));
+//lastIndexOf() method:
+console.log("Hello.lastIndexOf('l'): ", "Hello".lastIndexOf("l"));
+//includes() method to check for a certain character
+console.log("Hello.includes('e'): ", "Hello".includes("e"));
+console.log("Hello.includes('z'): ", "Hello".includes("z"));
+//startsWith() method - to check if a string starts with a certain character
+console.log("Hello.startsWith('H'): ", "Hello".startsWith("H"));
+console.log("Hello.startsWith('h'): ", "Hello".startsWith("h"));
+//endsWith method- to check if a string ends with a particular character
+console.log("Hello.endsWith('O'): ", "Hello".endsWith("O"));
+console.log("Hello.endsWith('o'): ", "Hello".endsWith("o"));
+//length
+console.log("Hello.length: ", "Hello".length);
+const myString = "Hello, is it me you're looking for?";
+console.log(
+  'const myString = "Hello is it me you\'re looking for?", console.log(myString.length)',
+  myString.length
+);
+myString.length = 36;
+console.log(myString.length);
