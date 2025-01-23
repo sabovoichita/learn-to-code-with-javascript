@@ -362,5 +362,11 @@ console.log(
 //Challenges
 //1.Create a prompt box that asks for user for their age.
 //Then tell them how old they'll be in 25 years.(!type coercion)
-const age = Number(prompt("How old are you (in years?)"));
-alert(`You will be be ${25 + age} years old in 25 years`);
+// const age = Number(prompt("How old are you (in years?)"));
+// alert(`You will be be ${25 + age} years old in 25 years`);
+
+//2. Write some code that will use prompt boxes to ask the user for two numbers,
+//then show an alert box that displays the result multiplying those numbers together
+const number1 = Number(prompt("Please enter a number: "));
+const number2 = Number(prompt("Please enter another number: "));
+alert(`The product of the numbers is ${number1 * number2}`);
