@@ -20,11 +20,11 @@ function change() {
 
 //add event listener for button
 button.addEventListener("click", change);
-{
-  //this is a block containing a comment and two statemets
-  const name = prompt("Please enter your name!");
-  alert("Hello there, " + name);
-}
+// {
+//   //this is a block containing a comment and two statemets
+//   const name = prompt("Please enter your name!");
+//   alert("Hello there, " + name);
+// }
 
 // console.log("Hello, World!", button, colors);
 
@@ -51,3 +51,8 @@ console.log("Answer: all of the above!");
 console.log(
   "4. Add some more colours to the array in the 'I can Code a Ranbow'"
 );*/
+console.log(typeof "hello");
+console.log(typeof 10);
+console.log(typeof true);
+console.log(typeof [(1, 2, 3)]);
+console.log(typeof function () {});
