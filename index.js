@@ -178,15 +178,25 @@ const message = "HELLO THERE!";
 // );
 
 // Changing Cases
-const name1 = "JavaScript";
-console.log();
-console.log(
-  'console.log(const name1="JavaScript";name1.toUpperCase")',
-  name1.toUpperCase()
-);
-console.log(
-  'console.log(const name1="JavaScript";name1.toLowerCase")',
-  name1.toLowerCase()
-);
+// const name1 = "JavaScript";
+// console.log();
+// console.log(
+//   'console.log(const name1="JavaScript";name1.toUpperCase")',
+//   name1.toUpperCase()
+// );
+// console.log(
+//   'console.log(const name1="JavaScript";name1.toLowerCase")',
+//   name1.toLowerCase()
+// );
 //These two methods don't change the string stored in name1!
 //They just return a value with the case changed
+
+//Trimming Space
+//trim() removes any whitespace from beginning and end of a string
+console.log("     Hello World  ".trim());
+console.log("   \t\t  JavaScript ".trim()); //escaped tabs and carriage returns
+// are also removed
+//trimStart() removes whitespace from beginning
+console.log("     Hello World  ".trimStart());
+//trimEnd() removed whitespace from end of string
+console.log("     Hello World  ".trimEnd());
