@@ -131,26 +131,37 @@ const message = "HELLO THERE!";
 
 //Finding Chars
 //indexOf() method
-console.log("Hello.indexOf('l'): ", "Hello".indexOf("l"));
-//if a character doesnt appear -1 will be returned
-console.log("Hello.indexOf('z'): ", "Hello".indexOf("z"));
-//lastIndexOf() method:
-console.log("Hello.lastIndexOf('l'): ", "Hello".lastIndexOf("l"));
-//includes() method to check for a certain character
-console.log("Hello.includes('e'): ", "Hello".includes("e"));
-console.log("Hello.includes('z'): ", "Hello".includes("z"));
-//startsWith() method - to check if a string starts with a certain character
-console.log("Hello.startsWith('H'): ", "Hello".startsWith("H"));
-console.log("Hello.startsWith('h'): ", "Hello".startsWith("h"));
-//endsWith method- to check if a string ends with a particular character
-console.log("Hello.endsWith('O'): ", "Hello".endsWith("O"));
-console.log("Hello.endsWith('o'): ", "Hello".endsWith("o"));
-//length
-console.log("Hello.length: ", "Hello".length);
-const myString = "Hello, is it me you're looking for?";
-console.log(
-  'const myString = "Hello is it me you\'re looking for?", console.log(myString.length)',
-  myString.length
-);
-myString.length = 36;
-console.log(myString.length);
+// console.log("Hello.indexOf('l'): ", "Hello".indexOf("l"));
+// //if a character doesnt appear -1 will be returned
+// console.log("Hello.indexOf('z'): ", "Hello".indexOf("z"));
+// //lastIndexOf() method:
+// console.log("Hello.lastIndexOf('l'): ", "Hello".lastIndexOf("l"));
+// //includes() method to check for a certain character
+// console.log("Hello.includes('e'): ", "Hello".includes("e"));
+// console.log("Hello.includes('z'): ", "Hello".includes("z"));
+// //startsWith() method - to check if a string starts with a certain character
+// console.log("Hello.startsWith('H'): ", "Hello".startsWith("H"));
+// console.log("Hello.startsWith('h'): ", "Hello".startsWith("h"));
+// //endsWith method- to check if a string ends with a particular character
+// console.log("Hello.endsWith('O'): ", "Hello".endsWith("O"));
+// console.log("Hello.endsWith('o'): ", "Hello".endsWith("o"));
+// //length
+// console.log("Hello.length: ", "Hello".length);
+// const myString = "Hello, is it me you're looking for?";
+// console.log(
+//   'const myString = "Hello is it me you\'re looking for?", console.log(myString.length)',
+//   myString.length
+// );
+// myString.length = 36;
+// console.log(myString.length);
+
+// String Arithmetic
+//concatenation:
+console.log('"Java" + "Script" + ": "', "Java" + "Script");
+console.log('"Hello" + " World" + ": "', "Hello" + " World");
+console.log('"Hello" + " " + "World"', "Hello" + " " + "World");
+//concat() method
+console.log('"Java".concat("Script")', "Java".concat("Script"));
+//find the last character of the string
+console.log('"Hello"[4] ', "Hello"[4]);
+console.log('"Goodbye"[6] ', "Goodbye"[6]);
