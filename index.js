@@ -229,30 +229,65 @@ const message = "HELLO THERE!";
 //Challenge
 //1. Use a prompt box to ask the user's name then use a template literal
 //to insert their name into a personalized "hello" message in an alert box.
-const userName = prompt("Please enter your name");
-alert(`Hello there ${userName}! You will win a new pair of socks today!`);
-//2.Now try changing the code so that tells the user how many letters their name contains
-const letters = userName.length;
-alert(
-  `Did you know that your name, ${userName} , contains ${letters} letters?`
-);
-//3.Try changing the Mad Libs code to ask for more words and create a funnier result
-const day = prompt("What day is today?");
-const year = prompt("What year were you born?");
-const season = prompt("What is your favourite season?");
-const place = prompt("Where do you spend your evening?");
-const madLibs = alert(
-  `How funny!!! You were born in the ${place}. You like to drink a lot ${day}. Your favourite number is ${year}. Not a fan of ${season}, aren't you?`
-);
-//4.Try writing some code that asks for a user's name, tells them their "swapy name"
-//by swapping the first and last letter around
-const username = prompt("Please enter your name: ");
-const usernameFirstLetter = username.slice(0, 1).toLowerCase();
-const usernameMiddleLetters = username.slice(1, -1);
-const usernameLastLetter = username.slice(username.length - 1).toUpperCase();
-console.log(usernameFirstLetter);
-console.log(usernameMiddleLetters);
-console.log(usernameLastLetter);
-alert(
-  `Your name is:${username}...Your swappy name is: ${usernameLastLetter}${usernameMiddleLetters}${usernameFirstLetter}`
-);
+// const userName = prompt("Please enter your name");
+// alert(`Hello there ${userName}! You will win a new pair of socks today!`);
+// //2.Now try changing the code so that tells the user how many letters their name contains
+// const letters = userName.length;
+// alert(
+//   `Did you know that your name, ${userName} , contains ${letters} letters?`
+// );
+// //3.Try changing the Mad Libs code to ask for more words and create a funnier result
+// const day = prompt("What day is today?");
+// const year = prompt("What year were you born?");
+// const season = prompt("What is your favourite season?");
+// const place = prompt("Where do you spend your evening?");
+// const madLibs = alert(
+//   `How funny!!! You were born in the ${place}. You like to drink a lot ${day}. Your favourite number is ${year}. Not a fan of ${season}, aren't you?`
+// );
+// //4.Try writing some code that asks for a user's name, tells them their "swapy name"
+// //by swapping the first and last letter around
+// const username = prompt("Please enter your name: ");
+// const usernameFirstLetter = username.slice(0, 1).toLowerCase();
+// const usernameMiddleLetters = username.slice(1, -1);
+// const usernameLastLetter = username.slice(username.length - 1).toUpperCase();
+// console.log(usernameFirstLetter);
+// console.log(usernameMiddleLetters);
+// console.log(usernameLastLetter);
+// alert(
+//   `Your name is:${username}...Your swappy name is: ${usernameLastLetter}${usernameMiddleLetters}${usernameFirstLetter}`
+// );
+
+//Numbers
+//Integers and Floats
+console.log(typeof 42);
+console.log(typeof 3.14159);
+//Numeric Literals = sequence of digits that form a decimal number and don't start with a leading zero
+console.log(3);
+console.log(-4.67);
+//Exponential Notation
+console.log(1e6); //1 multiplied by 10 to the power of 6
+console.log(2e3); //2 multiplied by 10 to the power of 3
+console.log(2.5e-3); //2.5 multiplied by 10 to the power of -3
+//When is a Number Not a Number(NaN)?
+//string multiplied to a number
+console.log("hello" * 5); //NaN
+//typeof NaN = number
+console.log(typeof NaN); //number
+
+//Arithmetic operations
+//Addition
+console.log("5 + 4.3 = ", 5 + 4.3); // 9.3
+//Subtraction
+console.log("6 - 11 = ", 6 - 11); // -5
+//Multiplication
+console.log("6 * 7 = ", 6 * 7); // 42
+//Division
+console.log("3/7 = ", 3 / 7); // 0.42857142857142855
+//Exponentiation
+console.log("2**3 = ", 2 ** 3); // 8
+//Order matters:Exponentioation->Multiplication->Division->Addition->Subtraction
+console.log("(8 - 5) + 6 / 3 =", 8 - 5 + 6 / 3);
+//Remainder
+console.log("23 % 6 =", 23 % 6);
+//What day will be a million days from now on?
+console.log("1e6 % 7 =", 1e6 % 7); //1=>same day as tomorrow
