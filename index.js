@@ -202,16 +202,26 @@ const message = "HELLO THERE!";
 // console.log("     Hello World  ".trimEnd());
 
 //Template Literals
-console.log(`Hello!`);
-console.log(`She said, "It's me!"`);
-//interpolation
-const name = `World`;
-console.log(`Hello ${name}!`);
-const name1 = `World`;
-console.log(`Hello ${name1.toUpperCase()}!`);
-console.log(`This is the start...\n\n\n ... and this is the end`);
-// console.log("This is the start...
+// console.log(`Hello!`);
+// console.log(`She said, "It's me!"`);
+// //interpolation
+// const name = `World`;
+// console.log(`Hello ${name}!`);
+// const name1 = `World`;
+// console.log(`Hello ${name1.toUpperCase()}!`);
+// console.log(`This is the start...\n\n\n ... and this is the end`);
+// // console.log("This is the start...
 
-//     ... and this is the end");
-//Uncaught SyntaxError: Invalid or unexpected token
-console.log(`This charcter,\`, is a backtick`);
+// //     ... and this is the end");
+// //Uncaught SyntaxError: Invalid or unexpected token
+// console.log(`This charcter,\`, is a backtick`);
+
+//Mad Libs
+//ask the user for some words
+const animal = prompt("Please enter an animal.");
+const color = prompt("Please enter a color.");
+const verb = prompt("Please enter a verb.");
+const job = prompt("Please enter a job.");
+//create a Mad Lib
+const madlib = `The ${animal} wanted to be a ${job}, but turned a funny shade of ${color} after trying to ${verb}!`;
+alert(madlib);
