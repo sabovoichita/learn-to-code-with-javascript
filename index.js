@@ -311,14 +311,20 @@ console.log(
 // score %= 7;
 // console.log("score %= 7; score =", score); //2
 
-//Increments
-let points = 5;
-console.log("points: ", points); //5
-points++;
-console.log("points++", points); //6
-++points;
-console.log("++points", points); //7
-points--;
-console.log("points--", points); //6
---points;
-console.log("--points", points); //5
+// //Increments
+// let points = 5;
+// console.log("points: ", points); //5
+// points++;
+// console.log("points++", points); //6
+// ++points;
+// //Decrements
+// console.log("++points", points); //7
+// points--;
+// console.log("points--", points); //6
+// --points;
+// console.log("--points", points); //5
+
+//How Old?
+const ageInYears = prompt("How old are you (in years)?");
+const ageInSeconds = ageInYears * 365.25 * 24 * 60 * 60;
+alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
