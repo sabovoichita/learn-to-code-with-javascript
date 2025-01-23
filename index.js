@@ -345,16 +345,22 @@ console.log(
 
 //Random numbers
 //Math.random() generates a number between 0(inclusive) and 1(inclusive)
-console.log("Math.random()", Math.random()); //0.97888268565043
-//Math.random() * 6 will return a random number between 0 and 6(not including)
-console.log("6 * Math.random()", 6 * Math.random()); //3.258344621372284
-//Math.ceil() rounds up the value to the next bigger integer
-console.log("Math.ceil(3.258344621372284)", Math.ceil(3.258344621372284)); // 4
-//To generate a random whole number from 1 to 6
-//Math.ceil(6 * Math.random())
-console.log("Math.ceil(6 * Math.random())", Math.ceil(6 * Math.random())); // 5
-//How many sides does a dice have?
-const sides = prompt("How many sides does a dice have?");
-alert("Press Enter or click close to roll the dice...");
-const number = Math.ceil(sides * Math.random());
-alert(`The dice landed on number ${number}`);
+// console.log("Math.random()", Math.random()); //0.97888268565043
+// //Math.random() * 6 will return a random number between 0 and 6(not including)
+// console.log("6 * Math.random()", 6 * Math.random()); //3.258344621372284
+// //Math.ceil() rounds up the value to the next bigger integer
+// console.log("Math.ceil(3.258344621372284)", Math.ceil(3.258344621372284)); // 4
+// //To generate a random whole number from 1 to 6
+// //Math.ceil(6 * Math.random())
+// console.log("Math.ceil(6 * Math.random())", Math.ceil(6 * Math.random())); // 5
+// //How many sides does a dice have?
+// const sides = prompt("How many sides does a dice have?");
+// alert("Press Enter or click close to roll the dice...");
+// const number = Math.ceil(sides * Math.random());
+// alert(`The dice landed on number ${number}`);
+
+//Challenges
+//1.Create a prompt box that asks for user for their age.
+//Then tell them how old they'll be in 25 years.(!type coercion)
+const age = Number(prompt("How old are you (in years?)"));
+alert(`You will be be ${25 + age} years old in 25 years`);
