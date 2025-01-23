@@ -51,8 +51,22 @@ console.log("Answer: all of the above!");
 console.log(
   "4. Add some more colours to the array in the 'I can Code a Ranbow'"
 );*/
-console.log(typeof "hello");
-console.log(typeof 10);
-console.log(typeof true);
-console.log(typeof [(1, 2, 3)]);
-console.log(typeof function () {});
+// console.log(typeof "hello");
+// console.log(typeof 10);
+// console.log(typeof true);
+// console.log(typeof [(1, 2, 3)]);
+// console.log(typeof function () {});
+let name = "Voichita Truscai";
+const name1 = "JavaScript";
+// console.log(typeof name1);
+// name1 = "JS";
+let score = 0;
+score = 5;
+let score1;
+score1;
+let $name;
+let _answer;
+let firstName;
+let address_line1;
+let firstNameAndLastName;
+let first_name_and_last_name;
