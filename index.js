@@ -330,6 +330,15 @@ console.log(
 // alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
 
 // Calculations with Numbers and Strings
-console.log("2 + 'two' =", 2 + "two"); //2two concatenation
-console.log("'2' * 8 = ", "2" * 8); //16
-console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
+// console.log("2 + 'two' =", 2 + "two"); //2two concatenation
+// console.log("'2' * 8 = ", "2" * 8); //16
+// console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
+
+//Converting Between Strings and Numbers
+//Number constructor
+console.log('Number("23") convert to =>', Number("23"));
+//if the string can't be converted to a number, NaN is returned
+console.log('Number("hello") convert to =>', Number("hello"));
+//String-to change a number literal into a string literal
+console.log("String(3) convert to =>", String(3));
+// const ageInYears = Number(prompt("How old are you (in years)?"));
