@@ -324,7 +324,12 @@ console.log(
 // --points;
 // console.log("--points", points); //5
 
-//How Old?
-const ageInYears = prompt("How old are you (in years)?");
-const ageInSeconds = ageInYears * 365.25 * 24 * 60 * 60;
-alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
+// How Old?
+// const ageInYears = prompt("How old are you (in years)?");
+// const ageInSeconds = ageInYears * 365.25 * 24 * 60 * 60;
+// alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
+
+// Calculations with Numbers and Strings
+console.log("2 + 'two' =", 2 + "two"); //2two concatenation
+console.log("'2' * 8 = ", "2" * 8); //16
+console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
