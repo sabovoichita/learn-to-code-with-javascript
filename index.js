@@ -367,6 +367,19 @@ console.log(
 
 //2. Write some code that will use prompt boxes to ask the user for two numbers,
 //then show an alert box that displays the result multiplying those numbers together
-const number1 = Number(prompt("Please enter a number: "));
-const number2 = Number(prompt("Please enter another number: "));
-alert(`The product of the numbers is ${number1 * number2}`);
+// const number1 = Number(prompt("Please enter a number: "));
+// const number2 = Number(prompt("Please enter another number: "));
+// alert(`The product of the numbers is ${number1 * number2}`);
+
+//3.Can you write some code to split a bill for a meal?
+//You'll need to use a prompt box to ask how much the meal was,
+//and another to ask how many people it needs splitting between.
+//Then an alert box to say how much each person has to pay.
+//For this challenge, you;ll need to think about the units and rounding.
+//Bonus if you can add an extra question that adds a tip as a percentage!
+const bill = Number(prompt("How much was the bill?"));
+const persons = Number(prompt("How many people were there eating?"));
+const tip = Number(
+  prompt("Please be kind and enter a tip percentage if you enjoyed it")
+);
+alert(`Each person has to pay ${(bill * tip) / persons}`);
