@@ -293,20 +293,32 @@ console.log(
 // console.log("1e6 % 7 =", 1e6 % 7); //1=>same day as tomorrow
 
 //Varying Variables
-let score = 0;
-console.log(score); // 0
-score = score + 10;
-console.log("score = score + 10; score =", score); //10
-//compound assignment operator
-score += 10;
-console.log("score += 10; score =", score); // 20
-score -= 5;
-console.log("score -= 5; score =", score); //15
-score *= 2;
-console.log("score *= 2; score =", score); // 30
-score /= 3;
-console.log("score /= 3; score =", score); // 10
-score **= 2;
-console.log("score **= 2; score =", score); // 100
-score %= 7;
-console.log("score %= 7; score =", score);
+// let score = 0;
+// console.log(score); // 0
+// score = score + 10;
+// console.log("score = score + 10; score =", score); //10
+// //compound assignment operator
+// score += 10;
+// console.log("score += 10; score =", score); // 20
+// score -= 5;
+// console.log("score -= 5; score =", score); //15
+// score *= 2;
+// console.log("score *= 2; score =", score); // 30
+// score /= 3;
+// console.log("score /= 3; score =", score); // 10
+// score **= 2;
+// console.log("score **= 2; score =", score); // 100
+// score %= 7;
+// console.log("score %= 7; score =", score); //2
+
+//Increments
+let points = 5;
+console.log("points: ", points); //5
+points++;
+console.log("points++", points); //6
+++points;
+console.log("++points", points); //7
+points--;
+console.log("points--", points); //6
+--points;
+console.log("--points", points); //5
