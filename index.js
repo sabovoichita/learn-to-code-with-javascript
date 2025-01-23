@@ -157,11 +157,22 @@ const message = "HELLO THERE!";
 
 // String Arithmetic
 //concatenation:
-console.log('"Java" + "Script" + ": "', "Java" + "Script");
-console.log('"Hello" + " World" + ": "', "Hello" + " World");
-console.log('"Hello" + " " + "World"', "Hello" + " " + "World");
-//concat() method
-console.log('"Java".concat("Script")', "Java".concat("Script"));
-//find the last character of the string
-console.log('"Hello"[4] ', "Hello"[4]);
-console.log('"Goodbye"[6] ', "Goodbye"[6]);
+// console.log('"Java" + "Script" + ": "', "Java" + "Script");
+// console.log('"Hello" + " World" + ": "', "Hello" + " World");
+// console.log('"Hello" + " " + "World"', "Hello" + " " + "World");
+// //concat() method
+// console.log('"Java".concat("Script")', "Java".concat("Script"));
+// //find the last character of the string
+// console.log('"Hello"[4] ', "Hello"[4]);
+// console.log('"Goodbye"[6] ', "Goodbye"[6]);
+
+//What's in a name?
+const person = prompt("What's your name?");
+alert(
+  "Hello " +
+    person +
+    " . The first letter of your name is " +
+    person[0] +
+    " and the last letter is " +
+    person[person.length - 1]
+);
