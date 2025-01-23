@@ -96,7 +96,29 @@ const message = "HELLO THERE!";
 // console.log(typeof 0);
 
 //Ask the user something
-const height = prompt("How tall are you?");
-alert("You are...");
-alert(height + "cm");
-alert("...tall");
+// const height = prompt("How tall are you?");
+// alert("You are...");
+// alert(height + "cm");
+// alert("...tall");
+
+//string examples
+console.log(typeof "M");
+console.log(typeof "@");
+console.log(typeof "Easy as 1, 2, 3");
+console.log(typeof "What The F*!#?");
+console.log(typeof "A long time ago, in the galaxy, far far away...");
+console.log(typeof " ");
+console.log(typeof "");
+//Put the content inside the console.log in the console
+console.log("Hello");
+console.log("I'm also a string literal.");
+// console.log('Don't do this.');
+//SyntaxError: missing ) after argument list
+console.log("That's the way to do it!");
+// console.log('It\'s okey if you escape the apotrophe');
+//The backslash can be used to insert special whitespace into strings:
+//\n: end of line
+//\r: carriage return
+//\t: tab
+
+console.log("This is a backslash: \\");
