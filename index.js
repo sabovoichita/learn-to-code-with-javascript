@@ -64,7 +64,7 @@ let score = 0;
 score = 5;
 let score1;
 score1;
-let $name;
+// let $name;
 let _answer;
 let firstName;
 let address_line1;
@@ -193,10 +193,25 @@ const message = "HELLO THERE!";
 
 //Trimming Space
 //trim() removes any whitespace from beginning and end of a string
-console.log("     Hello World  ".trim());
-console.log("   \t\t  JavaScript ".trim()); //escaped tabs and carriage returns
-// are also removed
-//trimStart() removes whitespace from beginning
-console.log("     Hello World  ".trimStart());
-//trimEnd() removed whitespace from end of string
-console.log("     Hello World  ".trimEnd());
+// console.log("     Hello World  ".trim());
+// console.log("   \t\t  JavaScript ".trim()); //escaped tabs and carriage returns
+// // are also removed
+// //trimStart() removes whitespace from beginning
+// console.log("     Hello World  ".trimStart());
+// //trimEnd() removed whitespace from end of string
+// console.log("     Hello World  ".trimEnd());
+
+//Template Literals
+console.log(`Hello!`);
+console.log(`She said, "It's me!"`);
+//interpolation
+const name = `World`;
+console.log(`Hello ${name}!`);
+const name1 = `World`;
+console.log(`Hello ${name1.toUpperCase()}!`);
+console.log(`This is the start...\n\n\n ... and this is the end`);
+// console.log("This is the start...
+
+//     ... and this is the end");
+//Uncaught SyntaxError: Invalid or unexpected token
+console.log(`This charcter,\`, is a backtick`);
