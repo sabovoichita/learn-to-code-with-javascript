@@ -377,9 +377,17 @@ console.log(
 //Then an alert box to say how much each person has to pay.
 //For this challenge, you;ll need to think about the units and rounding.
 //Bonus if you can add an extra question that adds a tip as a percentage!
-const bill = Number(prompt("How much was the bill?"));
-const persons = Number(prompt("How many people were there eating?"));
-const tip = Number(
-  prompt("Please be kind and enter a tip percentage if you enjoyed it")
-);
-alert(`Each person has to pay ${(bill * tip) / persons}`);
+// const bill = Number(prompt("How much was the bill?"));
+// const persons = Number(prompt("How many people were there eating?"));
+// const tip = Number(
+//   prompt("Please be kind and enter a tip percentage if you enjoyed it")
+// );
+// alert(`Each person has to pay ${(bill * tip) / persons}`);
+
+// 4. Write some code that will produce a random number between two values.
+//For example you can write some code that will return a random number between 5 and 10 inclusive
+const lower = Number(prompt("Please enter a small number"));
+const higher = Number(prompt("Please enter a higher number"));
+const randoValue = Math.floor((higher - lower + 1) * Math.random()) + lower;
+alert(`A radom number between ${lower} and ${higher} is ${randoValue}`);
+console.log(randoValue);
