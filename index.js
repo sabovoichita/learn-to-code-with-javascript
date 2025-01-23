@@ -70,3 +70,18 @@ let firstName;
 let address_line1;
 let firstNameAndLastName;
 let first_name_and_last_name;
+
+// alert("Hello");
+const message = "HELLO THERE!";
+// alert(message);
+// const name2 = prompt("What is your name?");
+// const permision = confirm(
+//   "Do you give consent for us to steel your personal data?"
+// );
+
+//ask the user for their name
+const name3 = prompt("Please enter your name");
+//say Hello
+alert("Hello!");
+//then personalize it
+alert(name3);
