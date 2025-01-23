@@ -86,11 +86,17 @@ const message = "HELLO THERE!";
 //then personalize it
 // alert(name3);
 
-console.log(typeof 42);
-console.log(typeof "Twenty20");
-console.log(typeof "123");
-console.log(typeof -68);
-console.log(typeof true);
-console.log(typeof FALSE);
-console.log(typeof "true");
-console.log(typeof 0);
+// console.log(typeof 42);
+// console.log(typeof "Twenty20");
+// console.log(typeof "123");
+// console.log(typeof -68);
+// console.log(typeof true);
+// console.log(typeof FALSE);
+// console.log(typeof "true");
+// console.log(typeof 0);
+
+//Ask the user something
+const height = prompt("How tall are you?");
+alert("You are...");
+alert(height + "cm");
+alert("...tall");
