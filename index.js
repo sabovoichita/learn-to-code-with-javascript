@@ -56,8 +56,8 @@ console.log(
 // console.log(typeof true);
 // console.log(typeof [(1, 2, 3)]);
 // console.log(typeof function () {});
-let name = "Voichita Truscai";
-const name1 = "JavaScript";
+// let name = "Voichita Truscai";
+// const name1 = "JavaScript";
 // console.log(typeof name1);
 // name1 = "JS";
 let score = 0;
@@ -167,12 +167,26 @@ const message = "HELLO THERE!";
 // console.log('"Goodbye"[6] ', "Goodbye"[6]);
 
 //What's in a name?
-const person = prompt("What's your name?");
-alert(
-  "Hello " +
-    person +
-    " . The first letter of your name is " +
-    person[0] +
-    " and the last letter is " +
-    person[person.length - 1]
+// const person = prompt("What's your name?");
+// alert(
+//   "Hello " +
+//     person +
+//     " . The first letter of your name is " +
+//     person[0] +
+//     " and the last letter is " +
+//     person[person.length - 1]
+// );
+
+// Changing Cases
+const name1 = "JavaScript";
+console.log();
+console.log(
+  'console.log(const name1="JavaScript";name1.toUpperCase")',
+  name1.toUpperCase()
 );
+console.log(
+  'console.log(const name1="JavaScript";name1.toLowerCase")',
+  name1.toLowerCase()
+);
+//These two methods don't change the string stored in name1!
+//They just return a value with the case changed
