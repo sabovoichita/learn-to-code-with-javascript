@@ -218,10 +218,41 @@ const message = "HELLO THERE!";
 
 //Mad Libs
 //ask the user for some words
-const animal = prompt("Please enter an animal.");
-const color = prompt("Please enter a color.");
-const verb = prompt("Please enter a verb.");
-const job = prompt("Please enter a job.");
-//create a Mad Lib
-const madlib = `The ${animal} wanted to be a ${job}, but turned a funny shade of ${color} after trying to ${verb}!`;
-alert(madlib);
+// const animal = prompt("Please enter an animal.");
+// const color = prompt("Please enter a color.");
+// const verb = prompt("Please enter a verb.");
+// const job = prompt("Please enter a job.");
+// //create a Mad Lib
+// const madlib = `The ${animal} wanted to be a ${job}, but turned a funny shade of ${color} after trying to ${verb}!`;
+// alert(madlib);
+
+//Challenge
+//1. Use a prompt box to ask the user's name then use a template literal
+//to insert their name into a personalized "hello" message in an alert box.
+const userName = prompt("Please enter your name");
+alert(`Hello there ${userName}! You will win a new pair of socks today!`);
+//2.Now try changing the code so that tells the user how many letters their name contains
+const letters = userName.length;
+alert(
+  `Did you know that your name, ${userName} , contains ${letters} letters?`
+);
+//3.Try changing the Mad Libs code to ask for more words and create a funnier result
+const day = prompt("What day is today?");
+const year = prompt("What year were you born?");
+const season = prompt("What is your favourite season?");
+const place = prompt("Where do you spend your evening?");
+const madLibs = alert(
+  `How funny!!! You were born in the ${place}. You like to drink a lot ${day}. Your favourite number is ${year}. Not a fan of ${season}, aren't you?`
+);
+//4.Try writing some code that asks for a user's name, tells them their "swapy name"
+//by swapping the first and last letter around
+const username = prompt("Please enter your name: ");
+const usernameFirstLetter = username.slice(0, 1).toLowerCase();
+const usernameMiddleLetters = username.slice(1, -1);
+const usernameLastLetter = username.slice(username.length - 1).toUpperCase();
+console.log(usernameFirstLetter);
+console.log(usernameMiddleLetters);
+console.log(usernameLastLetter);
+alert(
+  `Your name is:${username}...Your swappy name is: ${usernameLastLetter}${usernameMiddleLetters}${usernameFirstLetter}`
+);
