@@ -386,8 +386,52 @@ console.log(
 
 // 4. Write some code that will produce a random number between two values.
 //For example you can write some code that will return a random number between 5 and 10 inclusive
-const lower = Number(prompt("Please enter a small number"));
-const higher = Number(prompt("Please enter a higher number"));
-const randoValue = Math.floor((higher - lower + 1) * Math.random()) + lower;
-alert(`A radom number between ${lower} and ${higher} is ${randoValue}`);
-console.log(randoValue);
+// const lower = Number(prompt("Please enter a small number"));
+// const higher = Number(prompt("Please enter a higher number"));
+// const randoValue = Math.floor((higher - lower + 1) * Math.random()) + lower;
+// alert(`A radom number between ${lower} and ${higher} is ${randoValue}`);
+// console.log(randoValue);
+
+//Collections
+//Arrays
+//An array is a ordered list of values
+console.log(["🍎Apple", "🍌Banana", "🧁Cupcake"]);
+console.log("Array with numbers: ", [1, 3, 5, 7, 11]);
+console.log("Array with strings:", ["🐕Dog", "🐈Cat", "🐇Rabbit"]);
+console.log("Array with booleans", [true, false, true, false, true]);
+console.log("Array of different types:", [null, 1, "two", true]);
+// Arrays is JavaScript
+const shopping = ["🍎Apple", "🍌Banana", "🧁Cupcake"];
+console.log(shopping);
+console.log(
+  "Return the first item in the shopping list = shopping[0]: ",
+  shopping[0]
+);
+console.log(
+  "Return the third item in the shopping list = shopping[2]: ",
+  shopping[2]
+);
+console.log(
+  "If an element in the array is empty, undefined is returned: shopping[5]: ",
+  shopping[5]
+);
+//Adding values to arrays
+console.log(
+  "Add 'Donut' at position 3 in the array ,shopping[3]='🍩Donut' ",
+  (shopping[3] = "🍩Donut")
+);
+console.log("Take a look at content of shopping array ,shopping ", shopping);
+console.log(
+  "Change the value at position 2 to '🥕Carrot', shopping[2] = '🥕Carrot'",
+  (shopping[2] = "🥕carrot")
+);
+console.log("Check the contents from shopping: shopping", shopping);
+console.log(
+  "Use index notation to add new items to any position in the array: shopping[5] = '🍆eggplant'",
+  (shopping[5] = "🍆eggplant")
+);
+console.log(
+  "The position at shopping[4] is unused so will have the value of undefinded: shopping",
+  shopping[4]
+);
+console.log("Lets see the shopping array, shopping", shopping);
