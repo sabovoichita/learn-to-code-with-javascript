@@ -437,17 +437,40 @@ console.log(
 // console.log("Lets see the shopping array, shopping", shopping);
 
 //Removing Values from Arrays
-const shopping = [
-  "🍎Apple",
-  "🍌Banana",
-  "🥕Carrot",
-  "🍩Donut",
-  "",
-  "🍆eggplant",
-];
+// const shopping = [
+//   "🍎Apple",
+//   "🍌Banana",
+//   "🥕Carrot",
+//   "🍩Donut",
+//   "",
+//   "🍆eggplant",
+// ];
+// console.log(
+//   "Remove the value '🍩Donut' from the shopping array: delete shopping[3]",
+//   delete shopping[3]
+// );
+// console.log("Lets see the shopping array: shopping", shopping);
+// console.log("Shopping at position 3 is undefined: shoppping[3]", shopping[3]);
+
+//Finding the length of an array
+const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "", "", "🍆eggplant"];
 console.log(
-  "Remove the value '🍩Donut' from the shopping array: delete shopping[3]",
-  delete shopping[3]
+  "Find the number of items in the shopping array: shopping.length",
+  shopping.length
+); //6
+const length = shopping.length;
+console.log(
+  "The last item in the array: shopping[length-1]",
+  shopping[length - 1]
 );
-console.log("Lets see the shopping array: shopping", shopping);
-console.log("Shopping at position 3 is undefined: shoppping[3]", shopping[3]);
+console.log(
+  "The length property is mutable, we can change it directly: shopping.length = 8",
+  (shopping.length = 8)
+);
+console.log("See the content in shopping:", shopping);
+console.log("To delete items, make the array smaller", (shopping.length = 3));
+console.log("See the 3 items in shopping:", shopping);
+console.log(
+  "NO SECOND CHANCE! Once removed can't go back!",
+  ((shopping.length = 8), shopping)
+);
