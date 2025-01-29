@@ -477,15 +477,37 @@ console.log(
 
 //Popping and Pushing
 //pop() method removes the last item in the array
+// const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "🍩Donut", "🍆Eggplant"];
+// console.log(
+//   "To remove the last item from the array, shopping.pop()",
+//   shopping.pop()
+// );
+// console.log(shopping);
+// //push("something")
+// console.log(
+//   "To add one item to the end of the array, shopping.push('🧁Cupcake')",
+//   shopping.push("🧁Cupcake")
+// );
+// console.log(shopping);
+
+//Shifting and Unshifting
+//shift() removes the first item of the array
 const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "🍩Donut", "🍆Eggplant"];
+console.log("To see the array, shopping", shopping);
 console.log(
-  "To remove the last item from the array, shopping.pop()",
-  shopping.pop()
+  "To remove the first item from the array, shopping.shift()",
+  shopping.shift()
 );
-console.log(shopping);
-//push("something")
+console.log("To see the array, shopping", shopping);
+//unshift("item") adds an aitem to the beginning of the array
 console.log(
-  "To add one item to the end of the array, shopping.push('🧁Cupcake')",
-  shopping.push("🧁Cupcake")
+  "To add '🥑Avocado to the beginning of the array', shopping.unshift('🥑Avocado')",
+  shopping.unshift("🥑Avocado")
 );
-console.log(shopping);
+console.log(
+  "The return value is the length of the array after the new item has been added"
+);
+console.log(
+  "Let's see the new array, with the avocado added: shopping",
+  shopping
+);
