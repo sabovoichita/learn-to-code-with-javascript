@@ -453,24 +453,39 @@ console.log(
 // console.log("Shopping at position 3 is undefined: shoppping[3]", shopping[3]);
 
 //Finding the length of an array
-const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "", "", "🍆eggplant"];
+// const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "", "", "🍆eggplant"];
+// console.log(
+//   "Find the number of items in the shopping array: shopping.length",
+//   shopping.length
+// ); //6
+// const length = shopping.length;
+// console.log(
+//   "The last item in the array: shopping[length-1]",
+//   shopping[length - 1]
+// );
+// console.log(
+//   "The length property is mutable, we can change it directly: shopping.length = 8",
+//   (shopping.length = 8)
+// );
+// console.log("See the content in shopping:", shopping);
+// console.log("To delete items, make the array smaller", (shopping.length = 3));
+// console.log("See the 3 items in shopping:", shopping);
+// console.log(
+//   "NO SECOND CHANCE! Once removed can't go back!",
+//   ((shopping.length = 8), shopping)
+// );
+
+//Popping and Pushing
+//pop() method removes the last item in the array
+const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "🍩Donut", "🍆Eggplant"];
 console.log(
-  "Find the number of items in the shopping array: shopping.length",
-  shopping.length
-); //6
-const length = shopping.length;
-console.log(
-  "The last item in the array: shopping[length-1]",
-  shopping[length - 1]
+  "To remove the last item from the array, shopping.pop()",
+  shopping.pop()
 );
+console.log(shopping);
+//push("something")
 console.log(
-  "The length property is mutable, we can change it directly: shopping.length = 8",
-  (shopping.length = 8)
+  "To add one item to the end of the array, shopping.push('🧁Cupcake')",
+  shopping.push("🧁Cupcake")
 );
-console.log("See the content in shopping:", shopping);
-console.log("To delete items, make the array smaller", (shopping.length = 3));
-console.log("See the 3 items in shopping:", shopping);
-console.log(
-  "NO SECOND CHANCE! Once removed can't go back!",
-  ((shopping.length = 8), shopping)
-);
+console.log(shopping);
