@@ -492,22 +492,69 @@ console.log(
 
 //Shifting and Unshifting
 //shift() removes the first item of the array
-const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "🍩Donut", "🍆Eggplant"];
-console.log("To see the array, shopping", shopping);
+// const shopping = ["🍎Apple", "🍌Banana", "🥕Carrot", "🍩Donut", "🍆Eggplant"];
+// console.log("To see the array, shopping", shopping);
+// console.log(
+//   "To remove the first item from the array, shopping.shift()",
+//   shopping.shift()
+// );
+// console.log("To see the array, shopping", shopping);
+// //unshift("item") adds an aitem to the beginning of the array
+// console.log(
+//   "To add '🥑Avocado to the beginning of the array', shopping.unshift('🥑Avocado')",
+//   shopping.unshift("🥑Avocado")
+// );
+// console.log(
+//   "The return value is the length of the array after the new item has been added"
+// );
+// console.log(
+//   "Let's see the new array, with the avocado added: shopping",
+//   shopping
+// );
+
+//The Spread Operator(...)
+//it spreads out all the elements of the array into separate values
+//An array = a box; the spread operator is emptying the contents of the box into another box
+const arrayA = [1, 2, 3];
+console.log("arrayA", arrayA);
+const arrayB = [arrayA];
+console.log("arrayB=[arrayA]", arrayB);
+console.log("arrayB.length", arrayB.length);
+//in arrayB we see one item wich contains an array that matches arrayA('nested array')
+const arrayC = [...arrayA];
+console.log("arrayC = [...arrayA]", arrayC);
 console.log(
-  "To remove the first item from the array, shopping.shift()",
-  shopping.shift()
+  "arrayC contains three separate elements: arrayC.length",
+  arrayC.length
 );
-console.log("To see the array, shopping", shopping);
-//unshift("item") adds an aitem to the beginning of the array
+console.log("the contents of arrayC are the same elements as arrayA", arrayC);
+//The spread operator can be used to merge the elements from two or more arrays into a new arrays
+const fruit = ["Pineaple", "Melon"];
+console.log("const fruit = ['Pineaple', 'Melon']", fruit);
+const savory = ["Burger", "Fries"];
+console.log("const savory = ['Burger', 'Fries']", savory);
+const sweets = ["Cookie", "Popcorn"];
+console.log("const sweets = ['Cookie', 'Popcorn']", sweets);
+const food = [...fruit, ...savory, ...sweets];
+console.log("const food = [...fruit, ...savory, ...sweets]", food);
 console.log(
-  "To add '🥑Avocado to the beginning of the array', shopping.unshift('🥑Avocado')",
-  shopping.unshift("🥑Avocado")
+  "food contents are: ['Pineaple', 'Melon', 'Burger', 'Fries', 'Cookie', 'Popcorn']",
+  food
+);
+const food1 = [fruit, savory, sweets];
+console.log("const food1 = [fruit, savory, sweets]", food1);
+console.log(
+  "[['Pineaple', 'Melon'],['Burger', 'Fries'], ['Cookie', 'Popcorn']]"
 );
 console.log(
-  "The return value is the length of the array after the new item has been added"
+  "We use the spread operator to add new items to an array: [...food, 'Coffee']",
+  [...food, "Coffee"]
 );
 console.log(
-  "Let's see the new array, with the avocado added: shopping",
-  shopping
+  "The spread operator unpacks all the items out of the 'food' array and places them inside the new array as separate items"
 );
+console.log(
+  "We can add the string 'Coconut' to the beginning of the array: food = ['Coconut', ...food]",
+  ["Coconut", ...food]
+);
+console.log("lets see the content of food", food);
