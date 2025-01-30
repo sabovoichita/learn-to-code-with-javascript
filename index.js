@@ -515,46 +515,86 @@ console.log(
 //The Spread Operator(...)
 //it spreads out all the elements of the array into separate values
 //An array = a box; the spread operator is emptying the contents of the box into another box
-const arrayA = [1, 2, 3];
-console.log("arrayA", arrayA);
-const arrayB = [arrayA];
-console.log("arrayB=[arrayA]", arrayB);
-console.log("arrayB.length", arrayB.length);
-//in arrayB we see one item wich contains an array that matches arrayA('nested array')
-const arrayC = [...arrayA];
-console.log("arrayC = [...arrayA]", arrayC);
+// const arrayA = [1, 2, 3];
+// console.log("arrayA", arrayA);
+// const arrayB = [arrayA];
+// console.log("arrayB=[arrayA]", arrayB);
+// console.log("arrayB.length", arrayB.length);
+// //in arrayB we see one item wich contains an array that matches arrayA('nested array')
+// const arrayC = [...arrayA];
+// console.log("arrayC = [...arrayA]", arrayC);
+// console.log(
+//   "arrayC contains three separate elements: arrayC.length",
+//   arrayC.length
+// );
+// console.log("the contents of arrayC are the same elements as arrayA", arrayC);
+// //The spread operator can be used to merge the elements from two or more arrays into a new arrays
+// const fruit = ["Pineaple", "Melon"];
+// console.log("const fruit = ['Pineaple', 'Melon']", fruit);
+// const savory = ["Burger", "Fries"];
+// console.log("const savory = ['Burger', 'Fries']", savory);
+// const sweets = ["Cookie", "Popcorn"];
+// console.log("const sweets = ['Cookie', 'Popcorn']", sweets);
+// const food = [...fruit, ...savory, ...sweets];
+// console.log("const food = [...fruit, ...savory, ...sweets]", food);
+// console.log(
+//   "food contents are: ['Pineaple', 'Melon', 'Burger', 'Fries', 'Cookie', 'Popcorn']",
+//   food
+// );
+// const food1 = [fruit, savory, sweets];
+// console.log("const food1 = [fruit, savory, sweets]", food1);
+// console.log(
+//   "[['Pineaple', 'Melon'],['Burger', 'Fries'], ['Cookie', 'Popcorn']]"
+// );
+// console.log(
+//   "We use the spread operator to add new items to an array: [...food, 'Coffee']",
+//   [...food, "Coffee"]
+// );
+// console.log(
+//   "The spread operator unpacks all the items out of the 'food' array and places them inside the new array as separate items"
+// );
+// console.log(
+//   "We can add the string 'Coconut' to the beginning of the array: food = ['Coconut', ...food]",
+//   ["Coconut", ...food]
+// );
+// console.log("lets see the content of food", food);
+
+//Slicing and Splicing
+//slice() method creates a subarray, chopping out a slice of an original array
+//starting at one position and finishing at another, without including it
+const food = [
+  "🥥Coconut",
+  "🍍Pineaple",
+  "🍉Melon",
+  "🍔Burger",
+  "🍟Fries",
+  "🍪Cookie",
+  "🍿Popcorn",
+  "☕Coffee",
+];
+console.log("food.slice(2, 4): ['🍉Melon', '🍔Burger']", food.slice(2, 4));
 console.log(
-  "arrayC contains three separate elements: arrayC.length",
-  arrayC.length
-);
-console.log("the contents of arrayC are the same elements as arrayA", arrayC);
-//The spread operator can be used to merge the elements from two or more arrays into a new arrays
-const fruit = ["Pineaple", "Melon"];
-console.log("const fruit = ['Pineaple', 'Melon']", fruit);
-const savory = ["Burger", "Fries"];
-console.log("const savory = ['Burger', 'Fries']", savory);
-const sweets = ["Cookie", "Popcorn"];
-console.log("const sweets = ['Cookie', 'Popcorn']", sweets);
-const food = [...fruit, ...savory, ...sweets];
-console.log("const food = [...fruit, ...savory, ...sweets]", food);
-console.log(
-  "food contents are: ['Pineaple', 'Melon', 'Burger', 'Fries', 'Cookie', 'Popcorn']",
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
   food
 );
-const food1 = [fruit, savory, sweets];
-console.log("const food1 = [fruit, savory, sweets]", food1);
 console.log(
-  "[['Pineaple', 'Melon'],['Burger', 'Fries'], ['Cookie', 'Popcorn']]"
+  "food.splice(2, 1, '🥭Mango'): '🍉Melon'",
+  food.splice(2, 1, "🥭Mango")
 );
 console.log(
-  "We use the spread operator to add new items to an array: [...food, 'Coffee']",
-  [...food, "Coffee"]
+  "food:['🥥Coconut','🍍Pineaple','🥭Mango','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+  food
 );
+//splice() can be used to insert or remove: destructive
+//to insert into an array without removing any items,
+//we indicate that zero items are to be removed
+console.log('food.splice(4, 0, "🍕Pizza")://[]', food.splice(4, 0, "🍕Pizza"));
 console.log(
-  "The spread operator unpacks all the items out of the 'food' array and places them inside the new array as separate items"
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+  food
 );
+console.log('food.splice(3, 1)://["🍔Burger"]', food.splice(3, 1));
 console.log(
-  "We can add the string 'Coconut' to the beginning of the array: food = ['Coconut', ...food]",
-  ["Coconut", ...food]
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+  food
 );
-console.log("lets see the content of food", food);
