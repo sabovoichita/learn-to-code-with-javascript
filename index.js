@@ -662,17 +662,36 @@ console.log(
 
 // Reversing the Order of Array Items
 // reverse()- to reverse permanent the order of the array
+// const food = [
+//   "🥥Coconut",
+//   "🍍Pineaple",
+//   "🍉Melon",
+//   "🍕Pizza",
+//   "🍟Fries",
+//   "🍪Cookie",
+//   "🍿Popcorn",
+//   "☕Coffee",
+// ];
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.reverse()",
+//   food.reverse()
+// ); //['☕Coffee', '🍿Popcorn', '🍪Cookie', '🍟Fries', '🍕Pizza', '🍉Melon', '🍍Pineaple', '🥥Coconut']
+
+// Sorting Array Values permanently
 const food = [
-  "🥥Coconut",
-  "🍍Pineaple",
-  "🍉Melon",
-  "🍕Pizza",
-  "🍟Fries",
-  "🍪Cookie",
-  "🍿Popcorn",
-  "☕Coffee",
+  "Coconut",
+  "Pineaple",
+  "Melon",
+  "Pizza",
+  "Fries",
+  "Cookie",
+  "Popcorn",
+  "Coffee",
 ];
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.reverse()",
-  food.reverse()
-); //['☕Coffee', '🍿Popcorn', '🍪Cookie', '🍟Fries', '🍕Pizza', '🍉Melon', '🍍Pineaple', '🥥Coconut']
+  "food:['Coconut','Pineaple','Melon','Pizza','Fries','Cookie','Popcorn','Coffee'],food.sort()",
+  food.sort()
+); //['Coconut', 'Coffee', 'Cookie', 'Fries', 'Melon', 'Pineaple', 'Pizza', 'Popcorn']
+//Strings are sorted in alphaberical order by defalult, so are numbers
+//numbers are sorted by their first digit, rather than numerically
+console.log("[5, 9, 10].sort()", [5, 9, 10].sort()); //[10, 5, 9]
