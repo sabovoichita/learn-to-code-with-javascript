@@ -562,39 +562,77 @@ console.log(
 //Slicing and Splicing
 //slice() method creates a subarray, chopping out a slice of an original array
 //starting at one position and finishing at another, without including it
+// const food = [
+//   "🥥Coconut",
+//   "🍍Pineaple",
+//   "🍉Melon",
+//   "🍔Burger",
+//   "🍟Fries",
+//   "🍪Cookie",
+//   "🍿Popcorn",
+//   "☕Coffee",
+// ];
+// console.log("food.slice(2, 4): ['🍉Melon', '🍔Burger']", food.slice(2, 4));
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+//   food
+// );
+// console.log(
+//   "food.splice(2, 1, '🥭Mango'): '🍉Melon'",
+//   food.splice(2, 1, "🥭Mango")
+// );
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🥭Mango','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+//   food
+// );
+// //splice() can be used to insert or remove: destructive
+// //to insert into an array without removing any items,
+// //we indicate that zero items are to be removed
+// console.log('food.splice(4, 0, "🍕Pizza")://[]', food.splice(4, 0, "🍕Pizza"));
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+//   food
+// );
+// console.log('food.splice(3, 1)://["🍔Burger"]', food.splice(3, 1));
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
+//   food
+// );
+
+//Finding if a Value is in an Array
 const food = [
   "🥥Coconut",
   "🍍Pineaple",
   "🍉Melon",
-  "🍔Burger",
+  "🍕Pizza",
   "🍟Fries",
   "🍪Cookie",
   "🍿Popcorn",
   "☕Coffee",
 ];
-console.log("food.slice(2, 4): ['🍉Melon', '🍔Burger']", food.slice(2, 4));
+//indexOf()- method to find the first occurence of a value in an array
+//if the item is in the array, it will return the index of the first occurence
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
-  food
-);
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('🍕Pizza')",
+  food.indexOf("🍕Pizza")
+); //3
+//if the item isn't in the array, it will return -1
 console.log(
-  "food.splice(2, 1, '🥭Mango'): '🍉Melon'",
-  food.splice(2, 1, "🥭Mango")
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('Burger')",
+  food.indexOf("Burger")
 );
+//includes() returns a Boolean value(true/false)
+//depending on whether the array contains a particular element or not
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🥭Mango','🍔Burger','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
-  food
-);
-//splice() can be used to insert or remove: destructive
-//to insert into an array without removing any items,
-//we indicate that zero items are to be removed
-console.log('food.splice(4, 0, "🍕Pizza")://[]', food.splice(4, 0, "🍕Pizza"));
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🍕Pizza')",
+  food.includes("🍕Pizza")
+); //true
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍔Burger','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
-  food
-);
-console.log('food.splice(3, 1)://["🍔Burger"]', food.splice(3, 1));
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('Burger')",
+  food.includes("Burger")
+); //false
+//add an extra parameter to indicate which index to start the search from
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee']",
-  food
-);
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🥥Coconut',1)",
+  food.includes("🥥Coconut", 1)
+); //false
