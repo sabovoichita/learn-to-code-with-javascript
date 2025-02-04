@@ -678,20 +678,63 @@ console.log(
 // ); //['☕Coffee', '🍿Popcorn', '🍪Cookie', '🍟Fries', '🍕Pizza', '🍉Melon', '🍍Pineaple', '🥥Coconut']
 
 // Sorting Array Values permanently
-const food = [
-  "Coconut",
-  "Pineaple",
-  "Melon",
-  "Pizza",
-  "Fries",
-  "Cookie",
-  "Popcorn",
-  "Coffee",
+// const food = [
+//   "Coconut",
+//   "Pineaple",
+//   "Melon",
+//   "Pizza",
+//   "Fries",
+//   "Cookie",
+//   "Popcorn",
+//   "Coffee",
+// ];
+// console.log(
+//   "food:['Coconut','Pineaple','Melon','Pizza','Fries','Cookie','Popcorn','Coffee'],food.sort()",
+//   food.sort()
+// ); //['Coconut', 'Coffee', 'Cookie', 'Fries', 'Melon', 'Pineaple', 'Pizza', 'Popcorn']
+// //Strings are sorted in alphaberical order by defalult, so are numbers
+// //numbers are sorted by their first digit, rather than numerically
+// console.log("[5, 9, 10].sort()", [5, 9, 10].sort()); //[10, 5, 9]
+
+//Multi-dimentional Arrays
+const coordinates = [
+  [1, 3],
+  [4, 2],
 ];
 console.log(
-  "food:['Coconut','Pineaple','Melon','Pizza','Fries','Cookie','Popcorn','Coffee'],food.sort()",
-  food.sort()
-); //['Coconut', 'Coffee', 'Cookie', 'Fries', 'Melon', 'Pineaple', 'Pizza', 'Popcorn']
-//Strings are sorted in alphaberical order by defalult, so are numbers
-//numbers are sorted by their first digit, rather than numerically
-console.log("[5, 9, 10].sort()", [5, 9, 10].sort()); //[10, 5, 9]
+  "const coordinates = [[1, 3],[4, 2]], coordinates[0][0] //The first value of the first array",
+  coordinates[0][0]
+); //1
+console.log(
+  "const coordinates = [[1, 3],[4, 2]], coordinates[1][0] //The first value of the second array",
+  coordinates[1][0]
+); //4
+console.log(
+  "const coordinates = [[1, 3],[4, 2]], coordinates[0][1] //The second value of the first array",
+  coordinates[0][1]
+); //3
+console.log(
+  "const coordinates = [[1, 3],[4, 2]], coordinates[1][1] //The second value of the second array",
+  coordinates[1][1]
+); //2
+//use the Spread Operator to 'flatten' multidi-dimentional arrays
+//Flattening an array involves removing the nested arrays
+//by taking all the values out of their arrays
+//and placinf them on the same level in the parent array
+const summer = ["Jun", "Jul", "Aug"];
+const winter = ["Dec", "Ian", "Feb"];
+const nested = [summer, winter];
+console.log(
+  'const summer = ["Jun", "Jul", "Aug"];const winter = ["Dec", "Ian", "Feb"];const nested = [summer, winter];',
+  nested
+); //[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]]
+const flat = [...summer, ...winter];
+console.log("const flat = [...summer, ...winter]; flat()", flat); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+console.log("(nested.flat()", nested.flat()); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+console.log(
+  '[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]].flat()',
+  [
+    ["Jun", "Jul", "Aug"],
+    ["Dec", "Ian", "Feb"],
+  ].flat()
+); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
