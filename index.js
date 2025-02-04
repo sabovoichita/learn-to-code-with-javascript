@@ -638,6 +638,30 @@ console.log(
 // ); //false
 
 //Joining Array Items into a String
+// const food = [
+//   "🥥Coconut",
+//   "🍍Pineaple",
+//   "🍉Melon",
+//   "🍕Pizza",
+//   "🍟Fries",
+//   "🍪Cookie",
+//   "🍿Popcorn",
+//   "☕Coffee",
+// ];
+//join() method can be used to turn the array into a string
+//that comprises all the items in the array, separated by commas:
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join()",
+//   food.join()
+// ); //🥥Coconut,🍍Pineaple,🍉Melon,🍕Pizza,🍟Fries,🍪Cookie,🍿Popcorn,☕Coffee
+// //choose another separator insted of comma (' & ')
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join(' & ')",
+//   food.join(" & ")
+// ); //🥥Coconut & 🍍Pineaple & 🍉Melon & 🍕Pizza & 🍟Fries & 🍪Cookie & 🍿Popcorn & ☕Coffee
+
+// Reversing the Order of Array Items
+// reverse()- to reverse permanent the order of the array
 const food = [
   "🥥Coconut",
   "🍍Pineaple",
@@ -648,14 +672,7 @@ const food = [
   "🍿Popcorn",
   "☕Coffee",
 ];
-//join() method can be used to turn the array into a string
-//that comprises all the items in the array, separated by commas:
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join()",
-  food.join()
-); //🥥Coconut,🍍Pineaple,🍉Melon,🍕Pizza,🍟Fries,🍪Cookie,🍿Popcorn,☕Coffee
-//choose another separator insted of comma (' & ')
-console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join()",
-  food.join(" & ")
-); //🥥Coconut & 🍍Pineaple & 🍉Melon & 🍕Pizza & 🍟Fries & 🍪Cookie & 🍿Popcorn & ☕Coffee
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.reverse()",
+  food.reverse()
+); //['☕Coffee', '🍿Popcorn', '🍪Cookie', '🍟Fries', '🍕Pizza', '🍉Melon', '🍍Pineaple', '🥥Coconut']
