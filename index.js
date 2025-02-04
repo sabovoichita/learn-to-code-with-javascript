@@ -600,6 +600,44 @@ console.log(
 // );
 
 //Finding if a Value is in an Array
+// const food = [
+//   "🥥Coconut",
+//   "🍍Pineaple",
+//   "🍉Melon",
+//   "🍕Pizza",
+//   "🍟Fries",
+//   "🍪Cookie",
+//   "🍿Popcorn",
+//   "☕Coffee",
+// ];
+// //indexOf()- method to find the first occurence of a value in an array
+// //if the item is in the array, it will return the index of the first occurence
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('🍕Pizza')",
+//   food.indexOf("🍕Pizza")
+// ); //3
+// //if the item isn't in the array, it will return -1
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('Burger')",
+//   food.indexOf("Burger")
+// );
+// //includes() returns a Boolean value(true/false)
+// //depending on whether the array contains a particular element or not
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🍕Pizza')",
+//   food.includes("🍕Pizza")
+// ); //true
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('Burger')",
+//   food.includes("Burger")
+// ); //false
+// //add an extra parameter to indicate which index to start the search from
+// console.log(
+//   "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🥥Coconut',1)",
+//   food.includes("🥥Coconut", 1)
+// ); //false
+
+//Joining Array Items into a String
 const food = [
   "🥥Coconut",
   "🍍Pineaple",
@@ -610,29 +648,14 @@ const food = [
   "🍿Popcorn",
   "☕Coffee",
 ];
-//indexOf()- method to find the first occurence of a value in an array
-//if the item is in the array, it will return the index of the first occurence
+//join() method can be used to turn the array into a string
+//that comprises all the items in the array, separated by commas:
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('🍕Pizza')",
-  food.indexOf("🍕Pizza")
-); //3
-//if the item isn't in the array, it will return -1
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join()",
+  food.join()
+); //🥥Coconut,🍍Pineaple,🍉Melon,🍕Pizza,🍟Fries,🍪Cookie,🍿Popcorn,☕Coffee
+//choose another separator insted of comma (' & ')
 console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'], food.indexOf('Burger')",
-  food.indexOf("Burger")
-);
-//includes() returns a Boolean value(true/false)
-//depending on whether the array contains a particular element or not
-console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🍕Pizza')",
-  food.includes("🍕Pizza")
-); //true
-console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('Burger')",
-  food.includes("Burger")
-); //false
-//add an extra parameter to indicate which index to start the search from
-console.log(
-  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.includes('🥥Coconut',1)",
-  food.includes("🥥Coconut", 1)
-); //false
+  "food:['🥥Coconut','🍍Pineaple','🍉Melon','🍕Pizza','🍟Fries','🍪Cookie','🍿Popcorn','☕Coffee'],food.join()",
+  food.join(" & ")
+); //🥥Coconut & 🍍Pineaple & 🍉Melon & 🍕Pizza & 🍟Fries & 🍪Cookie & 🍿Popcorn & ☕Coffee
