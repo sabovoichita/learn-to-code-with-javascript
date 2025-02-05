@@ -864,13 +864,28 @@ console.log(
 //Then use a combination of split, reverse() and join() methods to write
 //the word backwords. For ex, "hello" would become  "olleh".
 //Hint: provide an empty string as the parameter to the split() and join() methods
-let word = prompt("Please enter a word to reverse it");
-alert(`The reversed word is: ${word.split("").reverse().join("")}`);
+// let word = prompt("Please enter a word to reverse it");
+// alert(`The reversed word is: ${word.split("").reverse().join("")}`);
 
-console.log("word:", word);
-let splitWord = word.split("");
-console.log("split word:", splitWord);
-let reversedWord = splitWord.reverse();
-console.log("reversed word:", splitWord);
-let joinedWord = reversedWord.join("");
-console.log("joined word: ", joinedWord);
+// console.log("word:", word);
+// let splitWord = word.split("");
+// console.log("split word:", splitWord);
+// let reversedWord = splitWord.reverse();
+// console.log("reversed word:", splitWord);
+// let joinedWord = reversedWord.join("");
+// console.log("joined word: ", joinedWord);
+
+//Challenge 4. Write a snippet of code that asks for a list of comma-separated
+//names in a prompt and then creates an alert thar displays the names
+//in alphabetical order
+const inputNames = prompt("Please enter some names, separated by comma").split(
+  ","
+);
+console.log("inputNames:", inputNames);
+const sortedInputNames = inputNames.sort();
+alert(`Sorted names are:  ${sortedInputNames}`);
+console.log("sortedInputNames: ", sortedInputNames);
+const names = ["Ioana", "Diana", "Alina"];
+console.log("names: ", names);
+const sortedNames = names.sort();
+console.log("sorted names:", sortedNames);
