@@ -920,7 +920,7 @@ console.log(
 //can be used to combine two or more statements to produce
 //a compound statement that returns a Boolean value.
 //Guess Who?
-const guessWho = ["🧑Alphie", "🤶.Betty", "👩‍🍳Gemma", "👴Del"];
+// const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
 
 //Negation(Logical NOT)
 //Negation return the opposite of a value's Boolean value.
@@ -928,16 +928,31 @@ const guessWho = ["🧑Alphie", "🤶.Betty", "👩‍🍳Gemma", "👴Del"];
 //Who is NOT wearing glasses? Alphie and Gemma
 //Who is NOT wearing a hat? Alphie and Del
 //negation is achieved by placing the logical NOT operator(!) in front of a value
-console.log("!true: //negating true returns false", !true);
-console.log("!0: //0 is falsy, so negating it returns true", !0);
-console.log("'hello': //all non-empty strings are truthy", !"hello");
-//Double negation(!!) to find out if a value is truthy or falsy
-//"negates the negation"
-console.log("empty atrings are falsy: (!!'')", !!"");
-//empty atrings are falsy
-console.log("all non-empty strings are truthy: (!!'hello')", !!"hello");
-//all non-empty strings are truthy
-console.log("all non-zero numbers are truthy: (!!3)", !!3);
-//all non-zero numbers are truthy
-console.log("zero  is falsy: (!!0)", !!0);
-//Double negation(!!) has the same effect as using the Boolean() function
+// console.log("!true: //negating true returns false", !true);
+// console.log("!0: //0 is falsy, so negating it returns true", !0);
+// console.log("'hello': //all non-empty strings are truthy", !"hello");
+// //Double negation(!!) to find out if a value is truthy or falsy
+// //"negates the negation"
+// console.log("empty atrings are falsy: (!!'')", !!"");
+// //empty atrings are falsy
+// console.log("all non-empty strings are truthy: (!!'hello')", !!"hello");
+// //all non-empty strings are truthy
+// console.log("all non-zero numbers are truthy: (!!3)", !!3);
+// //all non-zero numbers are truthy
+// console.log("zero  is falsy: (!!0)", !!0);
+// //Double negation(!!) has the same effect as using the Boolean() function
+
+// Logical AND
+const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
+console.log("Who is wearing glasses AND a hat? // Betty");
+//The logical AND operator acts on two oe more values and returns true
+// if all the values are thruthy and false if any of them are falsy
+//&& is used as the logical AND operator
+//The value that gets returned is the last truthy value if they are
+// all truthy, or the first falsy value if some of them are falsy
+console.log('"hello" && 42: //42', "hello" && 42);
+//both the string 'hello' and the number 42 are truthy values
+//so the last value, 42 is returned
+console.log('42 && "hello": //"hello"', 42 && "hello");
+console.log("true && false: //false because it is falsy", true && false);
+console.log("false && true: //false because it is falsy", false && true);
