@@ -892,26 +892,52 @@ console.log(
 
 //Logic
 //Booleans
-console.log("(Boolean('Hello'))", Boolean("Hello")); //true
-console.log("(Boolean(42))", Boolean(42)); //true
-console.log("(Boolean(0))", Boolean(0)); //false
+// console.log("(Boolean('Hello'))", Boolean("Hello")); //true
+// console.log("(Boolean(42))", Boolean(42)); //true
+// console.log("(Boolean(0))", Boolean(0)); //false
 
-//There are nine faulty values in JavaScript:
-//double quoted empty string literal ""
-console.log('(Boolean(""))', Boolean("")); //false
-//single quoted empty string literal ''
-console.log("(Boolean(''))", Boolean("")); //false
-//empty template literal ``
-console.log("(Boolean(``))", Boolean(``)); //false
-//zero : 0
-console.log("(Boolean(0))", Boolean(0)); //false
-//negative zero : -0
-console.log("(Boolean(-0))", Boolean(-0)); //false
-//Not a Number : NaN
-console.log("(Boolean(NaN))", Boolean(NaN)); //false
-//...
-// console.log("(Boolean(...))", Boolean(...)); //false
-//null
-console.log("(Boolean(null))", Boolean(null)); //false
-//undefined
-console.log("(Boolean(undefined))", Boolean(undefined)); //false
+// //There are nine faulty values in JavaScript:
+// //double quoted empty string literal ""
+// console.log('(Boolean(""))', Boolean("")); //false
+// //single quoted empty string literal ''
+// console.log("(Boolean(''))", Boolean("")); //false
+// //empty template literal ``
+// console.log("(Boolean(``))", Boolean(``)); //false
+// //zero : 0
+// console.log("(Boolean(0))", Boolean(0)); //false
+// //negative zero : -0
+// console.log("(Boolean(-0))", Boolean(-0)); //false
+// //Not a Number : NaN
+// console.log("(Boolean(NaN))", Boolean(NaN)); //false
+// //...
+// // console.log("(Boolean(...))", Boolean(...)); //false
+// //null
+// console.log("(Boolean(null))", Boolean(null)); //false
+// //undefined
+// console.log("(Boolean(undefined))", Boolean(undefined)); //false
+
+//Logical Operators
+//can be used to combine two or more statements to produce
+//a compound statement that returns a Boolean value.
+//Guess Who?
+const guessWho = ["🧑Alphie", "🤶.Betty", "👩‍🍳Gemma", "👴Del"];
+
+//Negation(Logical NOT)
+//Negation return the opposite of a value's Boolean value.
+//So thruthy values will return false and falsy values will return true
+//Who is NOT wearing glasses? Alphie and Gemma
+//Who is NOT wearing a hat? Alphie and Del
+//negation is achieved by placing the logical NOT operator(!) in front of a value
+console.log("!true: //negating true returns false", !true);
+console.log("!0: //0 is falsy, so negating it returns true", !0);
+console.log("'hello': //all non-empty strings are truthy", !"hello");
+//Double negation(!!) to find out if a value is truthy or falsy
+//"negates the negation"
+console.log("empty atrings are falsy: (!!'')", !!"");
+//empty atrings are falsy
+console.log("all non-empty strings are truthy: (!!'hello')", !!"hello");
+//all non-empty strings are truthy
+console.log("all non-zero numbers are truthy: (!!3)", !!3);
+//all non-zero numbers are truthy
+console.log("zero  is falsy: (!!0)", !!0);
+//Double negation(!!) has the same effect as using the Boolean() function
