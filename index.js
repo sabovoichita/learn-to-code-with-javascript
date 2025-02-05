@@ -847,15 +847,30 @@ console.log(
 //  three different words and place them in an array.
 // Use an alert box to display the array
 
-const list = [
-  prompt("Please enter your shopping list item1"),
-  prompt("Please enter your shopping list item2"),
-  prompt("Please enter your shopping list item3"),
-];
-console.log(list.join(", "));
-alert(`Your list is: ${list.join(", ")}`);
-const list1 = [prompt("Please enter your shopping list item1")];
-const list2 = [prompt("Please enter your shopping list item2")];
-const list3 = [prompt("Please enter your shopping list item3")];
-const result = [list1, " " + list2, " " + list3];
-alert(result);
+// const list = [
+//   prompt("Please enter your shopping list item1"),
+//   prompt("Please enter your shopping list item2"),
+//   prompt("Please enter your shopping list item3"),
+// ];
+// console.log(list.join(", "));
+// alert(`Your list is: ${list.join(", ")}`);
+// const list1 = [prompt("Please enter your shopping list item1")];
+// const list2 = [prompt("Please enter your shopping list item2")];
+// const list3 = [prompt("Please enter your shopping list item3")];
+// const result = [list1, " " + list2, " " + list3];
+// alert(result);
+
+//Challenge 3. Use a prompt box to ask the user to enter a word.
+//Then use a combination of split, reverse() and join() methods to write
+//the word backwords. For ex, "hello" would become  "olleh".
+//Hint: provide an empty string as the parameter to the split() and join() methods
+let word = prompt("Please enter a word to reverse it");
+alert(`The reversed word is: ${word.split("").reverse().join("")}`);
+
+console.log("word:", word);
+let splitWord = word.split("");
+console.log("split word:", splitWord);
+let reversedWord = splitWord.reverse();
+console.log("reversed word:", splitWord);
+let joinedWord = reversedWord.join("");
+console.log("joined word: ", joinedWord);
