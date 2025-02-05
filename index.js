@@ -943,16 +943,31 @@ console.log(
 // //Double negation(!!) has the same effect as using the Boolean() function
 
 // Logical AND
+// const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
+// console.log("Who is wearing glasses AND a hat? // Betty");
+// //The logical AND operator acts on two oe more values and returns true
+// // if all the values are thruthy and false if any of them are falsy
+// //&& is used as the logical AND operator
+// //The value that gets returned is the last truthy value if they are
+// // all truthy, or the first falsy value if some of them are falsy
+// console.log('"hello" && 42: //42', "hello" && 42);
+// //both the string 'hello' and the number 42 are truthy values
+// //so the last value, 42 is returned
+// console.log('42 && "hello": //"hello"', 42 && "hello");
+// console.log("true && false: //false because it is falsy", true && false);
+// console.log("false && true: //false because it is falsy", false && true);
+
+//Logical OR
 const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
-console.log("Who is wearing glasses AND a hat? // Betty");
-//The logical AND operator acts on two oe more values and returns true
-// if all the values are thruthy and false if any of them are falsy
-//&& is used as the logical AND operator
-//The value that gets returned is the last truthy value if they are
-// all truthy, or the first falsy value if some of them are falsy
-console.log('"hello" && 42: //42', "hello" && 42);
-//both the string 'hello' and the number 42 are truthy values
-//so the last value, 42 is returned
-console.log('42 && "hello": //"hello"', 42 && "hello");
-console.log("true && false: //false because it is falsy", true && false);
-console.log("false && true: //false because it is falsy", false && true);
+console.log(guessWho);
+console.log("Who is wearing glasses OR a hat? // Betty, Gemma, Del");
+//The logical OR operator acts on two or more values and
+//returns the first true value if any values are truthy
+//and the last false value if all the values are false
+//|| is the logical OR operator
+console.log('"hello" || "goodbye" : ', "hello" || "goodbye");
+//if both expressions are thuthy, the first is returned
+console.log('"all" || 0 :', "all" || 0);
+//if only one of the values is truthy, it will be this value that's returned
+console.log("false || 0 : ", false || 0);
+//both value are falsy, so the last is returned
