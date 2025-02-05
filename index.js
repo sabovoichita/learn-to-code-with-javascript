@@ -697,44 +697,143 @@ console.log(
 // console.log("[5, 9, 10].sort()", [5, 9, 10].sort()); //[10, 5, 9]
 
 //Multi-dimentional Arrays
-const coordinates = [
-  [1, 3],
-  [4, 2],
-];
+// const coordinates = [
+//   [1, 3],
+//   [4, 2],
+// ];
+// console.log(
+//   "const coordinates = [[1, 3],[4, 2]], coordinates[0][0] //The first value of the first array",
+//   coordinates[0][0]
+// ); //1
+// console.log(
+//   "const coordinates = [[1, 3],[4, 2]], coordinates[1][0] //The first value of the second array",
+//   coordinates[1][0]
+// ); //4
+// console.log(
+//   "const coordinates = [[1, 3],[4, 2]], coordinates[0][1] //The second value of the first array",
+//   coordinates[0][1]
+// ); //3
+// console.log(
+//   "const coordinates = [[1, 3],[4, 2]], coordinates[1][1] //The second value of the second array",
+//   coordinates[1][1]
+// ); //2
+// //use the Spread Operator to 'flatten' multidi-dimentional arrays
+// //Flattening an array involves removing the nested arrays
+// //by taking all the values out of their arrays
+// //and placinf them on the same level in the parent array
+// const summer = ["Jun", "Jul", "Aug"];
+// const winter = ["Dec", "Ian", "Feb"];
+// const nested = [summer, winter];
+// console.log(
+//   'const summer = ["Jun", "Jul", "Aug"];const winter = ["Dec", "Ian", "Feb"];const nested = [summer, winter];',
+//   nested
+// ); //[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]]
+// const flat = [...summer, ...winter];
+// console.log("const flat = [...summer, ...winter]; flat()", flat); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+// console.log("(nested.flat()", nested.flat()); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+// console.log(
+//   '[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]].flat()',
+//   [
+//     ["Jun", "Jul", "Aug"],
+//     ["Dec", "Ian", "Feb"],
+//   ].flat()
+// ); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+
+//Challenges
+// 1.Create a variable called shopping list that starts as an empty array
+//Experiment using pop, push, shift, unshift and splice, along
+//with the spread operator to add and remove items from the list
+
+//use push to add items to the shoppingList
+const shoppingList = [];
+console.log("const shoppingList = []; shoppingList =", shoppingList);
 console.log(
-  "const coordinates = [[1, 3],[4, 2]], coordinates[0][0] //The first value of the first array",
-  coordinates[0][0]
-); //1
+  "const shoppingList = []; shoppingList.push('Dero')",
+  shoppingList.push("Dero")
+);
+// 1
+console.log("const shoppingList = []; shoppingList =", shoppingList);
+//['Dero']
 console.log(
-  "const coordinates = [[1, 3],[4, 2]], coordinates[1][0] //The first value of the second array",
-  coordinates[1][0]
-); //4
+  "const shoppingList = []; shoppingList.push('Servetele umede')",
+  shoppingList.push("Servetele umede")
+);
+//2
 console.log(
-  "const coordinates = [[1, 3],[4, 2]], coordinates[0][1] //The second value of the first array",
-  coordinates[0][1]
-); //3
+  "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede']",
+  shoppingList
+);
+//['Dero', 'Servetele umede']
 console.log(
-  "const coordinates = [[1, 3],[4, 2]], coordinates[1][1] //The second value of the second array",
-  coordinates[1][1]
-); //2
-//use the Spread Operator to 'flatten' multidi-dimentional arrays
-//Flattening an array involves removing the nested arrays
-//by taking all the values out of their arrays
-//and placinf them on the same level in the parent array
-const summer = ["Jun", "Jul", "Aug"];
-const winter = ["Dec", "Ian", "Feb"];
-const nested = [summer, winter];
+  "const shoppingList = []; shoppingList.push('Ciocolata')",
+  shoppingList.push("Ciocolata")
+);
+// 3
 console.log(
-  'const summer = ["Jun", "Jul", "Aug"];const winter = ["Dec", "Ian", "Feb"];const nested = [summer, winter];',
-  nested
-); //[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]]
-const flat = [...summer, ...winter];
-console.log("const flat = [...summer, ...winter]; flat()", flat); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
-console.log("(nested.flat()", nested.flat()); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+  "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede', 'Ciocolata']",
+  shoppingList
+);
+// ['Dero', 'Servetele umede', 'Ciocolata']
+
+//use shift to delete the first item in shoppingList
 console.log(
-  '[["Jun", "Jul", "Aug"], ["Dec", "Ian", "Feb"]].flat()',
-  [
-    ["Jun", "Jul", "Aug"],
-    ["Dec", "Ian", "Feb"],
-  ].flat()
-); //['Jun', 'Jul', 'Aug', 'Dec', 'Ian', 'Feb']
+  "const shoppingList = []; shoppingList.shift()",
+  shoppingList.shift()
+);
+//Dero
+console.log(
+  "const shoppingList = []; shoppingList.shift()",
+  shoppingList.shift()
+);
+//Servetele umede
+console.log(
+  "const shoppingList = []; shoppingList = ['Ciocolata']",
+  shoppingList
+);
+//['Servetele umede', 'Ciocolata']
+//use push to add 'Ceai' to shoppingList
+console.log(
+  "const shoppingList = []; shoppingList.push('Ceai')",
+  shoppingList.push("Ceai")
+);
+//2
+console.log(
+  "const shoppingList = []; shoppingList = ['Ciocolata', 'Ceai']",
+  shoppingList
+);
+//['Ciocolata', 'Ceai']
+
+//use pop to delete the last item in shoppingList
+console.log("const shoppingList = []; shoppingList.pop()", shoppingList.pop());
+//Ceai
+// the removed item
+console.log(
+  "const shoppingList = []; shoppingList = ['Ciocolata']",
+  shoppingList
+);
+// ["Ciocolata"];
+
+//use unshift to add at the beginning of the array
+console.log(
+  "const shoppingList = []; shoppingList.unshift('Servetele uscate')",
+  shoppingList.unshift("Servetele uscate")
+);
+//2
+// logs out - the length of shoppingList
+console.log(
+  "const shoppingList = []; shoppingList = ['Servetele uscate', 'Ciocolata']",
+  shoppingList
+);
+//['Servetele uscate', 'Ciocolata']
+
+//use splice to remove 'Servetele umede'
+console.log(
+  "const shoppingList = []; shoppingList.splice(1)",
+  shoppingList.splice(1)
+);
+//['Ciocolata'] - the rest of the array logs out
+console.log(
+  "const shoppingList = []; shoppingList = ['Servetele uscate']",
+  shoppingList
+);
+//['Servetele uscate'] - the removed item logs out
