@@ -744,101 +744,118 @@ console.log(
 //Experiment using pop, push, shift, unshift and splice, along
 //with the spread operator to add and remove items from the list
 
-//use push to add items to the shoppingList
-const shoppingList = [];
-console.log("const shoppingList = []; shoppingList =", shoppingList);
-console.log(
-  "const shoppingList = []; shoppingList.push('Dero')",
-  shoppingList.push("Dero")
-);
-// 1
-console.log("const shoppingList = []; shoppingList =", shoppingList);
-//['Dero']
-console.log(
-  "const shoppingList = []; shoppingList.push('Servetele umede')",
-  shoppingList.push("Servetele umede")
-);
-//2
-console.log(
-  "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede']",
-  shoppingList
-);
-//['Dero', 'Servetele umede']
-console.log(
-  "const shoppingList = []; shoppingList.push('Ciocolata')",
-  shoppingList.push("Ciocolata")
-);
-// 3
-console.log(
-  "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede', 'Ciocolata']",
-  shoppingList
-);
-// ['Dero', 'Servetele umede', 'Ciocolata']
+// //use push to add items to the shoppingList
+// const shoppingList = [];
+// console.log("const shoppingList = []; shoppingList =", shoppingList);
+// console.log(
+//   "const shoppingList = []; shoppingList.push('Dero')",
+//   shoppingList.push("Dero")
+// );
+// // 1
+// console.log("const shoppingList = []; shoppingList =", shoppingList);
+// //['Dero']
+// console.log(
+//   "const shoppingList = []; shoppingList.push('Servetele umede')",
+//   shoppingList.push("Servetele umede")
+// );
+// //2
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede']",
+//   shoppingList
+// );
+// //['Dero', 'Servetele umede']
+// console.log(
+//   "const shoppingList = []; shoppingList.push('Ciocolata')",
+//   shoppingList.push("Ciocolata")
+// );
+// // 3
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Dero', 'Servetele umede', 'Ciocolata']",
+//   shoppingList
+// );
+// // ['Dero', 'Servetele umede', 'Ciocolata']
 
-//use shift to delete the first item in shoppingList
-console.log(
-  "const shoppingList = []; shoppingList.shift()",
-  shoppingList.shift()
-);
-//Dero
-console.log(
-  "const shoppingList = []; shoppingList.shift()",
-  shoppingList.shift()
-);
-//Servetele umede
-console.log(
-  "const shoppingList = []; shoppingList = ['Ciocolata']",
-  shoppingList
-);
-//['Servetele umede', 'Ciocolata']
-//use push to add 'Ceai' to shoppingList
-console.log(
-  "const shoppingList = []; shoppingList.push('Ceai')",
-  shoppingList.push("Ceai")
-);
-//2
-console.log(
-  "const shoppingList = []; shoppingList = ['Ciocolata', 'Ceai']",
-  shoppingList
-);
-//['Ciocolata', 'Ceai']
+// //use shift to delete the first item in shoppingList
+// console.log(
+//   "const shoppingList = []; shoppingList.shift()",
+//   shoppingList.shift()
+// );
+// //Dero
+// console.log(
+//   "const shoppingList = []; shoppingList.shift()",
+//   shoppingList.shift()
+// );
+// //Servetele umede
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Ciocolata']",
+//   shoppingList
+// );
+// //['Servetele umede', 'Ciocolata']
+// //use push to add 'Ceai' to shoppingList
+// console.log(
+//   "const shoppingList = []; shoppingList.push('Ceai')",
+//   shoppingList.push("Ceai")
+// );
+// //2
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Ciocolata', 'Ceai']",
+//   shoppingList
+// );
+// //['Ciocolata', 'Ceai']
 
-//use pop to delete the last item in shoppingList
-console.log("const shoppingList = []; shoppingList.pop()", shoppingList.pop());
-//Ceai
-// the removed item
-console.log(
-  "const shoppingList = []; shoppingList = ['Ciocolata']",
-  shoppingList
-);
-// ["Ciocolata"];
+// //use pop to delete the last item in shoppingList
+// console.log("const shoppingList = []; shoppingList.pop()", shoppingList.pop());
+// //Ceai
+// // the removed item
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Ciocolata']",
+//   shoppingList
+// );
+// // ["Ciocolata"];
 
-//use unshift to add at the beginning of the array
-console.log(
-  "const shoppingList = []; shoppingList.unshift('Servetele uscate')",
-  shoppingList.unshift("Servetele uscate")
-);
-//2
-// logs out - the length of shoppingList
-console.log(
-  "const shoppingList = []; shoppingList = ['Servetele uscate', 'Ciocolata']",
-  shoppingList
-);
-//['Servetele uscate', 'Ciocolata']
+// //use unshift to add at the beginning of the array
+// console.log(
+//   "const shoppingList = []; shoppingList.unshift('Servetele uscate')",
+//   shoppingList.unshift("Servetele uscate")
+// );
+// //2
+// // logs out - the length of shoppingList
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Servetele uscate', 'Ciocolata']",
+//   shoppingList
+// );
+// //['Servetele uscate', 'Ciocolata']
 
-//use splice to remove 'Servetele umede'
-console.log(
-  "const shoppingList = []; shoppingList.splice(1)",
-  shoppingList.splice(1)
-);
-//['Ciocolata'] - the rest of the array logs out
-console.log(
-  "const shoppingList = []; shoppingList = ['Servetele uscate']",
-  shoppingList
-);
-//['Servetele uscate'] - the removed item logs out
-const shoppingList1 = ["Bomboane", ...shoppingList, "Caramele"];
-console.log(
-  "const shoppingList = []; shoppingList = ['Servetele uscate']",
-  shoppingList1
-);
+// //use splice to remove 'Servetele umede'
+// console.log(
+//   "const shoppingList = []; shoppingList.splice(1)",
+//   shoppingList.splice(1)
+// );
+// //['Ciocolata'] - the rest of the array logs out
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Servetele uscate']",
+//   shoppingList
+// );
+// //['Servetele uscate'] - the removed item logs out
+// const shoppingList1 = ["Bomboane", ...shoppingList, "Caramele"];
+// console.log(
+//   "const shoppingList = []; shoppingList = ['Servetele uscate']",
+//   shoppingList1
+// );
+
+//Challenge 2. Use three prompt boxes to ask the user for
+//  three different words and place them in an array.
+// Use an alert box to display the array
+
+const list = [
+  prompt("Please enter your shopping list item1"),
+  prompt("Please enter your shopping list item2"),
+  prompt("Please enter your shopping list item3"),
+];
+console.log(list.join(", "));
+alert(`Your list is: ${list.join(", ")}`);
+const list1 = [prompt("Please enter your shopping list item1")];
+const list2 = [prompt("Please enter your shopping list item2")];
+const list3 = [prompt("Please enter your shopping list item3")];
+const result = [list1, " " + list2, " " + list3];
+alert(result);
