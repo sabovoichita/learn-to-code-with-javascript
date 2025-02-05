@@ -878,14 +878,40 @@ console.log(
 //Challenge 4. Write a snippet of code that asks for a list of comma-separated
 //names in a prompt and then creates an alert thar displays the names
 //in alphabetical order
-const inputNames = prompt("Please enter some names, separated by comma").split(
-  ","
-);
-console.log("inputNames:", inputNames);
-const sortedInputNames = inputNames.sort();
-alert(`Sorted names are:  ${sortedInputNames}`);
-console.log("sortedInputNames: ", sortedInputNames);
-const names = ["Ioana", "Diana", "Alina"];
-console.log("names: ", names);
-const sortedNames = names.sort();
-console.log("sorted names:", sortedNames);
+// const inputNames = prompt("Please enter some names, separated by comma").split(
+//   ","
+// );
+// console.log("inputNames:", inputNames);
+// const sortedInputNames = inputNames.sort();
+// alert(`Sorted names are:  ${sortedInputNames}`);
+// console.log("sortedInputNames: ", sortedInputNames);
+// const names = ["Ioana", "Diana", "Alina"];
+// console.log("names: ", names);
+// const sortedNames = names.sort();
+// console.log("sorted names:", sortedNames);
+
+//Logic
+//Booleans
+console.log("(Boolean('Hello'))", Boolean("Hello")); //true
+console.log("(Boolean(42))", Boolean(42)); //true
+console.log("(Boolean(0))", Boolean(0)); //false
+
+//There are nine faulty values in JavaScript:
+//double quoted empty string literal ""
+console.log('(Boolean(""))', Boolean("")); //false
+//single quoted empty string literal ''
+console.log("(Boolean(''))", Boolean("")); //false
+//empty template literal ``
+console.log("(Boolean(``))", Boolean(``)); //false
+//zero : 0
+console.log("(Boolean(0))", Boolean(0)); //false
+//negative zero : -0
+console.log("(Boolean(-0))", Boolean(-0)); //false
+//Not a Number : NaN
+console.log("(Boolean(NaN))", Boolean(NaN)); //false
+//...
+// console.log("(Boolean(...))", Boolean(...)); //false
+//null
+console.log("(Boolean(null))", Boolean(null)); //false
+//undefined
+console.log("(Boolean(undefined))", Boolean(undefined)); //false
