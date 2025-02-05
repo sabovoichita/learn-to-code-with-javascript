@@ -837,3 +837,8 @@ console.log(
   shoppingList
 );
 //['Servetele uscate'] - the removed item logs out
+const shoppingList1 = ["Bomboane", ...shoppingList, "Caramele"];
+console.log(
+  "const shoppingList = []; shoppingList = ['Servetele uscate']",
+  shoppingList1
+);
