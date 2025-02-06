@@ -1072,5 +1072,23 @@ console.log(
 //it takes two operands, a condition and two blocks of code
 // format:
 // condition ? code to run if condition is true : code to run if cond is false
-let energy = 10;
-energy < 5 ? alert("ZZZ...") : alert("Time to start running!");
+// let energy = 10;
+// energy < 5 ? alert("ZZZ...") : alert("Time to start running!");
+
+//What's Your Favorite Animal?
+// <= Does it live in water? Yes <= Is it big? => No => Does it live in water? =>
+// Is it big? => No =>Does it live in water? => No => mouse
+// Is it big? => No =>Does it live in water? => Yes => fish
+//  Whale <= Yes <= Does it live in water? Yes <= Is it big?
+//  Elephant <= No <= Does it live in water? Yes <= Is it big?
+const big = confirm("Is it a big animal?");
+const liveInWater = confirm("Does it live in water?");
+if (big && liveInWater) {
+  alert("Your favourite animal is a whale!");
+} else if (big && !liveInWater) {
+  alert("Your favorite animal is an elephant!");
+} else if (!big && liveInWater) {
+  alert("Your favorite animal is a fish!");
+} else if (!big && !liveInWater) {
+  alert("Your favorite animal is a mouse!");
+}
