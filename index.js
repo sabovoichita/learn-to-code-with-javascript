@@ -1204,18 +1204,32 @@ console.log(
 //another random number between 1 and 10 and tell the user if
 //they were right or wrong
 
-const computerFirstNumber = Math.ceil(10 * Math.random());
-let player = confirm(
-  `The computer has chosen this number: ${computerFirstNumber}. 
-  Will the next number be higher?`
+// const computerFirstNumber = Math.ceil(10 * Math.random());
+// let player = confirm(
+//   `The computer has chosen this number: ${computerFirstNumber}.
+//   Will the next number be higher?`
+// );
+// let computerSecondNumber = Math.ceil(10 * Math.random());
+// if (computerFirstNumber < computerSecondNumber) {
+//   alert(
+//     `Correct! You were right! ${computerFirstNumber} < ${computerSecondNumber}`
+//   );
+// } else if (computerFirstNumber > computerSecondNumber) {
+//   alert(
+//     `Wrong! You were wrong! ${computerFirstNumber} > ${computerSecondNumber}`
+//   );
+// }
+
+//Challenge 3. Write some code that picks two numbers at random and
+//  then asks the user to multiply them together.Use an alert box
+// to tell the user if they're got the answer right or wrong.
+const random1 = Math.ceil(Math.random() * 10);
+const random2 = Math.ceil(Math.random() * 10);
+let userAnswer = Number(
+  prompt(`What is the result of ${random1} * ${random2}`)
 );
-let computerSecondNumber = Math.ceil(10 * Math.random());
-if (computerFirstNumber < computerSecondNumber) {
-  alert(
-    `Correct! You were right! ${computerFirstNumber} < ${computerSecondNumber}`
-  );
-} else if (computerFirstNumber > computerSecondNumber) {
-  alert(
-    `Wrong! You were wrong! ${computerFirstNumber} > ${computerSecondNumber}`
-  );
+if (userAnswer === random1 * random2) {
+  alert(`Correct! ${random1} * ${random2}= ${userAnswer} `);
+} else {
+  alert(`Wrong! ${random1} * ${random2} != ${userAnswer}`);
 }
