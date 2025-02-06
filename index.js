@@ -1131,33 +1131,69 @@ console.log(
 //and continue to evaluate case blocks
 
 // Rock Paper Scissors
-const player = prompt("Choose rock, paper or scissors").toLowerCase().trim();
-const number = Math.ceil(3 * Math.random());
-//to choose a random number between 1 and 3 and store it in var number
-let computer;
-switch (number) {
-  case 1:
-    computer = "rock";
-    break;
-  case 2:
-    computer = "paper";
-    break;
-  case 3:
-    computer = "scissors";
-}
-if (player === computer) {
-  alert(`It's a draw, we both chose ${player}`);
-}
+// const player = prompt("Choose rock, paper or scissors").toLowerCase().trim();
+// const number = Math.ceil(3 * Math.random());
+// //to choose a random number between 1 and 3 and store it in var number
+// let computer;
+// switch (number) {
+//   case 1:
+//     computer = "rock";
+//     break;
+//   case 2:
+//     computer = "paper";
+//     break;
+//   case 3:
+//     computer = "scissors";
+// }
+// if (player === computer) {
+//   alert(`It's a draw, we both chose ${player}`);
+// }
 //all the options that result in the player winning:
 //player chooses "rock" and computer chooses "scissors"
 //player chooses "paper" and computer chooses "rock"
 //player chooses "scissors" and computer chooses "paper"
-else if (
-  (player === "rock" && computer === "scissors") ||
-  (player === "paper" && computer === "rock") ||
-  (player === "scissors" && computer === "paper")
-) {
-  alert(`You win! ${player} always beats ${computer}`);
-} else {
-  alert(`You lose! ${player} will never beat ${computer}`);
+// else if (
+//   (player === "rock" && computer === "scissors") ||
+//   (player === "paper" && computer === "rock") ||
+//   (player === "scissors" && computer === "paper")
+// ) {
+//   alert(`You win! ${player} always beats ${computer}`);
+// } else {
+//   alert(`You lose! ${player} will never beat ${computer}`);
+// }
+
+// Challenge 1. Write some code that will ask a question and
+//  then check to see if the answer provided by the user is correct.
+//It should then provide feedback to say if they were right or wrong
+//  in the alert box
+const currentDay = prompt("What day of the week is it today?")
+  .split("")
+  .join("")
+  .toLowerCase()
+  .trim();
+console.log(currentDay);
+switch (currentDay.toLowerCase()) {
+  case "monday":
+    alert("Correct. Today is Monday!");
+    break;
+  case "tuesday":
+    alert("Nope. Today is not Tuesday!");
+    break;
+  case "wednesday":
+    alert("Nope. Today is not Wednesday!");
+    break;
+  case "thursday":
+    alert("Nope. Today is not Thursday!");
+    break;
+  case "friday":
+    alert("Nope. Today is not Friday!");
+    break;
+  case "saturday":
+    alert("Nope. Today is not Saturday!");
+    break;
+  case "sunday":
+    alert("Nope. Today is not Sunday!");
+    break;
+  default:
+    alert("Hmm... I am not sure what if you did write a day of the week...");
 }
