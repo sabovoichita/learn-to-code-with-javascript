@@ -1259,3 +1259,33 @@ console.log(
 //The problem is that the number goes up by one every time it runs
 //through the loop, so it will never reach zero and therefore will never
 // break out of the loop and stop!
+
+//While loop
+//This will repeatedly run a block of code while a certain condition is true
+// while(some condition is true){
+// do something
+// }
+
+//Ten Green Bottles
+//Number of bottles = 10 => Is the number of bottles more than zero =>
+//YES => Sing the song... => Reduce the number of bottles by 1
+// => Is the number of bottles more than zero =>...
+//NO => Stop
+//We start by initializing the number of bottles to be 10
+//  before entering the main loop.
+//There is a check to see if there are more than zero bottles
+//at the start of every loop and if there are, the loop continues.
+// Otherwise, it breaks out and stops
+let bottles = 10;
+while (bottles > 0) {
+  console.log(`There were ${bottles} green bottles, hanging on the wall. 
+    And if one green bottle should accidentaly fall, 
+    there'd be ${bottles - 1} green bottles hanging on the wall.`);
+  bottles--;
+}
+//The loop starts with the while keyword, which is followed by the
+//condition in parentheses that the bottles variable has to be greater
+// than zero. The loop will continue to execute for as long as this
+//condition is true. This basically means "keep repeating the block of code,
+// as long as the number of bottles is greater than zero"
+//The decrement operator(--) is used to decrease the bottles variable by one
