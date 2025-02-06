@@ -1081,14 +1081,51 @@ console.log(
 // Is it big? => No =>Does it live in water? => Yes => fish
 //  Whale <= Yes <= Does it live in water? Yes <= Is it big?
 //  Elephant <= No <= Does it live in water? Yes <= Is it big?
-const big = confirm("Is it a big animal?");
-const liveInWater = confirm("Does it live in water?");
-if (big && liveInWater) {
-  alert("Your favourite animal is a whale!");
-} else if (big && !liveInWater) {
-  alert("Your favorite animal is an elephant!");
-} else if (!big && liveInWater) {
-  alert("Your favorite animal is a fish!");
-} else if (!big && !liveInWater) {
-  alert("Your favorite animal is a mouse!");
+// const big = confirm("Is it a big animal?");
+// const liveInWater = confirm("Does it live in water?");
+// if (big && liveInWater) {
+//   alert("Your favourite animal is a whale!");
+// } else if (big && !liveInWater) {
+//   alert("Your favorite animal is an elephant!");
+// } else if (!big && liveInWater) {
+//   alert("Your favorite animal is a fish!");
+// } else if (!big && !liveInWater) {
+//   alert("Your favorite animal is a mouse!");
+// }
+
+//Switch statements
+const legs = Number(prompt("How many legs does your favourite animal have?"));
+if (legs === 0) {
+  alert("Your favorite animal is a 🐟fish!");
+} else if (legs === 2) {
+  alert("Your favorite animal is a 🐧penguin!");
+} else if (legs === 4) {
+  alert("Your favorite animal is an 🐘elephant!");
+} else if (legs === 8) {
+  alert("Your favorite animal is an 🐙octopus!");
+} else {
+  alert("I'm not sure what animal has that many legs!");
 }
+
+const legs1 = Number(prompt("How many legs does your favourite animal have?"));
+switch (legs1) {
+  case 0:
+    alert("Your favorite animal is a 🐟fish");
+    break;
+  case 2:
+    alert("Your favorite animal is a 🐧penguin!");
+    break;
+  case 4:
+    alert("Your favorite animal is an 🐘elephant!");
+    break;
+  case 8:
+    alert("Your favorite animal is an 🐙octopus!");
+    break;
+  default:
+    alert("I'm not sure what animal has that many legs!");
+}
+//Taking a break
+//It's important to finish each case block with a break keyword,
+//as this stops any more of the case blocks being executed.
+// Without a break statement, the program will "fall through"
+//and continue to evaluate case blocks
