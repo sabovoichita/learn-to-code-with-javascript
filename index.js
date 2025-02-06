@@ -1094,38 +1094,70 @@ console.log(
 // }
 
 //Switch statements
-const legs = Number(prompt("How many legs does your favourite animal have?"));
-if (legs === 0) {
-  alert("Your favorite animal is a 🐟fish!");
-} else if (legs === 2) {
-  alert("Your favorite animal is a 🐧penguin!");
-} else if (legs === 4) {
-  alert("Your favorite animal is an 🐘elephant!");
-} else if (legs === 8) {
-  alert("Your favorite animal is an 🐙octopus!");
-} else {
-  alert("I'm not sure what animal has that many legs!");
-}
+// const legs = Number(prompt("How many legs does your favourite animal have?"));
+// if (legs === 0) {
+//   alert("Your favorite animal is a 🐟fish!");
+// } else if (legs === 2) {
+//   alert("Your favorite animal is a 🐧penguin!");
+// } else if (legs === 4) {
+//   alert("Your favorite animal is an 🐘elephant!");
+// } else if (legs === 8) {
+//   alert("Your favorite animal is an 🐙octopus!");
+// } else {
+//   alert("I'm not sure what animal has that many legs!");
+// }
 
-const legs1 = Number(prompt("How many legs does your favourite animal have?"));
-switch (legs1) {
-  case 0:
-    alert("Your favorite animal is a 🐟fish");
-    break;
-  case 2:
-    alert("Your favorite animal is a 🐧penguin!");
-    break;
-  case 4:
-    alert("Your favorite animal is an 🐘elephant!");
-    break;
-  case 8:
-    alert("Your favorite animal is an 🐙octopus!");
-    break;
-  default:
-    alert("I'm not sure what animal has that many legs!");
-}
+// const legs1 = Number(prompt("How many legs does your favourite animal have?"));
+// switch (legs1) {
+//   case 0:
+//     alert("Your favorite animal is a 🐟fish");
+//     break;
+//   case 2:
+//     alert("Your favorite animal is a 🐧penguin!");
+//     break;
+//   case 4:
+//     alert("Your favorite animal is an 🐘elephant!");
+//     break;
+//   case 8:
+//     alert("Your favorite animal is an 🐙octopus!");
+//     break;
+//   default:
+//     alert("I'm not sure what animal has that many legs!");
+// }
 //Taking a break
 //It's important to finish each case block with a break keyword,
 //as this stops any more of the case blocks being executed.
 // Without a break statement, the program will "fall through"
 //and continue to evaluate case blocks
+
+// Rock Paper Scissors
+const player = prompt("Choose rock, paper or scissors").toLowerCase().trim();
+const number = Math.ceil(3 * Math.random());
+//to choose a random number between 1 and 3 and store it in var number
+let computer;
+switch (number) {
+  case 1:
+    computer = "rock";
+    break;
+  case 2:
+    computer = "paper";
+    break;
+  case 3:
+    computer = "scissors";
+}
+if (player === computer) {
+  alert(`It's a draw, we both chose ${player}`);
+}
+//all the options that result in the player winning:
+//player chooses "rock" and computer chooses "scissors"
+//player chooses "paper" and computer chooses "rock"
+//player chooses "scissors" and computer chooses "paper"
+else if (
+  (player === "rock" && computer === "scissors") ||
+  (player === "paper" && computer === "rock") ||
+  (player === "scissors" && computer === "paper")
+) {
+  alert(`You win! ${player} always beats ${computer}`);
+} else {
+  alert(`You lose! ${player} will never beat ${computer}`);
+}
