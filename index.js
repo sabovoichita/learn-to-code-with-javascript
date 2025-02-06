@@ -1039,13 +1039,13 @@ console.log(
 //If the condition is not a Boolean value,
 //it will be converted to a Boolean
 //depending on whether or not is's truthy or falsy
-let energy = 10;
-// let energy = 2;
+// let energy = 10;
+// // let energy = 2;
 
-if (energy < 3) {
-  alert("ZZZZ...");
-  console.log("ZZZZ...");
-}
+// if (energy < 3) {
+//   alert("ZZZZ...");
+//   console.log("ZZZZ...");
+// }
 
 //Else Statements
 //Are you tired? => No => go for a run
@@ -1060,9 +1060,17 @@ if (energy < 3) {
 //The else keyword adds an alternative block of code to be executed
 //if the original condition isn't true;
 //This means only one block of code will run
-let energy1 = 10;
-if (energy1 < 3) {
-  alert("ZZZ...");
-} else {
-  alert("Time to start running!");
-}
+// let energy1 = 10;
+// if (energy1 < 3) {
+//   alert("ZZZ...");
+// } else {
+//   alert("Time to start running!");
+// }
+
+//The Ternary Operator
+//the ternary operator (?) is a shorthand way of writing an if-else statement
+//it takes two operands, a condition and two blocks of code
+// format:
+// condition ? code to run if condition is true : code to run if cond is false
+let energy = 10;
+energy < 5 ? alert("ZZZ...") : alert("Time to start running!");
