@@ -1307,11 +1307,37 @@ console.log(
 // => YES =>  Sing the song...
 // => NO => Stop
 //The condition has been moved to the end of the loop
-let bottles = 10;
-do {
-  console.log(`There were ${bottles} green bottles, hanging on the wall.
-    And if one green bottle should accidentaly fall,
-    there'd be ${bottles - 1} green bottles hanging on the wall.`);
-  bottles--;
-} while (bottles > 0);
+// let bottles = 10;
+// do {
+//   console.log(`There were ${bottles} green bottles, hanging on the wall.
+//     And if one green bottle should accidentaly fall,
+//     there'd be ${bottles - 1} green bottles hanging on the wall.`);
+//   bottles--;
+// } while (bottles > 0);
 //This has exactly the same result!
+
+//For Loops
+// for (initialization; condition; update){
+// //do something
+// }
+
+//The initialization code is run before the loop starts and is usually
+//employed to initialize any variables that are used it the loop.
+//The condition has to be satisfied for the loop to continue
+//The update code is what to do after each iteration of the loop
+// and it is typically used to update any values
+//Initialization=>Set the number of bottles to 10
+// => Sing the song...
+//=> condition => Is the number of bottles more than zero?
+//=> NO => Stop
+// => YES=> Update => Reduce number of bottles by 1
+// =>Sing the song... => condition => Is the number of bottles more than zero?
+for (let bottles = 10; bottles > 0; bottles--) {
+  console.log(`There were ${bottles} green bottles, hanging on the wall.
+     And if one green bottle should accidentaly fall,
+    there'd be ${bottles - 1} green bottles hanging on the wall.`);
+}
+//This initializes the variable bottles to 10, then sets the condition
+// to be bottles > 0, and uses the decrement operator bottles --
+// to reduce the value of the bottles variable by one after every loop
+//A while loop, a do-while loop and a for loop achieve exactly the same result
