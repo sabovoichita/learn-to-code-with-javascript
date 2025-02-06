@@ -976,36 +976,44 @@ console.log(
 //Equality
 //The equality operator can be used to check if two values are equal to each other
 //== the double-equals operator is used to check for equality
-const answer = 42;
-console.log("answer == 42 : //true ", answer == 42); // returns true if answer = 42
-const answer1 = 40;
-console.log("answer1 == 42 : //false", answer1 == 42); // returns false if answer1 is not = 42
+// const answer = 42;
+// console.log("answer == 42 : //true ", answer == 42); // returns true if answer = 42
+// const answer1 = 40;
+// console.log("answer1 == 42 : //false", answer1 == 42); // returns false if answer1 is not = 42
 
-//Soft Equality
-const answer2 = 42;
-console.log("answer2 == 42 : //true", answer2 == 42);
-//check if var answer2 is equal to the value of 42
-console.log("answer2 == '42' : // true", answer2 == "42");
-//check if var answer 2 is equal to the string '42'
-//Important difference: the string '42' is not the same as the number 42
-// they are completly different data types
-console.log('"  " == 0 : //true', "  " == 0);
-//A string containing white space is the same as number zero
-console.log('false == "0" : //true', false == "0");
-//The Boolean false is considered the same as the string "0"
-//Soft equality should never be used to check if two values are equal!!!
+// //Soft Equality
+// const answer2 = 42;
+// console.log("answer2 == 42 : //true", answer2 == 42);
+// //check if var answer2 is equal to the value of 42
+// console.log("answer2 == '42' : // true", answer2 == "42");
+// //check if var answer 2 is equal to the string '42'
+// //Important difference: the string '42' is not the same as the number 42
+// // they are completly different data types
+// console.log('"  " == 0 : //true', "  " == 0);
+// //A string containing white space is the same as number zero
+// console.log('false == "0" : //true', false == "0");
+// //The Boolean false is considered the same as the string "0"
+// //Soft equality should never be used to check if two values are equal!!!
 
-//Hard Equality
-//=== triple-equals to test for hard equality
-//This will only return true if the two values are equal AND
-// are the same data types
-const answer3 = 42;
-console.log("answer3: ", answer3);
-console.log("answer3 === 42 : //true", answer3 === 42);
-//answer3 is equal to the number 42
-console.log("answer3 === '42' : //false", answer3 === "42");
-//answer3 is NOT equal to the string 42
-//Always use hard equality to test if two values are equal!!!
-//If you want to check weather a number represented by a string
-//is equal to a number, you should convert it to a number yourself
-console.log('answer3 === Number("42") : //true', answer3 === Number("42"));
+// //Hard Equality
+// //=== triple-equals to test for hard equality
+// //This will only return true if the two values are equal AND
+// // are the same data types
+// const answer3 = 42;
+// console.log("answer3: ", answer3);
+// console.log("answer3 === 42 : //true", answer3 === 42);
+// //answer3 is equal to the number 42
+// console.log("answer3 === '42' : //false", answer3 === "42");
+// //answer3 is NOT equal to the string 42
+// //Always use hard equality to test if two values are equal!!!
+// //If you want to check weather a number represented by a string
+// //is equal to a number, you should convert it to a number yourself
+// console.log('answer3 === Number("42") : //true', answer3 === Number("42"));
+
+//Inequality
+//inequality operator  - to check if two values are not equal
+//(!=)- soft inequality operator
+//(!==) - hard inequality operator
+console.log("16 != '16' : //false", 16 != "16");
+//type coercion makes these equal
+console.log("16 !== '16' : //true", 16 !== "16");
