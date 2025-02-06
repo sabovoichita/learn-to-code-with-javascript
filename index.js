@@ -1223,13 +1223,39 @@ console.log(
 //Challenge 3. Write some code that picks two numbers at random and
 //  then asks the user to multiply them together.Use an alert box
 // to tell the user if they're got the answer right or wrong.
-const random1 = Math.ceil(Math.random() * 10);
-const random2 = Math.ceil(Math.random() * 10);
-let userAnswer = Number(
-  prompt(`What is the result of ${random1} * ${random2}`)
-);
-if (userAnswer === random1 * random2) {
-  alert(`Correct! ${random1} * ${random2}= ${userAnswer} `);
-} else {
-  alert(`Wrong! ${random1} * ${random2} != ${userAnswer}`);
-}
+// const random1 = Math.ceil(Math.random() * 10);
+// const random2 = Math.ceil(Math.random() * 10);
+// let userAnswer = Number(
+//   prompt(`What is the result of ${random1} * ${random2}`)
+// );
+// if (userAnswer === random1 * random2) {
+//   alert(`Correct! ${random1} * ${random2}= ${userAnswer} `);
+// } else {
+//   alert(`Wrong! ${random1} * ${random2} != ${userAnswer}`);
+// }
+
+//Going Loopy
+//What's a loop?
+//A loop is a piece of code that will continue to run
+// until a certain condition is met.
+//Start at number 10 => Say the number out loud =>
+// => Subtract one from the number => Have you reached zero?
+// => YES => BLAST OFF!
+//=> NO=> Say the number out loud...
+//We start at 10, say the number out loud, subtract one from the number
+//and then check to see if we've reached zero.
+//If we haven't reached zero, we loop back and repeat the process over again
+//so we continue to say the number out loud, then subtract 1
+// until we get to zero. Once this happens,
+//we break out from the loop and the rocket can blast off!
+
+//Infinite loops
+//It's important that the condition to stop a loop is met at some point
+//Otherwise will get an infinite loop
+//Start at number 10 => Say the number out loud =>
+// => Add one from the number => Have you reached zero?
+// => YES => BLAST OFF!
+//=> NO=> Say the number out loud...
+//The problem is that the number goes up by one every time it runs
+//through the loop, so it will never reach zero and therefore will never
+// break out of the loop and stop!
