@@ -1332,12 +1332,57 @@ console.log(
 //=> NO => Stop
 // => YES=> Update => Reduce number of bottles by 1
 // =>Sing the song... => condition => Is the number of bottles more than zero?
-for (let bottles = 10; bottles > 0; bottles--) {
-  console.log(`There were ${bottles} green bottles, hanging on the wall.
-     And if one green bottle should accidentaly fall,
-    there'd be ${bottles - 1} green bottles hanging on the wall.`);
-}
+// for (let bottles = 10; bottles > 0; bottles--) {
+//   console.log(`There were ${bottles} green bottles, hanging on the wall.
+//      And if one green bottle should accidentaly fall,
+//     there'd be ${bottles - 1} green bottles hanging on the wall.`);
+// }
 //This initializes the variable bottles to 10, then sets the condition
 // to be bottles > 0, and uses the decrement operator bottles --
 // to reduce the value of the bottles variable by one after every loop
 //A while loop, a do-while loop and a for loop achieve exactly the same result
+
+//Nested loops
+//You can loop inside another loop to create a nested loop
+//The inner loop runs all the was through every step of the outer loop
+//Once the inner loop has run all the way through, the variables for
+//the outer loop are updated and it runs the inner loop all the way through
+//again. This continues until the condition has been met for the outer loop
+// to stop
+//Lets create a set of multiplication tables, going from "one times" table
+// up to "twelve times" table.
+//1x1=1,1x2=2,1x3=3,1x4=4... all the way to 12x12=144
+//To achieve this, we want the outer loop to set the first number to 1
+// then use the inner loop to multiply it by a second number that will go
+//from 1 to 12 in each step. After we've multiplied 1 by every number, we'll
+// increase the first number to 2 in the outer loop and multiply this by
+//all the numbers from 1 to 12 in the inner loop, untill we get 12  x 12
+
+//outer loop
+for (let i = 1; i < 13; i++) {
+  //inner loop
+  for (let j = 1; j < 13; j++) {
+    console.log(`${j} x ${i} is ${i * j}`);
+  }
+}
+//Loop variables
+//We've created two varibles in the code above, i and j
+//In loops, it's traditional to use a single letter for these "counter" var
+//It's important to note that you need to use different letter for the var
+//in each nested loop, so that they don't get confused
+//We used i for the outer loop and j for the inner loop
+
+//The outer loop increases the var i from 1 to 12.
+//For every step of the outer loop, the inner loop increases the var j
+// from 1 to 12. So the first iteration starts with i=1 anf j=1
+// and logs out to console: 1 X 2 is 1
+//In the next step, we're still inside the inner loop,
+// so i remains 1 but j increases to 2, giving this:
+//<< 1 x 2 is 2
+//j continues to increase untill it reaches 12.
+//After this, the program breaks out of the inner loop and returns to the
+//outer loop, where i is updated from 1 to 2.
+//It then re-enters the inner loop and j is initialized back to 1 and
+//begins counting up to 12 again.
+//This continues untill the last iteration produces the line:
+// <<12 x 12 is 144
