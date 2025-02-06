@@ -1019,8 +1019,50 @@ console.log(
 // console.log("16 !== '16' : //true", 16 !== "16");
 
 //Greater Than or Less Than
-const answer = 42;
-console.log("answer > 10  //true", answer > 10);
-console.log("answer < 50  //true", answer < 50);
-console.log("answer <= 42  //true", answer <= 42);
-console.log("'apples' < 'Bananas'  //false", "apples" < "Bananas");
+// const answer = 42;
+// console.log("answer > 10  //true", answer > 10);
+// console.log("answer < 50  //true", answer < 50);
+// console.log("answer <= 42  //true", answer <= 42);
+// console.log("'apples' < 'Bananas'  //false", "apples" < "Bananas");
+
+// Flow Control
+//If Statements
+// an if statement can be used to run a block of code
+// only if a certain condition returns true
+//Are you tired? => yes => Sleep
+//pseudocode: if you are tired then go to sleep
+// JS: if (tired){
+// sleep();
+// }
+//The code inside the block will only run
+//  if the condition in the parentheses is true.
+//If the condition is not a Boolean value,
+//it will be converted to a Boolean
+//depending on whether or not is's truthy or falsy
+let energy = 10;
+// let energy = 2;
+
+if (energy < 3) {
+  alert("ZZZZ...");
+  console.log("ZZZZ...");
+}
+
+//Else Statements
+//Are you tired? => No => go for a run
+//Are you tired? => Yes => go to sleep
+//pseudocode: if you are tired then go to sleep
+//else go for a run
+//JS: if (tired){
+// sleep();
+// } else {
+// run();
+// }
+//The else keyword adds an alternative block of code to be executed
+//if the original condition isn't true;
+//This means only one block of code will run
+let energy1 = 10;
+if (energy1 < 3) {
+  alert("ZZZ...");
+} else {
+  alert("Time to start running!");
+}
