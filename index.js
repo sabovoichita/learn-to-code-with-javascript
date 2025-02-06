@@ -1014,6 +1014,13 @@ console.log(
 //inequality operator  - to check if two values are not equal
 //(!=)- soft inequality operator
 //(!==) - hard inequality operator
-console.log("16 != '16' : //false", 16 != "16");
-//type coercion makes these equal
-console.log("16 !== '16' : //true", 16 !== "16");
+// console.log("16 != '16' : //false", 16 != "16");
+// //type coercion makes these equal
+// console.log("16 !== '16' : //true", 16 !== "16");
+
+//Greater Than or Less Than
+const answer = 42;
+console.log("answer > 10  //true", answer > 10);
+console.log("answer < 50  //true", answer < 50);
+console.log("answer <= 42  //true", answer <= 42);
+console.log("'apples' < 'Bananas'  //false", "apples" < "Bananas");
