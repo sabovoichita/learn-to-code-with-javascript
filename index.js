@@ -1276,16 +1276,42 @@ console.log(
 //There is a check to see if there are more than zero bottles
 //at the start of every loop and if there are, the loop continues.
 // Otherwise, it breaks out and stops
-let bottles = 10;
-while (bottles > 0) {
-  console.log(`There were ${bottles} green bottles, hanging on the wall. 
-    And if one green bottle should accidentaly fall, 
-    there'd be ${bottles - 1} green bottles hanging on the wall.`);
-  bottles--;
-}
+// let bottles = 10;
+// while (bottles > 0) {
+//   console.log(`There were ${bottles} green bottles, hanging on the wall.
+//     And if one green bottle should accidentaly fall,
+//     there'd be ${bottles - 1} green bottles hanging on the wall.`);
+//   bottles--;
+// }
 //The loop starts with the while keyword, which is followed by the
 //condition in parentheses that the bottles variable has to be greater
 // than zero. The loop will continue to execute for as long as this
 //condition is true. This basically means "keep repeating the block of code,
 // as long as the number of bottles is greater than zero"
 //The decrement operator(--) is used to decrease the bottles variable by one
+
+//Do-while loops
+//The difference between a do-while loop and a while loop is
+//that the condition comes after the block of code
+//do{
+// //do something
+// } while (condition)
+//The key  difference between a do-while loop and a while loop is that
+//in the do-while loop the do block of code comes first,
+//meaning that it will always run at least once,
+//regardless of whether the condition is true or not
+//Number of bottles = 10
+// =>Sing the song...
+// => Reduce the number of bottles by 1
+// => Is the number of bottles more than zero
+// => YES =>  Sing the song...
+// => NO => Stop
+//The condition has been moved to the end of the loop
+let bottles = 10;
+do {
+  console.log(`There were ${bottles} green bottles, hanging on the wall.
+    And if one green bottle should accidentaly fall,
+    there'd be ${bottles - 1} green bottles hanging on the wall.`);
+  bottles--;
+} while (bottles > 0);
+//This has exactly the same result!
