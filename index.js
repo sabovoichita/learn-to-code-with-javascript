@@ -1166,34 +1166,56 @@ console.log(
 //  then check to see if the answer provided by the user is correct.
 //It should then provide feedback to say if they were right or wrong
 //  in the alert box
-const currentDay = prompt("What day of the week is it today?")
-  .split("")
-  .join("")
-  .toLowerCase()
-  .trim();
-console.log(currentDay);
-switch (currentDay.toLowerCase()) {
-  case "monday":
-    alert("Correct. Today is Monday!");
-    break;
-  case "tuesday":
-    alert("Nope. Today is not Tuesday!");
-    break;
-  case "wednesday":
-    alert("Nope. Today is not Wednesday!");
-    break;
-  case "thursday":
-    alert("Nope. Today is not Thursday!");
-    break;
-  case "friday":
-    alert("Nope. Today is not Friday!");
-    break;
-  case "saturday":
-    alert("Nope. Today is not Saturday!");
-    break;
-  case "sunday":
-    alert("Nope. Today is not Sunday!");
-    break;
-  default:
-    alert("Hmm... I am not sure what if you did write a day of the week...");
+// const currentDay = prompt("What day of the week is it today?")
+//   .split("")
+//   .join("")
+//   .toLowerCase()
+//   .trim();
+// console.log(currentDay);
+// switch (currentDay.toLowerCase()) {
+//   case "monday":
+//     alert("Correct. Today is Monday!");
+//     break;
+//   case "tuesday":
+//     alert("Nope. Today is not Tuesday!");
+//     break;
+//   case "wednesday":
+//     alert("Nope. Today is not Wednesday!");
+//     break;
+//   case "thursday":
+//     alert("Nope. Today is not Thursday!");
+//     break;
+//   case "friday":
+//     alert("Nope. Today is not Friday!");
+//     break;
+//   case "saturday":
+//     alert("Nope. Today is not Saturday!");
+//     break;
+//   case "sunday":
+//     alert("Nope. Today is not Sunday!");
+//     break;
+//   default:
+//     alert("Hmm... I am not sure what if you did write a day of the week...");
+// }
+
+//Challenge 2. Write a "higher or lower" game. The computer should pick
+//  a random number between 1 and 10, then ask if the next number
+//will be higher using a confirm box. The computer should then choose
+//another random number between 1 and 10 and tell the user if
+//they were right or wrong
+
+const computerFirstNumber = Math.ceil(10 * Math.random());
+let player = confirm(
+  `The computer has chosen this number: ${computerFirstNumber}. 
+  Will the next number be higher?`
+);
+let computerSecondNumber = Math.ceil(10 * Math.random());
+if (computerFirstNumber < computerSecondNumber) {
+  alert(
+    `Correct! You were right! ${computerFirstNumber} < ${computerSecondNumber}`
+  );
+} else if (computerFirstNumber > computerSecondNumber) {
+  alert(
+    `Wrong! You were wrong! ${computerFirstNumber} > ${computerSecondNumber}`
+  );
 }
