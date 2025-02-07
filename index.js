@@ -330,17 +330,17 @@ console.log(
 // alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
 
 // Calculations with Numbers and Strings
-// console.log("2 + 'two' =", 2 + "two"); //2two concatenation
-// console.log("'2' * 8 = ", "2" * 8); //16
-// console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
+console.log("2 + 'two' =", 2 + "two"); //2two concatenation
+console.log("'2' * 8 = ", "2" * 8); //16
+console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
 
 //Converting Between Strings and Numbers
 //Number constructor
-// console.log('Number("23") convert to =>', Number("23"));
-// //if the string can't be converted to a number, NaN is returned
-// console.log('Number("hello") convert to =>', Number("hello"));
-// //String-to change a number literal into a string literal
-// console.log("String(3) convert to =>", String(3));
+console.log('Number("23") convert to =>', Number("23"));
+//if the string can't be converted to a number, NaN is returned
+console.log('Number("hello") convert to =>', Number("hello"));
+//String-to change a number literal into a string literal
+console.log("String(3) convert to =>", String(3));
 // const ageInYears = Number(prompt("How old are you (in years)?"));
 
 //Random numbers
@@ -1359,12 +1359,12 @@ console.log(
 //all the numbers from 1 to 12 in the inner loop, untill we get 12  x 12
 
 //outer loop
-for (let i = 1; i < 13; i++) {
-  //inner loop
-  for (let j = 1; j < 13; j++) {
-    console.log(`${j} x ${i} is ${i * j}`);
-  }
-}
+// for (let i = 1; i < 13; i++) {
+//   //inner loop
+//   for (let j = 1; j < 13; j++) {
+//     console.log(`${j} x ${i} is ${i * j}`);
+//   }
+// }
 //Loop variables
 //We've created two varibles in the code above, i and j
 //In loops, it's traditional to use a single letter for these "counter" var
@@ -1386,3 +1386,31 @@ for (let i = 1; i < 13; i++) {
 //begins counting up to 12 again.
 //This continues untill the last iteration produces the line:
 // <<12 x 12 is 144
+
+//Challenge 1. Write a loop that counts from 1 to 100 and checks
+//if the number is a multiple of 3 or 5.
+//It it is a multiple of 3, it should log "Fizz" to the console.
+//If it is a multiple of 5, it should log "Buzz" to the console.
+//If it is a multiple of 3 and 5, it should log "FizzBuzz" to the console
+//and it it's neither, it should just log to the console.
+//The initial output should look something like this:
+//<< 1, 2, Fizz, 4, Buzz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz..
+//You'll need to use the modulud operator (%) for this
+let result = [];
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 15 === 0) {
+    // console.log("FizzBuzz");
+    result.push("FizzBuzz");
+  } else if (i % 3 === 0) {
+    // console.log("Fuzz");
+    result.push("Fizz");
+  } else if (i % 5 === 0) {
+    // console.log("Buzz");
+    result.push("Buzz");
+  } else {
+    // console.log(i);
+    result.push(i);
+  }
+}
+console.log("Result:", result.join());

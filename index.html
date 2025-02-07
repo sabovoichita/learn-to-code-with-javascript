@@ -7,6 +7,114 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="groups"></div>
+
+    <script src="https://nmatei.github.io/generators/docs/circle-slices.js"></script>
+
+    <script>
+      CircleSlices.render({
+        renderTo: "#groups",
+        groupSize: 420,
+        slicesSize: 350,
+        centerSize: 175,
+        text: `
+# 1: Press Start
+I-can-code-a-Rainbow
+
+# 2. Programming Basics
+Comments
+Variables
+Alert-Confirm-Prompt-Box
+Challenges-2
+
+
+# 3. Letters and Words
+Chars-and-Strings
+Find-the-Char
+String-Arithmetic
+What's-in-a-Name
+Changing-Cases
+Trimming-Space
+Template-Literals
+Mad-Libs
+Challenge-3
+
+# 4.Numbers
+Integers-and-Floats
+Arithmetic-Operations
+Varying-Variables
+Increments-Decrements
+How-Old
+
+# 5.Collections
+ceva
+
+#6. Logic
+ceva
+
+#7. Going Loopy
+ceva
+
+#8.Functions
+ceva
+
+#9.Objects
+ceva
+
+#10.DOM
+ceva
+
+#11.The Main Event
+ceva
+
+#12. Going Loopy Over Arrays
+ceva
+
+#13. Let's Get Functional
+ceva
+
+#14. Getting Classy
+ceva
+
+#15.It's About Time
+ceva
+
+#16. End of Line
+ceva
+`,
+        centerText: `#Learn to Code with JavaScript`,
+        onClick: function (event, sliceIndex, sliceText) {
+          showImage(sliceIndex);
+        },
+      });
+
+      function showImage(sliceIndex) {
+        // Clean and format the text to match image file names
+        let formattedText = sliceText
+          .replace(/[^a-zA-Z0-9-]/g, "") // Remove special characters except dashes
+          .trim(); // Remove leading/trailing spaces
+
+        let imgSrc = `images/${formattedText}.png`;
+
+        // Check if an image container exists; if not, create it
+        let imgContainer = document.getElementById("image-container");
+        if (!imgContainer) {
+          imgContainer = document.createElement("div");
+          imgContainer.id = "image-container";
+          imgContainer.style.position = "absolute";
+          imgContainer.style.top = "50px";
+          imgContainer.style.left = "50px";
+          imgContainer.style.zIndex = "1000";
+          document.body.appendChild(imgContainer);
+        }
+
+        // Display image, fallback to default if not found
+        imgContainer.innerHTML = `
+          <img src="${imgSrc}" width="300" height="300" alt="${sliceText}"
+          onerror="this.onerror=null;this.src='images/default.jpg';" />
+        `;
+      }
+    </script>
     <button id="button">click me</button>
     <script src="index.js"></script>
   </body>
