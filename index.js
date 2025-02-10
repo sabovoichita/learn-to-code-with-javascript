@@ -330,18 +330,17 @@ console.log(
 // alert(`That means you have been alive for ${ageInSeconds} seconds!!!`);
 
 // Calculations with Numbers and Strings
-console.log("2 + 'two' =", 2 + "two"); //2two concatenation
-console.log("'2' * 8 = ", "2" * 8); //16
-console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
+// console.log("2 + 'two' =", 2 + "two"); //2two concatenation
+// console.log("'2' * 8 = ", "2" * 8); //16
+// console.log("'2' + 8 = ", "2" + 8); // 28 concatenation
 
 //Converting Between Strings and Numbers
 //Number constructor
-console.log('Number("23") convert to =>', Number("23"));
-//if the string can't be converted to a number, NaN is returned
-console.log('Number("hello") convert to =>', Number("hello"));
-//String-to change a number literal into a string literal
-console.log("String(3) convert to =>", String(3));
-// const ageInYears = Number(prompt("How old are you (in years)?"));
+// console.log('Number("23") convert to =>', Number("23"));
+// //if the string can't be converted to a number, NaN is returned
+// console.log('Number("hello") convert to =>', Number("hello"));
+// //String-to change a number literal into a string literal
+// console.log("String(3) convert to =>", String(3));
 
 //Random numbers
 //Math.random() generates a number between 0(inclusive) and 1(inclusive)
@@ -392,9 +391,9 @@ console.log("String(3) convert to =>", String(3));
 // alert(`A radom number between ${lower} and ${higher} is ${randoValue}`);
 // console.log(randoValue);
 
-//Collections
-//Arrays
-//An array is a ordered list of values
+// Collections
+// Arrays
+// An array is a ordered list of values
 // console.log(["🍎Apple", "🍌Banana", "🧁Cupcake"]);
 // console.log("Array with numbers: ", [1, 3, 5, 7, 11]);
 // console.log("Array with strings:", ["🐕Dog", "🐈Cat", "🐇Rabbit"]);
@@ -843,10 +842,9 @@ console.log("String(3) convert to =>", String(3));
 //   shoppingList1
 // );
 
-//Challenge 2. Use three prompt boxes to ask the user for
+// Challenge 2. Use three prompt boxes to ask the user for
 //  three different words and place them in an array.
 // Use an alert box to display the array
-
 // const list = [
 //   prompt("Please enter your shopping list item1"),
 //   prompt("Please enter your shopping list item2"),
@@ -920,7 +918,7 @@ console.log("String(3) convert to =>", String(3));
 //can be used to combine two or more statements to produce
 //a compound statement that returns a Boolean value.
 //Guess Who?
-// const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
+//  const guessWho = ["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"];
 
 //Negation(Logical NOT)
 //Negation return the opposite of a value's Boolean value.
@@ -1396,21 +1394,21 @@ console.log("String(3) convert to =>", String(3));
 //The initial output should look something like this:
 //<< 1, 2, Fizz, 4, Buzz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz..
 //You'll need to use the modulud operator (%) for this
-let result = [];
+// let result = [];
 
-for (let i = 1; i <= 100; i++) {
-  if (i % 15 === 0) {
-    // console.log("FizzBuzz");
-    result.push("FizzBuzz");
-  } else if (i % 3 === 0) {
-    // console.log("Fuzz");
-    result.push("Fizz");
-  } else if (i % 5 === 0) {
-    // console.log("Buzz");
-    result.push("Buzz");
-  } else {
-    // console.log(i);
-    result.push(i);
-  }
-}
-console.log("Result:", result.join());
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 15 === 0) {
+//     // console.log("FizzBuzz");
+//     result.push("FizzBuzz");
+//   } else if (i % 3 === 0) {
+//     // console.log("Fuzz");
+//     result.push("Fizz");
+//   } else if (i % 5 === 0) {
+//     // console.log("Buzz");
+//     result.push("Buzz");
+//   } else {
+//     // console.log(i);
+//     result.push(i);
+//   }
+// }
+// console.log("Result:", result.join());
