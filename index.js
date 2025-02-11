@@ -1412,3 +1412,117 @@ console.log(
 //   }
 // }
 // console.log("Result:", result.join());
+
+//Challenge 7.2. In the last chapter, we wrote some code for a higher
+//and lower game, but it only gave user one go at guessing higher or lower.
+//Write some code that allows the user to keep guessing until they
+//get it wrong. It should also tell them how many times they managed
+//to guess correctly at the end of the game.
+
+// let correct = 0;
+// let wrong = 0;
+
+// for (let i = 0; i < 3; i++) {
+//   let computer1 = Math.ceil(Math.random() * 10);
+//   // console.log("1", computer1);
+//   let computer2 = Math.ceil(Math.random() * 10);
+//   // console.log("2", computer2);
+//   let userChoice = confirm(
+//     `The computer has chosen this number: ${computer1}.
+//       Will the next number be higher?
+//       Click Ok for Yes and Cancel for No`
+//   );
+//   if (
+//     (userChoice && computer2 > computer1) ||
+//     (!userChoice && computer2 < computer1)
+//   ) {
+//     alert(
+//       `Corect! ${computer2} was ${
+//         computer2 > computer1 ? "higher" : "lower"
+//       } than ${computer1}`
+//     );
+//     correct++;
+//   } else {
+//     alert(
+//       `Wrong! ${computer2} was ${
+//         computer2 > computer1 ? "higher" : "lower"
+//       }  than ${computer1}`
+//     );
+//     wrong++;
+//   }
+// }
+
+// alert(`Game Over!
+//    Correct guesses: ${correct},
+//    Wrong Guesses: ${wrong}`);
+// Another version with while loop
+// 1. Initialize variables
+// let gameOver = false;
+// //a boolean flag to track whether the game is over(false=game is running)
+// let guesses = 0;
+// //a counter to track how many correct guesses the user has made
+// let number = Math.ceil(Math.random() * 10);
+// //the first random number between 1 and 10
+// while (!gameOver) {
+//   //the while loop runs indefinetely untill the user makes a wrong guess
+//   //since gameOver is false, the loop runs at least once
+//   const userSayHigher = confirm(`The current number is ${number}.
+//      Do you think the next number will be higher?`);
+//   //the confirm() funtion presents the user with a Yes/No(OK/Cancel) dialog
+//   //if the user clicks OK, userSayHigher becomes true
+//   //if the user clicks Cancel, userSayHigher becomes false
+//   const nextNumber = Math.ceil(Math.random() * 10);
+//   // a new random number(nextNumber) is generate, again between 1 and 10
+//   if (
+//     (nextNumber > number && userSayHigher) ||
+//     (nextNumber <= number && !userSayHigher)
+//   ) {
+//     //this condition checks whether the user prediction was correct:
+//     //if the user predicted "Higher"(true) and the new number is greater=>Correct!
+//     //if the user predicted "Lower"(false) and the new number is equal or smaller=>Correct!
+//     alert(`Correct! It was ${nextNumber}`);
+//     guesses++;
+//     number = nextNumber;
+//     //displays a message saying they were correct
+//     //increment guesses(correct guess counter)
+//     //updates number to the new number(nextNumber) for the next round
+//   } else {
+//     alert(`Wrong! It was ${nextNumber}`);
+//     gameOver = true;
+//     //if the user made the wrong guess, an alert notifies them
+//     //the gameOver flag is set to true, which exits the loop
+//   }
+//   alert(`Game Over! You managed to guess correctly ${guesses} times.`);
+//   //the user sees how many correct guesses they made before losing
+// }
+
+//Guess game- for loop version
+let guesses = 0;
+let number = Math.ceil(Math.random() * 10);
+for (let i = 0; i < Infinity; i++) {
+  //the for loop runs indefinitely
+  //infinite loop will break when the user loses
+  const userSayHigher = confirm(`The current number is ${number}.
+     Do you think the next number will be higher?`);
+  //the user is asked if the next number will be higher
+  const nextNumber = Math.ceil(Math.random() * 10);
+  // a new random number is generated
+  if (
+    (userSayHigher && nextNumber > number) ||
+    (!userSayHigher && nextNumber <= number)
+  ) {
+    //the guess is checked:
+    //if correct, the loop continues
+    //if incorrect, break; stops the loop
+    alert(`Correct! It was ${nextNumber}`);
+    guesses++;
+    number = nextNumber;
+    //updates the number for the next round
+  } else {
+    alert(`Wrong! It was ${nextNumber}`);
+    break;
+    //Exit the loop when the user is wrong
+  }
+}
+alert(`Game Over! You managed to guess correctly ${guesses} times. `);
+//After the loop ends, the final score is displayed.
