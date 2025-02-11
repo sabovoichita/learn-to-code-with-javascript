@@ -1579,11 +1579,20 @@ console.log(
 //Function Expressions
 //-another way to defining a function
 //-this assigns an "anonymous function" to a variable:
-const goodbye = function () {
-  alert(`Goodbye, World!`);
-};
-//Notice that the example above ends with a semicolon!
-goodbye(); //A pop up window alert with "Goodbye, World"
+// const goodbye = function () {
+//   alert(`Goodbye, World!`);
+// };
+// //Notice that the example above ends with a semicolon!
+// goodbye(); //A pop up window alert with "Goodbye, World"
 //It's important to remember that you need parentheses to call a function
 //If you forget to add the parentheses, yo're just referencing the actual
 //function, rather than calling it
+
+//Arrow functions (=>)
+//Arrow functions are always anonymous, so if you want to refer to them
+//you must always assign them to a variable
+const hola = () => alert("Hola, Mundo!");
+//The arrow functions start with the parentheses and arrow, ()=>
+//Everything after that is the code that will run when the function is called
+//Arrow function are called as any other functions:
+hola();
