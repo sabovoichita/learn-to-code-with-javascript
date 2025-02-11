@@ -1546,3 +1546,32 @@ console.log(
 //   }
 // }
 // alert(`Your have ${correct} correct answers`);
+
+//8. Functions
+//A function is a block of code that's almost like a small, self-contained
+//mini program.
+//Functions are a perfect application of the DRY principle:
+//Don't Repeat Yourself!
+//input=>Function=>Output
+//cake example:mInput=ingredients; process=mixing&Baking; output=cake
+//Ex: Functionn that doubles a number:
+//Input = a number; Process = number * 2; Output = answer
+//A named block of code is known as a subroutine.
+//If the code just performs a task, it should technically be called a
+//procedure
+//It only if the block of code outputs(or returns) a value it's called
+//a function
+// JS functions will return a value of undefined if a return value is
+//not explicitly specified
+
+//Defining a function
+function hello() {
+  alert(`Hello, World`);
+}
+//Calling a function
+//Calling a function will run the block of code inside the function's body
+hello();
+// edit the function hello:
+function hello() {
+  console.log("Hello, World!");
+}
