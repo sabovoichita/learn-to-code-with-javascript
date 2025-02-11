@@ -1793,7 +1793,7 @@ console.log(
 //Sorting Arrays with a Callback
 //the sort() method sorts items in the array into alphabetical order
 //this works fine for strings but not so well for numbers
-console.log([1, 3, 12, 5, 23, 18, 7].sort()); //<<[1, 12, 18, 23, 3, 5, 7]
+// console.log([1, 3, 12, 5, 23, 18, 7].sort()); //<<[1, 12, 18, 23, 3, 5, 7]
 //The numbers are converted into strings and then placed in alphabetical
 //Lets provide a callback as an argument to the sort() method.
 //This callback tells the method how to compare any two values in the array
@@ -1804,8 +1804,26 @@ console.log([1, 3, 12, 5, 23, 18, 7].sort()); //<<[1, 12, 18, 23, 3, 5, 7]
 //An easy way to sort values numerically is to use subtraction a-b
 //This will return a negative value if b is bigger than a,
 //zero if a and b are equal, or positive if a is bigger than b
-console.log([1, 3, 12, 5, 23, 18, 7].sort((a, b) => a - b));
+// console.log([1, 3, 12, 5, 23, 18, 7].sort((a, b) => a - b));
 //<< [1, 3, 5, 7, 12, 18, 23] //sorted increasingly
 //The result returned by the callback function help the sort() method
 //understand whether an item is bigger or smaller than another
 //so it can then order the items numerically
+
+//Challenges-8.1
+//1. Write a function called lastChar that accepts a string as an
+//argument and returns the last letter of the string.
+//For ex: lastChar('JavaScript') should return 't'
+function lastChar(string) {
+  let splitedWord = string.split("");
+  let reversedWord = splitedWord.reverse();
+  let joinedWord = reversedWord.join("");
+  return joinedWord[0];
+}
+console.log(lastChar("String"));
+
+//Version2:
+function lastChar2(string) {
+  return string[string.length - 1];
+}
+console.log(lastChar2("Version2"));
