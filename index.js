@@ -1564,14 +1564,26 @@ console.log(
 // JS functions will return a value of undefined if a return value is
 //not explicitly specified
 
-//Defining a function
-function hello() {
-  alert(`Hello, World`);
-}
-//Calling a function
-//Calling a function will run the block of code inside the function's body
-hello();
-// edit the function hello:
-function hello() {
-  console.log("Hello, World!");
-}
+// //Defining a function
+// function hello() {
+//   alert(`Hello, World`);
+// }
+// //Calling a function
+// //Calling a function will run the block of code inside the function's body
+// hello();
+// // edit the function hello:
+// function hello() {
+//   console.log("Hello, World!");
+// }
+
+//Function Expressions
+//-another way to defining a function
+//-this assigns an "anonymous function" to a variable:
+const goodbye = function () {
+  alert(`Goodbye, World!`);
+};
+//Notice that the example above ends with a semicolon!
+goodbye(); //A pop up window alert with "Goodbye, World"
+//It's important to remember that you need parentheses to call a function
+//If you forget to add the parentheses, yo're just referencing the actual
+//function, rather than calling it
