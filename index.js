@@ -1591,8 +1591,26 @@ console.log(
 //Arrow functions (=>)
 //Arrow functions are always anonymous, so if you want to refer to them
 //you must always assign them to a variable
-const hola = () => alert("Hola, Mundo!");
+// const hola = () => alert("Hola, Mundo!");
 //The arrow functions start with the parentheses and arrow, ()=>
 //Everything after that is the code that will run when the function is called
 //Arrow function are called as any other functions:
-hola();
+// hola();
+
+// Return Values
+//Functions always return(or output) a value!
+function howdy() {
+  return "Howdy, World!";
+}
+//Returned values can be any type of values, even functions
+//!!If a return value isn't explicitly stated, it will return undefined
+//This is because the function must return a value in order
+// to be considered a function
+//You'll often see undefined in the console after calling a function
+//that in essence in just a procedure and doesn't need to return a value
+//Ex: alert("hello") //undefinded
+//When using arrow functions, you don't need to explicitly use the return
+// keyword if the body of the function is just one line of code!
+//In this case, the result of that code is the returned value
+const howdy = () => "Howdy, World!";
+//Short, one line functions are good candidated for using arrow functions
