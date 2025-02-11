@@ -1531,18 +1531,18 @@ console.log(
 //In the last chapter, we wrote a times table question game.
 //Modify the code so that it asks five questions and
 //keeps score of how many the user gets right
-let correct = 0;
-for (let i = 0; i < 5; i++) {
-  let random1 = Math.ceil(Math.random() * 10);
-  let random2 = Math.ceil(Math.random() * 10);
-  let userAnswer = Number(
-    prompt(`What is the result of ${random1} * ${random2}`)
-  );
-  if (userAnswer === random1 * random2) {
-    alert(`Correct! The answer is ${random1 * random2}`);
-    correct++;
-  } else if (userAnswer !== random1 * random2) {
-    alert(`Wrong! It was ${random1 * random2}`);
-  }
-}
-alert(`Your have ${correct} correct answers`);
+// let correct = 0;
+// for (let i = 0; i < 5; i++) {
+//   let random1 = Math.ceil(Math.random() * 10);
+//   let random2 = Math.ceil(Math.random() * 10);
+//   let userAnswer = Number(
+//     prompt(`What is the result of ${random1} * ${random2}`)
+//   );
+//   if (userAnswer === random1 * random2) {
+//     alert(`Correct! The answer is ${random1 * random2}`);
+//     correct++;
+//   } else if (userAnswer !== random1 * random2) {
+//     alert(`Wrong! It was ${random1 * random2}`);
+//   }
+// }
+// alert(`Your have ${correct} correct answers`);
