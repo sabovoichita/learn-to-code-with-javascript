@@ -1810,20 +1810,32 @@ console.log(
 //understand whether an item is bigger or smaller than another
 //so it can then order the items numerically
 
-//Challenges-8.1
+//Challenge-8.1
 //1. Write a function called lastChar that accepts a string as an
 //argument and returns the last letter of the string.
 //For ex: lastChar('JavaScript') should return 't'
-function lastChar(string) {
-  let splitedWord = string.split("");
-  let reversedWord = splitedWord.reverse();
-  let joinedWord = reversedWord.join("");
-  return joinedWord[0];
-}
-console.log(lastChar("String"));
+// function lastChar(string) {
+//   let splitedWord = string.split("");
+//   let reversedWord = splitedWord.reverse();
+//   let joinedWord = reversedWord.join("");
+//   return joinedWord[0];
+// }
+// console.log(lastChar("String"));
 
-//Version2:
-function lastChar2(string) {
-  return string[string.length - 1];
+// //Version2:
+// function lastChar2(string) {
+//   return string[string.length - 1];
+// }
+// console.log(lastChar2("Version2"));
+
+//Challenge-8.2
+//Write a function called reverse that accepts a string and returns
+// the string written backwards. For ex: reverse('JavaScript') should
+//return 'tpircSavaJ'.
+//Applying the function twice should return the original value, so
+//reverse(reverse('JavaScript')) should return 'JavaScript'
+function reverse(string) {
+  return string.split("").reverse().join("");
 }
-console.log(lastChar2("Version2"));
+console.log(reverse("Aurel"));  //leruA
+console.log(reverse(reverse("Aurel"))); //Aurel
