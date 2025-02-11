@@ -1733,21 +1733,59 @@ console.log(
 //-they can be assigned
 //-they can even be used by other functions
 //We can assign the return value of a function call to a variable
-function hello() {
-  return "Hello, World!";
-}
-const message = hello();
-console.log(message); //<<Hello, Wold!
+// function hello() {
+//   return "Hello, World!";
+// }
+// const message = hello();
+// console.log(message); //<<Hello, Wold!
 //We want to check if a person was over 18.
 //We could write a function that accepted age as an argument and
 // returned true if they were over 18 or false if they weren't
-userIsChild = function (age) {
-  if (age < 18) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// userIsChild = function (age) {
+//   if (age < 18) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 // const restrictedAccess = userIsChild(age);
-const restrictedAccess1 = userIsChild(18);
-console.log(restrictedAccess1); //<< false
+// const restrictedAccess1 = userIsChild(18);
+// console.log(restrictedAccess1); //<< false
+
+//Callbacks
+//A function that's passed as an argument to another function is know as
+//calback
+//The callback can then be called from within the body of the function
+//that's an argument of.
+function bake(ingredients, calback) {
+  console.log(`Mix together ${ingredients}...`);
+  console.log("Bake in the oven...");
+}
+console.log(bake("flour, water & sugar"));
+//<< Mix together flour, water & sugar...
+//<< Bake in the oven...
+function bake1(ingredients, calback) {
+  console.log(`Mix together ${ingredients}`);
+  console.log("Bake in the oven");
+  calback();
+}
+//!You can overwrite a function declaration by declaring it again
+//later in the code, but this won't work if you've assigned a function
+//expression to a variable using const
+console.log(
+  bake1("flour, water & sugar", () => console.log("Add icing on top..."))
+);
+//<< Mix together flour, water & sugar
+//<< Bake in the oven
+//<< Add icing on top...
+//The calback doesnt have to be an anonymous function that's defined
+// in the function call. We can definde a named function and then
+//provide the name as an argument:
+function eat() {
+  console.log("Eat every last crumb!");
+}
+//Let's try providing this function as an argument to the bake function
+console.log(bake1("flour, water and sugar", eat));
+// << Mix together flour, water and sugar
+// << Bake in the oven
+// << Eat every last crumb!
