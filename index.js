@@ -1599,9 +1599,9 @@ console.log(
 
 // Return Values
 //Functions always return(or output) a value!
-function howdy() {
-  return "Howdy, World!";
-}
+// function howdy() {
+//   return "Howdy, World!";
+// }
 //Returned values can be any type of values, even functions
 //!!If a return value isn't explicitly stated, it will return undefined
 //This is because the function must return a value in order
@@ -1612,5 +1612,52 @@ function howdy() {
 //When using arrow functions, you don't need to explicitly use the return
 // keyword if the body of the function is just one line of code!
 //In this case, the result of that code is the returned value
-const howdy = () => "Howdy, World!";
+// const howdy = () => "Howdy, World!";
 //Short, one line functions are good candidated for using arrow functions
+
+//Parameters and Arguments
+//Parameters and arguments are terms taht are often used interchangeably
+//to represent values that are provided for the function as in input
+//Difference:
+//-the parameters of a function are set when the function is defined
+//-the arguments of a function are provided when it is called
+
+function square(n) {
+  return n * n;
+}
+
+//A function that squares numbers
+//The function accepts a single parameter(n), which is the number
+//to be squared
+//In the body of the function, the name of the parameter
+//  acts just like a variable.
+//We multiply this value by itself and return the result
+
+square(4.5); //<20.45
+//When we call the square function, we need to provide an argument
+//which takes the place of the parameter in the definition
+//and is the number to be squared
+
+//When defining arrow functions with a single parameter, the parameter
+//come before the arrow and the main body of the function comes after
+const square1 = (n) => n * n;
+//You can use as many parameters as you like when defining functions
+//This function finds the mean of any three numbers by adding them
+//together and dividing the result by three:
+function mean(a, b, c) {
+  return (a + b + c) / 3;
+}
+//Let's run that in console
+mean(8, 3, 4);
+console.log(mean(8, 3, 4)); //< 5
+//When using more than one parameter with arrow functions, you need to
+//olace them in parentheses, so the mean function would be written
+//in arrow notation like this:
+let mean1 = (a, b, c) => (a, b, c) / 3;
+//If the parameter isn't provided as an argument when the arrow function
+//is called, the function eill still be called, but the missing argument
+//will be given the value of undefined.
+console.log(mean1(1, 2)); //Nan
+//If too many arguments are provided, when a function is called,
+//the function will work as normal and the extra parameters will be ignored
+console.log(mean(1, 2, 3, 4, 5)); //2
