@@ -1757,35 +1757,55 @@ console.log(
 //calback
 //The callback can then be called from within the body of the function
 //that's an argument of.
-function bake(ingredients, calback) {
-  console.log(`Mix together ${ingredients}...`);
-  console.log("Bake in the oven...");
-}
-console.log(bake("flour, water & sugar"));
+// function bake(ingredients, calback) {
+//   console.log(`Mix together ${ingredients}...`);
+//   console.log("Bake in the oven...");
+// }
+// console.log(bake("flour, water & sugar"));
 //<< Mix together flour, water & sugar...
 //<< Bake in the oven...
-function bake1(ingredients, calback) {
-  console.log(`Mix together ${ingredients}`);
-  console.log("Bake in the oven");
-  calback();
-}
+// function bake1(ingredients, calback) {
+//   console.log(`Mix together ${ingredients}`);
+//   console.log("Bake in the oven");
+//   calback();
+// }
 //!You can overwrite a function declaration by declaring it again
 //later in the code, but this won't work if you've assigned a function
 //expression to a variable using const
-console.log(
-  bake1("flour, water & sugar", () => console.log("Add icing on top..."))
-);
+// console.log(
+//   bake1("flour, water & sugar", () => console.log("Add icing on top..."))
+// );
 //<< Mix together flour, water & sugar
 //<< Bake in the oven
 //<< Add icing on top...
 //The calback doesnt have to be an anonymous function that's defined
 // in the function call. We can definde a named function and then
 //provide the name as an argument:
-function eat() {
-  console.log("Eat every last crumb!");
-}
+// function eat() {
+//   console.log("Eat every last crumb!");
+// }
 //Let's try providing this function as an argument to the bake function
-console.log(bake1("flour, water and sugar", eat));
+// console.log(bake1("flour, water and sugar", eat));
 // << Mix together flour, water and sugar
 // << Bake in the oven
 // << Eat every last crumb!
+
+//Sorting Arrays with a Callback
+//the sort() method sorts items in the array into alphabetical order
+//this works fine for strings but not so well for numbers
+console.log([1, 3, 12, 5, 23, 18, 7].sort()); //<<[1, 12, 18, 23, 3, 5, 7]
+//The numbers are converted into strings and then placed in alphabetical
+//Lets provide a callback as an argument to the sort() method.
+//This callback tells the method how to compare any two values in the array
+//Let's call them a and b. The callback function should return the following:
+//-a negative value if a comes before b
+//-0 if a and b are equal
+//-a positive value if a comes after b
+//An easy way to sort values numerically is to use subtraction a-b
+//This will return a negative value if b is bigger than a,
+//zero if a and b are equal, or positive if a is bigger than b
+console.log([1, 3, 12, 5, 23, 18, 7].sort((a, b) => a - b));
+//<< [1, 3, 5, 7, 12, 18, 23] //sorted increasingly
+//The result returned by the callback function help the sort() method
+//understand whether an item is bigger or smaller than another
+//so it can then order the items numerically
