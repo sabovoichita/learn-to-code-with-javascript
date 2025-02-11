@@ -1496,33 +1496,53 @@ console.log(
 //   //the user sees how many correct guesses they made before losing
 // }
 
-//Guess game- for loop version
-let guesses = 0;
-let number = Math.ceil(Math.random() * 10);
-for (let i = 0; i < Infinity; i++) {
-  //the for loop runs indefinitely
-  //infinite loop will break when the user loses
-  const userSayHigher = confirm(`The current number is ${number}.
-     Do you think the next number will be higher?`);
-  //the user is asked if the next number will be higher
-  const nextNumber = Math.ceil(Math.random() * 10);
-  // a new random number is generated
-  if (
-    (userSayHigher && nextNumber > number) ||
-    (!userSayHigher && nextNumber <= number)
-  ) {
-    //the guess is checked:
-    //if correct, the loop continues
-    //if incorrect, break; stops the loop
-    alert(`Correct! It was ${nextNumber}`);
-    guesses++;
-    number = nextNumber;
-    //updates the number for the next round
-  } else {
-    alert(`Wrong! It was ${nextNumber}`);
-    break;
-    //Exit the loop when the user is wrong
+// //Guess game- for loop version
+// let guesses = 0;
+// let number = Math.ceil(Math.random() * 10);
+// for (let i = 0; i < Infinity; i++) {
+//   //the for loop runs indefinitely
+//   //infinite loop will break when the user loses
+//   const userSayHigher = confirm(`The current number is ${number}.
+//      Do you think the next number will be higher?`);
+//   //the user is asked if the next number will be higher
+//   const nextNumber = Math.ceil(Math.random() * 10);
+//   // a new random number is generated
+//   if (
+//     (userSayHigher && nextNumber > number) ||
+//     (!userSayHigher && nextNumber <= number)
+//   ) {
+//     //the guess is checked:
+//     //if correct, the loop continues
+//     //if incorrect, break; stops the loop
+//     alert(`Correct! It was ${nextNumber}`);
+//     guesses++;
+//     number = nextNumber;
+//     //updates the number for the next round
+//   } else {
+//     alert(`Wrong! It was ${nextNumber}`);
+//     break;
+//     //Exit the loop when the user is wrong
+//   }
+// }
+// alert(`Game Over! You managed to guess correctly ${guesses} times. `);
+// //After the loop ends, the final score is displayed.
+
+// Challenge 7.3
+//In the last chapter, we wrote a times table question game.
+//Modify the code so that it asks five questions and
+//keeps score of how many the user gets right
+let correct = 0;
+for (let i = 0; i < 5; i++) {
+  let random1 = Math.ceil(Math.random() * 10);
+  let random2 = Math.ceil(Math.random() * 10);
+  let userAnswer = Number(
+    prompt(`What is the result of ${random1} * ${random2}`)
+  );
+  if (userAnswer === random1 * random2) {
+    alert(`Correct! The answer is ${random1 * random2}`);
+    correct++;
+  } else if (userAnswer !== random1 * random2) {
+    alert(`Wrong! It was ${random1 * random2}`);
   }
 }
-alert(`Game Over! You managed to guess correctly ${guesses} times. `);
-//After the loop ends, the final score is displayed.
+alert(`Your have ${correct} correct answers`);
