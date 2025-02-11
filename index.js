@@ -1621,43 +1621,72 @@ console.log(
 //Difference:
 //-the parameters of a function are set when the function is defined
 //-the arguments of a function are provided when it is called
-
-function square(n) {
-  return n * n;
-}
-
+// function square(n) {
+//   return n * n;
+// }
 //A function that squares numbers
 //The function accepts a single parameter(n), which is the number
 //to be squared
 //In the body of the function, the name of the parameter
 //  acts just like a variable.
 //We multiply this value by itself and return the result
-
-square(4.5); //<20.45
+// square(4.5); //<20.45
 //When we call the square function, we need to provide an argument
 //which takes the place of the parameter in the definition
 //and is the number to be squared
-
 //When defining arrow functions with a single parameter, the parameter
 //come before the arrow and the main body of the function comes after
-const square1 = (n) => n * n;
+// const square1 = (n) => n * n;
 //You can use as many parameters as you like when defining functions
 //This function finds the mean of any three numbers by adding them
 //together and dividing the result by three:
-function mean(a, b, c) {
-  return (a + b + c) / 3;
-}
+// function mean(a, b, c) {
+//   return (a + b + c) / 3;
+// }
 //Let's run that in console
-mean(8, 3, 4);
-console.log(mean(8, 3, 4)); //< 5
+// mean(8, 3, 4);
+// console.log(mean(8, 3, 4)); //< 5
 //When using more than one parameter with arrow functions, you need to
 //olace them in parentheses, so the mean function would be written
 //in arrow notation like this:
-let mean1 = (a, b, c) => (a, b, c) / 3;
+// let mean1 = (a, b, c) => (a, b, c) / 3;
 //If the parameter isn't provided as an argument when the arrow function
 //is called, the function eill still be called, but the missing argument
 //will be given the value of undefined.
-console.log(mean1(1, 2)); //Nan
+// console.log(mean1(1, 2)); //Nan
 //If too many arguments are provided, when a function is called,
 //the function will work as normal and the extra parameters will be ignored
-console.log(mean(1, 2, 3, 4, 5)); //2
+// console.log(mean(1, 2, 3, 4, 5)); //2
+
+//Default Parameters
+function hello(name = "World") {
+  alert(`Hello, ${name}!`);
+}
+//Now if we call this function without any arguments, it will default to
+//using "World" as the name argument:
+hello(); //<"Hello, World!"
+console.log(hello()); //< undefined
+//Lets change the argument "World" to "Universe"
+hello("Universe"); //<"Hello, Universe!"
+//Default parameters should always come after non-default parameters
+//Otherwise, you'll have to enter default values when you call the function
+//anyway.
+function discount(price, amount = 10) {
+  return (price * (100 - amount)) / 100;
+}
+//This function takes two arguments: the price of an item, and the
+//percentage discount to be applied. The store's most common discount
+//is 10%, a default value. This means that the amount argument can be
+//ommited in most cases and the 10% discount will still be applied.
+//Let's calculate the sale price of an item that was $20 with 10% discount
+console.log(discount(20)); //<< 18
+//Note that we didnt have to specify that the discount was 10%
+//If a different discount needed to be applied, the amount argument can be provided
+console.log(discount(15, 20)); //<< 12 //an item that was 15$ discount 20%
+//This will fain to work if the parentheses are defined in reversed order:
+function discount1(amount = 10, price) {
+  return (price * (100 - amount)) / 100;
+}
+console.log(discount1(20)); //NaN //because the price hasn't been set
+console.log(discount1(10, 20)); // 18 //works if both values are entered
+//Always put default parameters after all other parameters!!!
