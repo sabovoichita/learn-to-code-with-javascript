@@ -1693,36 +1693,61 @@ console.log(
 
 //Random Integers
 //creates a random number between 1 and 10
-Math.ceil(Math.random() * 10);
+// Math.ceil(Math.random() * 10);
 //helper function
-function randomInt(n) {
-  return Math.ceil(Math.random() * n);
-}
+// function randomInt(n) {
+// return Math.ceil(Math.random() * n);
+// }
 //This will return a random integer between 1 and the number provided as an argument
 //We can generate a random number between 1 and 6 using the following code:
-console.log(randomInt(6)); //<< 2
+// console.log(randomInt(6)); //<< 2
 //It would be useful if we could add an optional lower bound to this function
 //Let's set 1 as default value:
-function randomInt1(upper, lower = 1) {
-  return Math.floor(Math.random() * (upper - lower + 1) + lower);
-}
+// function randomInt1(upper, lower = 1) {
+// return Math.floor(Math.random() * (upper - lower + 1) + lower);
+// }
 //This will now return a random integer between lower and upper values provided
 //as arguments
 //The following code will return a random integer between 4 and 7:
-console.log(randomInt1(7, 4)); //<< 5
+// console.log(randomInt1(7, 4)); //<< 5
 //Because we've given the lower bound a default value of 1, we can use it
 //as before with a single argument to generate a random number between 1 and 10
-console.log(randomInt1(10)); //<< 4
+// console.log(randomInt1(10)); //<< 4
 //!The default parameters have to come last
 //If the second argument isn't provided, it's given the value of undefinded
 //We can check for this and assign the value of the upper and lower bound accordingly
-function randomInt2(lower, upper) {
-  if (upper === undefined) {
-    upper = lower;
-    lower = 1;
-  }
-  return Math.floor(Math.random() * (upper - lower + 1) + lower);
-}
+// function randomInt2(lower, upper) {
+// if (upper === undefined) {
+// upper = lower;
+// lower = 1;
+// }
+// return Math.floor(Math.random() * (upper - lower + 1) + lower);
+// }
 //We set the upper bound to be equal the argument provided(stored in var lower)
 //and then set lower to be our default value of 1
-console.log(randomInt2(4, 7)); //<< 6
+// console.log(randomInt2(4, 7)); //<< 6
+
+//Asigning Return Values to Variables
+//Function are first-class-object in JS
+//This mean they behave like all other data types
+//-they can be assigned
+//-they can even be used by other functions
+//We can assign the return value of a function call to a variable
+function hello() {
+  return "Hello, World!";
+}
+const message = hello();
+console.log(message); //<<Hello, Wold!
+//We want to check if a person was over 18.
+//We could write a function that accepted age as an argument and
+// returned true if they were over 18 or false if they weren't
+userIsChild = function (age) {
+  if (age < 18) {
+    return true;
+  } else {
+    return false;
+  }
+};
+// const restrictedAccess = userIsChild(age);
+const restrictedAccess1 = userIsChild(18);
+console.log(restrictedAccess1); //<< false
