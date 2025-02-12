@@ -1886,3 +1886,18 @@ console.log(
 //Properties Length: 5
 //Methods    Perimeter = 4 * Length
 //           Area = Length * Length
+
+//Creating Objects in JavaScript
+//An object-literal is a self-contained set of related values
+//Properties can be of almost any data type, such as numbers, strings,
+//Booleans, arrays anf even other objects
+//If a property is a function, then it's known as a method
+//To create an object literal in JS, simply enter a pair of curly braces
+const myObject = { key: value };
+const square = {
+  sides: 4,
+  length: 5,
+  perimeter: 20,
+  area: 25,
+};
+//Each property has a key and an associated value
