@@ -2117,16 +2117,48 @@ console.log(
 //Roll-The-Dice
 //-the sides property tells us that the dice has 6 sides
 //-the roll() method will return a random number between 1 and 6
-const dice = {
-  sides: 6,
-  roll() {
-    return Math.ceil(Math.random() * this.sides);
-  },
+// const dice = {
+//   sides: 6,
+//   roll() {
+//     return Math.ceil(Math.random() * this.sides);
+//   },
+// };
+// dice.roll();
+// console.log(dice.roll()); // 4
+// console.log(dice.roll()); // 6
+// dice.sides = 20;
+// //The dice will return a random number between 1 and 20
+// console.log(dice.roll()); // 17
+// console.log(dice.roll()); // 13
+
+//Challenge-9.1
+//Create objects that describe some of your favourite things.
+//For ex, you could create some objects that model your favorite sports
+//stars and provide properties such as speed, power, agility.
+//Or you could create some objects that represent products for sale
+//on an ecommerce site, including properties as description, price and rating
+//Have a play around in the console and practice reading and updating
+//properties and calling the methods
+const dragon = {
+  strength: 10,
+  skill: 98,
+  "magic power": 90,
+  "fear factor": 99,
+  mPower: () => console.log(Math.ceil(Math.random() * 10 * this.skill)),
 };
-dice.roll();
-console.log(dice.roll()); // 4
-console.log(dice.roll()); // 6
-dice.sides = 20;
-//The dice will return a random number between 1 and 20
-console.log(dice.roll()); // 17
-console.log(dice.roll()); // 13
+console.log("dragon:", dragon);
+//{strength: 10, skill: 98, magic power: 90, fear factor: 99}
+dragon.skill = 99;
+console.log("dragon:", dragon);
+//dragon: {strength: 10, skill: 99, magic power: 90, fear factor: 99}
+
+const cake = {
+  ingredients: ["flour", "sugar", "milk"],
+  stir: () => console.log("Stir well everything"),
+  bake: () => console.log("Bake for 15 minutes"),
+  review: () => console.log("Please rate this recipe"),
+  reviewList: [],
+};
+console.log("cake", cake);
+cake.reviewList.push("Smells nice!!");
+cake.ingredients.push("salt");
