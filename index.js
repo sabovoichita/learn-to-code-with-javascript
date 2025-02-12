@@ -1928,9 +1928,32 @@ console.log(
 //We could create objects to reperesent each of them.
 //Each object would contain properties describing their name and
 //Boolean values to indicate if they're wearing glasses and a hat or not
-const alfie = {
-  name: "Alphie",
-  picture: "🧑",
-  glasses: no,
-  hat: no,
+// const alfie = {
+//   name: "Alphie",
+//   picture: "🧑",
+//   glasses: no,
+//   hat: no,
+// };
+
+//Creating Object From Variables
+//You can also create objects from variables that already exist
+const name4 = "Dumbo🐘";
+const legs = 4;
+const fly = () => console.log("Fly, fly away!");
+const elephant = { name4, legs, fly };
+console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, fly: ƒ}
+//Notice that if the variable have already been declared and assigned
+//to values or functions, you only have to place the variable names
+//inside the object literal and it will assign the properties and
+//methods to match the variable
+//This is an example of object property shourthand syntax
+//that makes it easier to create an object with property and method
+//names that are the same as variables and functions that already exist
+//The long-hand version would involve some repetition when creating
+//the elephant object
+const elephant1 = {
+  name4: name4,
+  legs: legs,
+  fly: fly,
 };
+console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, fly: ƒ}
