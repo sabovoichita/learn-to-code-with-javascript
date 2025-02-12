@@ -2233,16 +2233,37 @@ console.log(
 //property
 //This will return all the HTML that's enclosed inside that element's
 //tag as a string
-const hello = document.getElementById("greeting");
-console.log(hello); //h1#greeting
-console.log(hello.innerHTML); //Hello <em>World!</em>
+// const hello = document.getElementById("greeting");
+// console.log(hello); //h1#greeting
+// console.log(hello.innerHTML); //Hello <em>World!</em>
 //The great thing about the innerHTML property is that it's writable
-const hello1 = document.getElementById("greeting");
+// const hello1 = document.getElementById("greeting");
 //Next, we'll use a prompt box to ask for their name and store it in
 // a variable name:
-const name = prompt("What is your name?");
+// const name = prompt("What is your name?");
 //Last of all, we'll replace the innerHTML property with our own
 //personalized greeting, which uses the name variable that we've just
 //collected from the user:
-hello.innerHTML = `Hello, <em>${name}</em>`; //Hello name
+// hello.innerHTML = `Hello, <em>${name}</em>`; //Hello name
 //Notice that we've used a template literal to produce the HTML
+
+//Getting-Multiple-Elements
+//We gain access to the <ul> element using the following code:
+const food = document.getElementById("food");
+
+//Getting elements by Tag Name
+//We can use getElementsByTagName() to return a collection of all the
+//elements with the tag name provided as an argument
+const items = document.getElementsByTagName("li");
+//The var items now contains a collection of all the list-item elements
+console.log(items[0]); //li.fruit
+console.log(items.length); //3
+
+//Getting Elements By Their Class Name
+//We can also use the getElementsByClassName() method to return a collection
+//of all the elements that have a particular class name.
+const fruit1 = document.getElementsByClassName("fruit");
+console.log(fruit1); //HTMLCollection(2) [li.fruit, li.fruit]
+console.log(fruit1.length); //2
+console.log(fruit1[0]); //<li class="fruit"><span>🍏</span>Apple</li>
+console.log(fruit1[1]); //<li class="fruit"><span>🍌</span>Banana</li>
