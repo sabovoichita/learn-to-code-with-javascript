@@ -2224,6 +2224,25 @@ console.log(
 //a reference to the element with a particulat ID attribute.
 //Ex: we can get a reference to the h1 heading element using its id of
 //greeting
+// const hello = document.getElementById("greeting");
+// console.log(hello); //h1#greeting
+//If no elements with the ID provided, null is returned
+
+//Updating-The-HTML
+//The easiest way to update the HTML on a page is to use the innerHTML
+//property
+//This will return all the HTML that's enclosed inside that element's
+//tag as a string
 const hello = document.getElementById("greeting");
 console.log(hello); //h1#greeting
-//If no elements with the ID provided, null is returned
+console.log(hello.innerHTML); //Hello <em>World!</em>
+//The great thing about the innerHTML property is that it's writable
+const hello1 = document.getElementById("greeting");
+//Next, we'll use a prompt box to ask for their name and store it in
+// a variable name:
+const name = prompt("What is your name?");
+//Last of all, we'll replace the innerHTML property with our own
+//personalized greeting, which uses the name variable that we've just
+//collected from the user:
+hello.innerHTML = `Hello, <em>${name}</em>`; //Hello name
+//Notice that we've used a template literal to produce the HTML
