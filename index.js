@@ -1834,8 +1834,40 @@ console.log(
 //return 'tpircSavaJ'.
 //Applying the function twice should return the original value, so
 //reverse(reverse('JavaScript')) should return 'JavaScript'
-function reverse(string) {
-  return string.split("").reverse().join("");
+// function reverse(string) {
+//   return string.split("").reverse().join("");
+// }
+// console.log(reverse("Aurel"));  //leruA
+// console.log(reverse(reverse("Aurel"))); //Aurel
+
+//Challenge-8.3
+//Write some functions that will add and remove some items from a list
+//The list should be stored as an array and add('apples') should add
+//the string 'apples' to the array and remove('apples') should remove
+//'apples' from the array
+let list = [];
+
+function add(item) {
+  return list.push(item);
 }
-console.log(reverse("Aurel"));  //leruA
-console.log(reverse(reverse("Aurel"))); //Aurel
+console.log(add("apples")); //<< 1
+console.log(add("pears")); //<< 2
+console.log(add("bananans")); //<< 3
+console.log(list); //<< (3) ['apples', 'pears', 'bananans'
+
+function remove(item) {
+  return list.pop(item);
+}
+console.log(remove("bananas")); //<< bananans
+console.log("list:", list); //<< list: (2) ['apples', 'pears']
+
+//Version 2
+function remove2(item) {
+  i = list.indexOf(item);
+  if (i > -1) {
+    list.splice(i, 1);
+  }
+  return list;
+}
+console.log(remove2("bananas")); //<< (2) ['apples', 'pears']
+console.log("list:", list); //<< (2) ['apples', 'pears']
