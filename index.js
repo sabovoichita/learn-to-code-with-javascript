@@ -1959,28 +1959,42 @@ console.log(
 // console.log(elephant1); //{name4: 'Dumbo🐘', legs: 4, fly: ƒ}
 
 //Objects Properties And Methods
+// const name4 = "Dumbo🐘";
+// const legs = 4;
+// const fly = () => console.log("Fly, fly away!");
+// const elephant = { name4, legs, fly };
+//You can access the properties of an object using the dot notation
+// elephant.name4;
+// console.log(elephant.name4); //Dumbo🐘
+//You can also access an object's properties using bracket notation
+// elephant["name4"];
+// console.log(elephant["name4"]);
+// const info = "name4";
+// elephant[info];
+// console.log(elephant[info]);
+//If you try to access a property that doesn't exist, undefined will be
+//returned
+// elephant.arms;
+// console.log(elephant.arms); //undefined
+//The in operator can be used to check whether an object has a particular
+//property. So, for example, we can check if the elephant object has a
+//properties called arms and legs using :
+// "arms" in elephant;
+// console.log("arms" in elephant); //false
+// "legs" in elephant;
+// console.log("legs" in elephant); //true
+
+//Calling Methods
 const name4 = "Dumbo🐘";
 const legs = 4;
 const fly = () => console.log("Fly, fly away!");
 const elephant = { name4, legs, fly };
-//You can access the properties of an object using the dot notation
-elephant.name4;
-console.log(elephant.name4); //Dumbo🐘
-//You can also access an object's properties using bracket notation
-elephant["name4"];
-console.log(elephant["name4"]);
-const info = "name4";
-elephant[info];
-console.log(elephant[info]);
-//If you try to access a property that doesn't exist, undefined will be
-//returned
-elephant.arms;
-console.log(elephant.arms); //undefined
-//The in operator can be used to check whether an object has a particular
-//property. So, for example, we can check if the elephant object has a
-//properties called arms and legs using :
-"arms" in elephant;
-console.log("arms" in elephant); //false
-"legs" in elephant;
-console.log("legs" in elephant); //true
-
+//Methods are just like functions, so we call them in the same way
+//We can refer to the object's method using dot or bracket notation
+//just like with properties, but with parentheses at the end, so we
+//would use the following code to call the fly method
+elephant.fly();
+console.log(elephant.fly()); //Fly, fly away!
+//We can use the square bracket notation to call methods:
+elephant["fly"](); //Fly, fly away!
+console.log(elephant["fly"]());
