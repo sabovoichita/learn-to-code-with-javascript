@@ -1985,16 +1985,29 @@ console.log(
 // console.log("legs" in elephant); //true
 
 //Calling Methods
-const name4 = "Dumbo🐘";
-const legs = 4;
-const fly = () => console.log("Fly, fly away!");
-const elephant = { name4, legs, fly };
+// const name4 = "Dumbo🐘";
+// const legs = 4;
+// const fly = () => console.log("Fly, fly away!");
+// const elephant = { name4, legs, fly };
 //Methods are just like functions, so we call them in the same way
 //We can refer to the object's method using dot or bracket notation
 //just like with properties, but with parentheses at the end, so we
 //would use the following code to call the fly method
-elephant.fly();
-console.log(elephant.fly()); //Fly, fly away!
+// elephant.fly();
+// console.log(elephant.fly()); //Fly, fly away!
 //We can use the square bracket notation to call methods:
-elephant["fly"](); //Fly, fly away!
-console.log(elephant["fly"]());
+// elephant["fly"](); //Fly, fly away!
+// console.log(elephant["fly"]());
+
+//Adding More Properties And Methods
+const name4 = "Dumbo🐘";
+const legs = 4;
+const fly = () => console.log("Fly, fly away!");
+const elephant = { name4, legs, fly };
+//Objects are mutable by default, which means that their properties
+//and methods can be changed or removed and new properties and methods
+//can be added, even if they were declared using const
+// !!It's possible to freeze an object and make it immutable
+//New properties and methods can be added at any time in a program
+elephant.ears = 2;
+console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, ears: 2, fly: ƒ}
