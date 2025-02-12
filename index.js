@@ -1845,29 +1845,44 @@ console.log(
 //The list should be stored as an array and add('apples') should add
 //the string 'apples' to the array and remove('apples') should remove
 //'apples' from the array
-let list = [];
+// let list = [];
 
-function add(item) {
-  return list.push(item);
-}
-console.log(add("apples")); //<< 1
-console.log(add("pears")); //<< 2
-console.log(add("bananans")); //<< 3
-console.log(list); //<< (3) ['apples', 'pears', 'bananans'
+// function add(item) {
+//   return list.push(item);
+// }
+// console.log(add("apples")); //<< 1
+// console.log(add("pears")); //<< 2
+// console.log(add("bananans")); //<< 3
+// console.log(list); //<< (3) ['apples', 'pears', 'bananans'
 
-function remove(item) {
-  return list.pop(item);
-}
-console.log(remove("bananas")); //<< bananans
-console.log("list:", list); //<< list: (2) ['apples', 'pears']
+// function remove(item) {
+//   return list.pop(item);
+// }
+// console.log(remove("bananas")); //<< bananans
+// console.log("list:", list); //<< list: (2) ['apples', 'pears']
 
 //Version 2
-function remove2(item) {
-  i = list.indexOf(item);
-  if (i > -1) {
-    list.splice(i, 1);
-  }
-  return list;
-}
-console.log(remove2("bananas")); //<< (2) ['apples', 'pears']
-console.log("list:", list); //<< (2) ['apples', 'pears']
+// function remove2(item) {
+//   i = list.indexOf(item);
+//   if (i > -1) {
+//     list.splice(i, 1);
+//   }
+//   return list;
+// }
+// console.log(remove2("bananas")); //<< (2) ['apples', 'pears']
+// console.log("list:", list); //<< (2) ['apples', 'pears']
+
+//Objects
+//Properties and Methods
+//Objects are abstract data types used in programming.
+//Properties are information about the object
+//Methods are actons that the object can perform
+//Octopus🐙
+//Properties Name: "Octavius"
+//           Legs: 8
+//Methods    Swim
+//           Walk
+//Square 🟥
+//Properties Length: 5
+//Methods    Perimeter = 4 * Length
+//           Area = Length * Length
