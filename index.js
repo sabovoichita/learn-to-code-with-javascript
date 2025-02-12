@@ -2013,18 +2013,30 @@ console.log(
 // console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, ears: 2, fly: ƒ}
 
 //Changing-Properties
-const name4 = "Dumbo🐘";
-const legs = 4;
-const fly = () => console.log("Fly, fly away!");
-const elephant = { name4, legs, fly };
-elephant.ears = 2;
-console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, ears: 2, fly: ƒ}
+// const name4 = "Dumbo🐘";
+// const legs = 4;
+// const fly = () => console.log("Fly, fly away!");
+// const elephant = { name4, legs, fly };
+// elephant.ears = 2;
+// console.log(elephant); //{name4: 'Dumbo🐘', legs: 4, ears: 2, fly: ƒ}
 //We can change the properties of an object's properties at any time
 //using assignment
-elephant.name4 = "Elmer";
-console.log(elephant);
+// elephant.name4 = "Elmer";
+// console.log(elephant);
 //  { name4: "Elmer",
 //   legs: 4,
 //   ears:2
 //   fly: [function:fly]
 // };
+
+//Removing-Properties
+const name4 = "Dumbo🐘";
+const legs = 4;
+const fly = () => console.log("Fly, fly away!");
+const elephant = { name4, legs, fly };
+elephant.ears = 2;
+elephant.name4 = "Elmer";
+console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2, fly: ƒ}
+//- Any property can be removed from an object using the delete operator
+delete elephant.fly;
+console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2}
