@@ -2164,22 +2164,38 @@ console.log(
 
 //Challenge-9.2
 //Write objects that represents Betty, Gemma and Del in the Guess Who game
-"🤶Betty", "👩‍🍳Gemma", "👴Del"
-const betty = {
-  name:"Betty",
-  picture:"🤶",
-  glasses: true,
-  hat: true,
+"🤶Betty", "👩‍🍳Gemma", "👴Del";
+// const betty = {
+//   name:"Betty",
+//   picture:"🤶",
+//   glasses: true,
+//   hat: true,
+// };
+// const gemma = {
+//   name:"Gemma",
+//   picture:"👩‍🍳",
+//   glasses:no,
+//   hat:true,
+// }
+// const del ={
+//   name:"Del",
+//   picture:"👴",
+//   glasses:true,
+//   hat:false
+// }
+
+//Challenge-9.3
+//Create a circle object that has a radius property and calculates the
+//circumference and area. Hint: you might need to use the Math.PI const
+const circle = {
+  radius: 7.9,
+  circumference() {
+    return 2 * Math.PI * this.radius;
+  },
+  area() {
+    return Math.PI * this.radius * this.radius;
+  },
 };
-const gemma = {
-  name:"Gemma",
-  picture:"👩‍🍳",
-  glasses:no,
-  hat:true,
-}
-const del ={
-  name:"Del",
-  picture:"👴",
-  glasses:true,
-  hat:false
-}
+console.log("area: ", circle.area());
+console.log("circumference: ", circle.circumference());
+console.log("radius: ", circle.radius);
