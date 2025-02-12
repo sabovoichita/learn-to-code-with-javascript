@@ -2030,13 +2030,34 @@ console.log(
 // };
 
 //Removing-Properties
-const name4 = "Dumbo🐘";
-const legs = 4;
-const fly = () => console.log("Fly, fly away!");
-const elephant = { name4, legs, fly };
-elephant.ears = 2;
-elephant.name4 = "Elmer";
-console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2, fly: ƒ}
-//- Any property can be removed from an object using the delete operator
-delete elephant.fly;
-console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2}
+// const name4 = "Dumbo🐘";
+// const legs = 4;
+// const fly = () => console.log("Fly, fly away!");
+// const elephant = { name4, legs, fly };
+// elephant.ears = 2;
+// elephant.name4 = "Elmer";
+// console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2, fly: ƒ}
+// //- Any property can be removed from an object using the delete operator
+// delete elephant.fly;
+// console.log(elephant); //{name4: 'Elmer', legs: 4, ears: 2}
+
+//Nested-Objects
+//It's even possible for an object to contain other objects=nested objects
+//Each nested object represents a different shape 📐, 🟥, 🛑
+const shapes = {
+  triangle: { sides: 3 },
+  square: { sides: 4 },
+  pentagon: { sides: 5 },
+  hexagon: { sides: 6 },
+  octagon: { sides: 8 },
+  megagon: { sides: 10e6 },
+};
+//The values in nested objects can be accessed by referencing each
+//property name in order using either dot or bracket notation:
+shapes.triangle.sides;
+console.log(shapes.triangle.sides); //3
+shapes.megagon.sides;
+console.log(shapes.megagon.sides); //10000000
+//You can mix the different notations
+shapes.hexagon["sides"]
+console.log(shapes.hexagon["sides"]) //6
