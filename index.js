@@ -2066,49 +2066,67 @@ console.log(
 //The this keyword can be used inside an object to refer to the object
 //itself.
 //It is often used in methods to gain access to the object's properties
-const square = {
-  sides: 4,
-  length: 5,
-  perimeter: 20,
-  area: 25,
-};
+// const square = {
+//   sides: 4,
+//   length: 5,
+//   perimeter: 20,
+//   area: 25,
+// };
 //The problem with this object is that all the info about the square is
 //hard-coded as properties. This isn't necessary, since wew can use methods
 //to calculate the perimeter and area based on the values of the sides
 //and length properties. We can use this to gain access to those prop
-const square1 = {
-  sides: 4,
-  length: 5,
-  perimeter() {
-    return this.sides * this.length;
-  },
-  area() {
-    return this.length * this.length;
-  },
-};
-console.log(square1); //{sides: 4, length: 5, perimeter: ƒ, area: ƒ}
+// const square1 = {
+//   sides: 4,
+//   length: 5,
+//   perimeter() {
+//     return this.sides * this.length;
+//   },
+//   area() {
+//     return this.length * this.length;
+//   },
+// };
+// console.log(square1); //{sides: 4, length: 5, perimeter: ƒ, area: ƒ}
 //The perimeter and area properties have now been changed to methods
 //that return the desired value. Inside the body of these methods there
 //are references to other properties of the object: this.sides. is
 //equivalent to writing square.sides, and this is number 4
-square1.perimeter();
-console.log(square1.perimeter()); // 20
-square1.area();
-console.log(square1.area()); // 25
+// square1.perimeter();
+// console.log(square1.perimeter()); // 20
+// square1.area();
+// console.log(square1.area()); // 25
 //If we change the value of the length property, the perimeter and area
 //also change to reflect this:
-const square2 = {
+// const square2 = {
+//   sides: 6,
+//   length: 7,
+//   perimeter() {
+//     return this.sides * this.length;
+//   },
+//   area() {
+//     return this.length * this.length;
+//   },
+// };
+// console.log(square2); //{sides: 6, length: 7, perimeter: ƒ, area: ƒ}
+// square2.length = 8; //8
+// square2.perimeter();
+// console.log(square2.perimeter()); // 48
+// square2.area();
+// console.log(square2.area()); // 64
+
+//Roll-The-Dice
+//-the sides property tells us that the dice has 6 sides
+//-the roll() method will return a random number between 1 and 6
+const dice = {
   sides: 6,
-  length: 7,
-  perimeter() {
-    return this.sides * this.length;
-  },
-  area() {
-    return this.length * this.length;
+  roll() {
+    return Math.ceil(Math.random() * this.sides);
   },
 };
-console.log(square2); //{sides: 6, length: 7, perimeter: ƒ, area: ƒ}
-square2.perimeter();
-console.log(square2.perimeter()); // 42
-square2.area();
-console.log(square2.area()); // 49
+dice.roll();
+console.log(dice.roll()); // 4
+console.log(dice.roll()); // 6
+dice.sides = 20;
+//The dice will return a random number between 1 and 20
+console.log(dice.roll()); // 17
+console.log(dice.roll()); // 13
