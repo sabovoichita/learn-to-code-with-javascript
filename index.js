@@ -2187,15 +2187,34 @@ console.log(
 //Challenge-9.3
 //Create a circle object that has a radius property and calculates the
 //circumference and area. Hint: you might need to use the Math.PI const
-const circle = {
-  radius: 7.9,
-  circumference() {
-    return 2 * Math.PI * this.radius;
-  },
-  area() {
-    return Math.PI * this.radius * this.radius;
-  },
-};
-console.log("area: ", circle.area());
-console.log("circumference: ", circle.circumference());
-console.log("radius: ", circle.radius);
+// const circle = {
+//   radius: 7.9,
+//   circumference() {
+//     return 2 * Math.PI * this.radius;
+//   },
+//   area() {
+//     return Math.PI * this.radius * this.radius;
+//   },
+// };
+// console.log("area: ", circle.area());
+// console.log("circumference: ", circle.circumference());
+// console.log("radius: ", circle.radius);
+
+//The-Document-Object-Model
+//DOM allows us to access the elements of a web page from within our code
+//The DOM is language agnostic, which means it can be used in any program
+//DOM represents an HTML document as a network of connected nods that form
+//a tree-like structure
+//The DOM treats everything on  web page as a node.
+//It represents HTML tags as elements nods
+//All these nods are connected to make a node-tree that describes the overall
+//structure of the web page
+//<h1 id="greeting">
+// Hello, <em>World!</em>
+//</h1>;
+//The h1 tag contains everything, so this appears as an element node,
+//at the top of the node tree
+//The word "Hello" is text, so this is a child text node
+//The <em> element is inside the <h1> tag, so it's a child element node
+//This makes the <h1> element node a parent node of these child nodes
+//The text inside the <em> tags is a child node of the <em> element node
