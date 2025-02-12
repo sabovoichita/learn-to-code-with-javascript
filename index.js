@@ -2139,26 +2139,47 @@ console.log(
 //on an ecommerce site, including properties as description, price and rating
 //Have a play around in the console and practice reading and updating
 //properties and calling the methods
-const dragon = {
-  strength: 10,
-  skill: 98,
-  "magic power": 90,
-  "fear factor": 99,
-  mPower: () => console.log(Math.ceil(Math.random() * 10 * this.skill)),
-};
-console.log("dragon:", dragon);
-//{strength: 10, skill: 98, magic power: 90, fear factor: 99}
-dragon.skill = 99;
-console.log("dragon:", dragon);
-//dragon: {strength: 10, skill: 99, magic power: 90, fear factor: 99}
+// const dragon = {
+//   strength: 10,
+//   skill: 98,
+//   "magic power": 90,
+//   "fear factor": 99,
+//   mPower: () => console.log(Math.ceil(Math.random() * 10 * this.skill)),
+// };
+// console.log("dragon:", dragon);
+// //{strength: 10, skill: 98, magic power: 90, fear factor: 99}
+// dragon.skill = 99;
+// console.log("dragon:", dragon);
+// //dragon: {strength: 10, skill: 99, magic power: 90, fear factor: 99}
+// const cake = {
+//   ingredients: ["flour", "sugar", "milk"],
+//   stir: () => console.log("Stir well everything"),
+//   bake: () => console.log("Bake for 15 minutes"),
+//   review: () => console.log("Please rate this recipe"),
+//   reviewList: [],
+// };
+// console.log("cake", cake);
+// cake.reviewList.push("Smells nice!!");
+// cake.ingredients.push("salt");
 
-const cake = {
-  ingredients: ["flour", "sugar", "milk"],
-  stir: () => console.log("Stir well everything"),
-  bake: () => console.log("Bake for 15 minutes"),
-  review: () => console.log("Please rate this recipe"),
-  reviewList: [],
+//Challenge-9.2
+//Write objects that represents Betty, Gemma and Del in the Guess Who game
+"🤶Betty", "👩‍🍳Gemma", "👴Del"
+const betty = {
+  name:"Betty",
+  picture:"🤶",
+  glasses: true,
+  hat: true,
 };
-console.log("cake", cake);
-cake.reviewList.push("Smells nice!!");
-cake.ingredients.push("salt");
+const gemma = {
+  name:"Gemma",
+  picture:"👩‍🍳",
+  glasses:no,
+  hat:true,
+}
+const del ={
+  name:"Del",
+  picture:"👴",
+  glasses:true,
+  hat:false
+}
