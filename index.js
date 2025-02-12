@@ -2218,3 +2218,12 @@ console.log(
 //The <em> element is inside the <h1> tag, so it's a child element node
 //This makes the <h1> element node a parent node of these child nodes
 //The text inside the <em> tags is a child node of the <em> element node
+
+//Getting-An-Element
+//The DOM provides a useful method called getElementById that returns
+//a reference to the element with a particulat ID attribute.
+//Ex: we can get a reference to the h1 heading element using its id of
+//greeting
+const hello = document.getElementById("greeting");
+console.log(hello); //h1#greeting
+//If no elements with the ID provided, null is returned
