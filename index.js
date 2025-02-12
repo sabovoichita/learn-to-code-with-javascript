@@ -2044,20 +2044,71 @@ console.log(
 //Nested-Objects
 //It's even possible for an object to contain other objects=nested objects
 //Each nested object represents a different shape 📐, 🟥, 🛑
-const shapes = {
-  triangle: { sides: 3 },
-  square: { sides: 4 },
-  pentagon: { sides: 5 },
-  hexagon: { sides: 6 },
-  octagon: { sides: 8 },
-  megagon: { sides: 10e6 },
-};
+// const shapes = {
+//   triangle: { sides: 3 },
+//   square: { sides: 4 },
+//   pentagon: { sides: 5 },
+//   hexagon: { sides: 6 },
+//   octagon: { sides: 8 },
+//   megagon: { sides: 10e6 },
+// };
 //The values in nested objects can be accessed by referencing each
 //property name in order using either dot or bracket notation:
-shapes.triangle.sides;
-console.log(shapes.triangle.sides); //3
-shapes.megagon.sides;
-console.log(shapes.megagon.sides); //10000000
-//You can mix the different notations
-shapes.hexagon["sides"]
-console.log(shapes.hexagon["sides"]) //6
+// shapes.triangle.sides;
+// console.log(shapes.triangle.sides); //3
+// shapes.megagon.sides;
+// console.log(shapes.megagon.sides); //10000000
+// //You can mix the different notations
+// shapes.hexagon["sides"]
+// console.log(shapes.hexagon["sides"]) //6
+
+//this
+//The this keyword can be used inside an object to refer to the object
+//itself.
+//It is often used in methods to gain access to the object's properties
+const square = {
+  sides: 4,
+  length: 5,
+  perimeter: 20,
+  area: 25,
+};
+//The problem with this object is that all the info about the square is
+//hard-coded as properties. This isn't necessary, since wew can use methods
+//to calculate the perimeter and area based on the values of the sides
+//and length properties. We can use this to gain access to those prop
+const square1 = {
+  sides: 4,
+  length: 5,
+  perimeter() {
+    return this.sides * this.length;
+  },
+  area() {
+    return this.length * this.length;
+  },
+};
+console.log(square1); //{sides: 4, length: 5, perimeter: ƒ, area: ƒ}
+//The perimeter and area properties have now been changed to methods
+//that return the desired value. Inside the body of these methods there
+//are references to other properties of the object: this.sides. is
+//equivalent to writing square.sides, and this is number 4
+square1.perimeter();
+console.log(square1.perimeter()); // 20
+square1.area();
+console.log(square1.area()); // 25
+//If we change the value of the length property, the perimeter and area
+//also change to reflect this:
+const square2 = {
+  sides: 6,
+  length: 7,
+  perimeter() {
+    return this.sides * this.length;
+  },
+  area() {
+    return this.length * this.length;
+  },
+};
+console.log(square2); //{sides: 6, length: 7, perimeter: ƒ, area: ƒ}
+square2.perimeter();
+console.log(square2.perimeter()); // 42
+square2.area();
+console.log(square2.area()); // 49
