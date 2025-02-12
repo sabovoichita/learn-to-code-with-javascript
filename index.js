@@ -1905,19 +1905,32 @@ console.log(
 //Methods
 //Methods look similar to other properties but are defined as a function
 //Here is an object literal of a duck🦆 with a quack() method
-const duck = {
-  name: "Quacky",
-  legs: 2,
-  quack: function () {
-    alert("QUACK! QUACK!");
-  },
-};
+// const duck = {
+//   name: "Quacky",
+//   legs: 2,
+//   quack: function () {
+//     alert("QUACK! QUACK!");
+//   },
+// };
 //There's also an alternative notation for describing methods that omit
 //the function keyword and just places parentheses after the method name
-const duck1 = {
-  name: "Quacky",
-  legs: 2,
-  quack() {
-    alert("QUACK! QUACK!");
-  },
+// const duck1 = {
+//   name: "Quacky",
+//   legs: 2,
+//   quack() {
+//     alert("QUACK! QUACK!");
+//   },
+// };
+
+//Guess Again
+//Remember the characters from our mini Game Guess Who?
+//["🧑Alphie", "🤶Betty", "👩‍🍳Gemma", "👴Del"]
+//We could create objects to reperesent each of them.
+//Each object would contain properties describing their name and
+//Boolean values to indicate if they're wearing glasses and a hat or not
+const alfie = {
+  name: "Alphie",
+  picture: "🧑",
+  glasses: no,
+  hat: no,
 };
