@@ -1893,11 +1893,31 @@ console.log(
 //Booleans, arrays anf even other objects
 //If a property is a function, then it's known as a method
 //To create an object literal in JS, simply enter a pair of curly braces
-const myObject = { key: value };
-const square = {
-  sides: 4,
-  length: 5,
-  perimeter: 20,
-  area: 25,
-};
+// const myObject = { key: "value" };
+// const square = {
+//   sides: 4,
+//   length: 5,
+//   perimeter: 20,
+//   area: 25,
+// };
 //Each property has a key and an associated value
+
+//Methods
+//Methods look similar to other properties but are defined as a function
+//Here is an object literal of a duck🦆 with a quack() method
+const duck = {
+  name: "Quacky",
+  legs: 2,
+  quack: function () {
+    alert("QUACK! QUACK!");
+  },
+};
+//There's also an alternative notation for describing methods that omit
+//the function keyword and just places parentheses after the method name
+const duck1 = {
+  name: "Quacky",
+  legs: 2,
+  quack() {
+    alert("QUACK! QUACK!");
+  },
+};
