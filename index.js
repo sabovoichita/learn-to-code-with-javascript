@@ -2358,20 +2358,44 @@ console.log(
 // </ul>
 
 //Building-Elements-Node-By-Node
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+//An alternative to using innerHTML to populate the content of an element
+// is to build each node individually and then use the appendChild()
+// method to put them all together
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+//This will create all the nodes and assign variables to them
+//Now we can put them together to form a list item:
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+//Now we need to insert this new list item into the HTML
+
+//Insert-Before
+const apple = food.children[0];
+const banana = food.children[1];
+const carrot = food.children[2];
 const melon = document.createElement("li");
 melon.innerHTML = "<span>🍉</span>Melon";
 melon.textContent = "🍉Melon";
 food.appendChild(melon);
-//An alternative to using innerHTML to populate the content of an element
-// is to build each node individually and then use the appendChild()
-// method to put them all together
 const brocoli = document.createElement("li");
 const text = document.createTextNode("Brocoli");
 const span = document.createElement("span");
 const emoji = document.createTextNode("🥦");
-//This will create all the nodes and assign variables to them
-//Now we can put them together to form a list item:
 span.appendChild(emoji);
 brocoli.appendChild(span);
 brocoli.appendChild(text);
-//Now we need to insert this new list item into the HTML
+//The insertBefore() method will pace a new element before another
+//element in the markup
+//This method is called on the parent node
+//It takes two arguments: the first is the new node to be added,
+//and the second is the node that you want it to go before
+//The order of the parameters is the order they'll appear in the markup
+//We can place the new brocoli element before apple element:
+food.insertBefore(brocoli, apple);
