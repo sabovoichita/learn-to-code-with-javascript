@@ -2424,6 +2424,37 @@ console.log(
 //JS has removed the carrot list item from DOM but not from actual HTML
 
 //Replacing-Elements-On-A-Page
+// const apple = food.children[0];
+// const banana = food.children[1];
+// const carrot = food.children[2];
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+// food.insertBefore(brocoli, apple);
+// carrot.remove();
+//The replaceChild() method can be used to replace one node with another
+//It's called on the parent node and has two parameters: the new node
+//and the node that's to be replaced.
+// const lemon = document.createElement("li");
+// lemon.innerHTML = `<span>🍋</span>Lemon`;
+// food.replaceChild(lemon, banana);
+// console.log(food);
+//<ul id="food">
+//    <li><span>🥦</span>Brocoli</li>
+//    <li class="fruit"><span>🍏</span>Apple</li>
+//    <li><span>🍋</span>Lemon</li>
+//  <li>🍉Melon</li>
+//</ul>
+
+//Getting-An-Element's-Attribute
 const apple = food.children[0];
 const banana = food.children[1];
 const carrot = food.children[2];
@@ -2440,16 +2471,13 @@ brocoli.appendChild(span);
 brocoli.appendChild(text);
 food.insertBefore(brocoli, apple);
 carrot.remove();
-//The replaceChild() method can be used to replace one node with another
-//It's called on the parent node and has two parameters: the new node
-//and the node that's to be replaced.
-const lemon = document.createElement("li");
-lemon.innerHTML = `<span>🍋</span>Lemon`;
-food.replaceChild(lemon, banana);
-console.log(food);
-//<ul id="food">
-//    <li><span>🥦</span>Brocoli</li>
-//    <li class="fruit"><span>🍏</span>Apple</li>
-//    <li><span>🍋</span>Lemon</li>
-//  <li>🍉Melon</li>
-//</ul>
+//All HTML elements have a large number of possible attributes such as:
+//class, id, src and href.
+//The getAttribute() method returns the value of the attibute provided
+//as an argument
+//We can find the clss of apple element:
+apple.getAttribute("class");
+console.log(apple.getAttribute("class")); //fruit
+//If an element doesn't have the given attribute, it returns null
+brocoli.getAttribute("src");
+console.log(brocoli.getAttribute("src")); //null
