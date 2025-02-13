@@ -2328,14 +2328,31 @@ console.log(
 //as a parameter and returns that element.
 //For ex: we could create a new item for our food list as a DOM fragment
 //in memory by writing the following in the console:
-const melon = document.createElement("li");
+// const melon = document.createElement("li");
 //At the moment this element is empty
 //To add some content, we'll use the innerHTML property to add HTML content
-melon.innerHTML = "<span>🍉</span>Melon";
+// melon.innerHTML = "<span>🍉</span>Melon";
 // !!There's also a textContent property that can be used to add text
 //to an element, but you can't use any HTML element for it.
-melon.textContent = "🍉Melon";
+// melon.textContent = "🍉Melon";
 //But if you tried to add the <span> tags around the emoji, it wouldn't
 //parse the HTML
-melon.textContent = "<span>🍉</span>Melon";
+// melon.textContent = "<span>🍉</span>Melon";
 //'<span>🍉</span>Melon'
+
+//Adding-Elements-To-The-Page
+// Every DOM node has an appendChild() method that will add another node
+//as a child node.
+//The following ex will add the melon element we created above to
+//  the end of food list:
+const melon = document.createElement("li");
+melon.innerHTML = "<span>🍉</span>Melon";
+melon.textContent = "🍉Melon";
+food.appendChild(melon);
+console.log(food);
+// <ul id="food">
+// <li class="fruit"><span>🍏</span>Apple</li>
+// <li class="fruit"><span>🍌</span>Banana</li>
+// <li class="veg"><span>🥕</span>Carrot</li>
+// <li>🍉Melon</li>
+// </ul>
