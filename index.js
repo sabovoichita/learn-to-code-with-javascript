@@ -2510,6 +2510,34 @@ console.log(
 //classes that an element has
 
 //The-className-Property
+// const apple = food.children[0];
+// const banana = food.children[1];
+// const carrot = food.children[2];
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+// food.insertBefore(brocoli, apple);
+// carrot.remove();
+// brocoli.setAttribute("class", "veg");
+//The className property allows the class of an element to be set directly
+//It can be used to find out the value of the class attribute too
+// apple.className;
+// console.log(apple.className); //fruit
+//We can also use it to set the class attribute of an element
+// melon.className = "fruit";
+// console.log(melon.className); //fruit
+//!!Changing the className property of an element by assignment will
+//also overwrite all other classes that have already been set on the element
+
+//The-classList-Property
 const apple = food.children[0];
 const banana = food.children[1];
 const carrot = food.children[2];
@@ -2526,14 +2554,19 @@ brocoli.appendChild(span);
 brocoli.appendChild(text);
 food.insertBefore(brocoli, apple);
 carrot.remove();
+const lemon = document.createElement("li");
+lemon.innerHTML = `<span>🍋</span>Lemon`;
+food.replaceChild(lemon, banana);
 brocoli.setAttribute("class", "veg");
-//The className property allows the class of an element to be set directly
-//It can be used to find out the value of the class attribute too
-apple.className;
-console.log(apple.className); //fruit
-//We can also use it to set the class attribute of an element
 melon.className = "fruit";
-console.log(melon.className); //fruit
-//!!Changing the className property of an element by assignment will
-//also overwrite all other classes that have already been set on the element
-
+//The classList property is a list of akk the classes an element has.
+//The add() method can be used to add a class to an element without
+//overwriting any classes that already exist.
+lemon.classList.add("fruit");
+console.log(lemon); //<li class="fruit"><span>🍋</span>Lemon</li>
+//The remove() method will remove a specific class from an element
+lemon.classList.remove("fruit");
+console.log(lemon); //<li class=""><span>🍋</span>Lemon</li>
+//The contains() method will check if  an element has a particular class
+console.log(apple.classList.contains("fruit")); //true
+console.log(apple.classList.contains("veg")); //false
