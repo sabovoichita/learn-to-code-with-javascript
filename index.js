@@ -2300,24 +2300,42 @@ console.log(
 //child elements of the <ul> element that has an ID of food
 //The code below shows how we can get access to a node list containing
 //the three child <li> elements:
-const food1 = document.querySelector("#food");
-console.log(food1.children.length); //3
-console.log(food1.children[0]);
+// const food1 = document.querySelector("#food");
+// console.log(food1.children.length); //3
+// console.log(food1.children[0]);
 //<li class="fruit"><span>🍏</span>Apple</li>
 //Let's create some references to these child nodes
-const apple = food1.children[0];
-console.log(apple); //<li class="fruit"><span>🍏</span>Apple</li>
-const banana = food1.children[1];
-console.log(banana); //<li class="fruit"><span>🍌</span>Banana</li>
-const carrot = food1.children[2];
-console.log(carrot); //<li class="veg"><span>🥕</span>Carrot</li>
+// const apple = food1.children[0];
+// console.log(apple); //<li class="fruit"><span>🍏</span>Apple</li>
+// const banana = food1.children[1];
+// console.log(banana); //<li class="fruit"><span>🍌</span>Banana</li>
+// const carrot = food1.children[2];
+// console.log(carrot); //<li class="veg"><span>🥕</span>Carrot</li>
 //Parent Node
 //The parentNode property returns the parent node of an element
 //The following code returns the food node because it's the parent
 //of the apple node:
-console.log(apple.parentNode);
+// console.log(apple.parentNode);
 //<ul id="food">
 //<li class="fruit"><span>🍏</span>Apple</li>
 //<li class="fruit"><span>🍌</span>Banana</li>
 //<li class="veg"><span>🥕</span>Carrot</li>
 //</ul>
+
+//Creating-Dynamic-Markup
+//Creating an Element
+//The document object has a createElement() method that takes a tag name
+//as a parameter and returns that element.
+//For ex: we could create a new item for our food list as a DOM fragment
+//in memory by writing the following in the console:
+const melon = document.createElement("li");
+//At the moment this element is empty
+//To add some content, we'll use the innerHTML property to add HTML content
+melon.innerHTML = "<span>🍉</span>Melon";
+// !!There's also a textContent property that can be used to add text
+//to an element, but you can't use any HTML element for it.
+melon.textContent = "🍉Melon";
+//But if you tried to add the <span> tags around the emoji, it wouldn't
+//parse the HTML
+melon.textContent = "<span>🍉</span>Melon";
+//'<span>🍉</span>Melon'
