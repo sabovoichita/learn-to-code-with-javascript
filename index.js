@@ -2271,23 +2271,53 @@ console.log(
 // Query-Selectors
 // - The document.guerySelector() method allows you to use CSS notation
 // to target the first element in the document that matches the CSS selector
-const food1 = document.querySelector("#food");
-console.log(food1);
-{
-  /* <ul id="food">
+// const food1 = document.querySelector("#food");
+// console.log(food1);
+// {
+/* <ul id="food">
       <li class="fruit"><span>🍏</span>Apple</li>
       <li class="fruit"><span>🍌</span>Banana</li>
       <li class="veg"><span>🥕</span>Carrot</li>
 	</ul> */
-}
+// }
 // - The document.querySelectorAll() metjod also uses CSS notatio, but
 // returns a list of all the elements in the document that match the
 // CSS query selector
 // - These two statements are identical and return the same node list:
-const fruit2 = document.getElementsByClassName("fruit");
-console.log(fruit2); //HTMLCollection(2) [li.fruit, li.fruit]
-const fruit3 = document.querySelectorAll(".fruit");
-console.log(fruit3); //NodeList(2) [li.fruit, li.fruit]
+// const fruit2 = document.getElementsByClassName("fruit");
+// console.log(fruit2); //HTMLCollection(2) [li.fruit, li.fruit]
+// const fruit3 = document.querySelectorAll(".fruit");
+// console.log(fruit3); //NodeList(2) [li.fruit, li.fruit]
 // - The following code will return only the last item in the food list:
-const carrot = document.querySelector("ul#food li:last-child");
+// const carrot = document.querySelector("ul#food li:last-child");
+// console.log(carrot); //<li class="veg"><span>🥕</span>Carrot</li>
+
+//Navigating-The-DOM-Tree
+//Child nodes
+//You can get a collection of all the child elements using the children
+//property
+//In our food example, food.children will return a node list of all the
+//child elements of the <ul> element that has an ID of food
+//The code below shows how we can get access to a node list containing
+//the three child <li> elements:
+const food1 = document.querySelector("#food");
+console.log(food1.children.length); //3
+console.log(food1.children[0]);
+//<li class="fruit"><span>🍏</span>Apple</li>
+//Let's create some references to these child nodes
+const apple = food1.children[0];
+console.log(apple); //<li class="fruit"><span>🍏</span>Apple</li>
+const banana = food1.children[1];
+console.log(banana); //<li class="fruit"><span>🍌</span>Banana</li>
+const carrot = food1.children[2];
 console.log(carrot); //<li class="veg"><span>🥕</span>Carrot</li>
+//Parent Node
+//The parentNode property returns the parent node of an element
+//The following code returns the food node because it's the parent
+//of the apple node:
+console.log(apple.parentNode);
+//<ul id="food">
+//<li class="fruit"><span>🍏</span>Apple</li>
+//<li class="fruit"><span>🍌</span>Banana</li>
+//<li class="veg"><span>🥕</span>Carrot</li>
+//</ul>
