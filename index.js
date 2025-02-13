@@ -2483,6 +2483,33 @@ console.log(
 // console.log(brocoli.getAttribute("src")); //null
 
 //Setting-An-Elements-Attribute
+// const apple = food.children[0];
+// const banana = food.children[1];
+// const carrot = food.children[2];
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+// food.insertBefore(brocoli, apple);
+// carrot.remove();
+//- The setAttribute() method can change the value of the elemen's attribute
+//- It takes two arguments: the attribute that you wish to change and
+//the new value of the attribute
+//We want to add the class of veg to the brocoli element:
+// brocoli.setAttribute("class", "veg");
+// console.log(brocoli); //<li class="veg"><span>🥦</span>Brocoli</li>
+//Using the setAttribute() method will overwrite the current value
+//When used to update the class attribute, this will overwrite all the
+//classes that an element has
+
+//The-className-Property
 const apple = food.children[0];
 const banana = food.children[1];
 const carrot = food.children[2];
@@ -2499,12 +2526,14 @@ brocoli.appendChild(span);
 brocoli.appendChild(text);
 food.insertBefore(brocoli, apple);
 carrot.remove();
-//- The setAttribute() method can change the value of the elemen's attribute
-//- It takes two arguments: the attribute that you wish to change and
-//the new value of the attribute
-//We want to add the class of veg to the brocoli element:
 brocoli.setAttribute("class", "veg");
-console.log(brocoli); //<li class="veg"><span>🥦</span>Brocoli</li>
-//Using the setAttribute() method will overwrite the current value
-//When used to update the class attribute, this will overwrite all the
-//classes that an element has
+//The className property allows the class of an element to be set directly
+//It can be used to find out the value of the class attribute too
+apple.className;
+console.log(apple.className); //fruit
+//We can also use it to set the class attribute of an element
+melon.className = "fruit";
+console.log(melon.className); //fruit
+//!!Changing the className property of an element by assignment will
+//also overwrite all other classes that have already been set on the element
+
