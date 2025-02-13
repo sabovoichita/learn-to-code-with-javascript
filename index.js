@@ -2249,21 +2249,45 @@ console.log(
 
 //Getting-Multiple-Elements
 //We gain access to the <ul> element using the following code:
-const food = document.getElementById("food");
+// const food = document.getElementById("food");
 
 //Getting elements by Tag Name
 //We can use getElementsByTagName() to return a collection of all the
 //elements with the tag name provided as an argument
-const items = document.getElementsByTagName("li");
+// const items = document.getElementsByTagName("li");
 //The var items now contains a collection of all the list-item elements
-console.log(items[0]); //li.fruit
-console.log(items.length); //3
+// console.log(items[0]); //li.fruit
+// console.log(items.length); //3
 
 //Getting Elements By Their Class Name
 //We can also use the getElementsByClassName() method to return a collection
 //of all the elements that have a particular class name.
-const fruit1 = document.getElementsByClassName("fruit");
-console.log(fruit1); //HTMLCollection(2) [li.fruit, li.fruit]
-console.log(fruit1.length); //2
-console.log(fruit1[0]); //<li class="fruit"><span>🍏</span>Apple</li>
-console.log(fruit1[1]); //<li class="fruit"><span>🍌</span>Banana</li>
+// const fruit1 = document.getElementsByClassName("fruit");
+// console.log(fruit1); //HTMLCollection(2) [li.fruit, li.fruit]
+// console.log(fruit1.length); //2
+// console.log(fruit1[0]); //<li class="fruit"><span>🍏</span>Apple</li>
+// console.log(fruit1[1]); //<li class="fruit"><span>🍌</span>Banana</li>
+
+// Query-Selectors
+// - The document.guerySelector() method allows you to use CSS notation
+// to target the first element in the document that matches the CSS selector
+const food1 = document.querySelector("#food");
+console.log(food1);
+{
+  /* <ul id="food">
+      <li class="fruit"><span>🍏</span>Apple</li>
+      <li class="fruit"><span>🍌</span>Banana</li>
+      <li class="veg"><span>🥕</span>Carrot</li>
+	</ul> */
+}
+// - The document.querySelectorAll() metjod also uses CSS notatio, but
+// returns a list of all the elements in the document that match the
+// CSS query selector
+// - These two statements are identical and return the same node list:
+const fruit2 = document.getElementsByClassName("fruit");
+console.log(fruit2); //HTMLCollection(2) [li.fruit, li.fruit]
+const fruit3 = document.querySelectorAll(".fruit");
+console.log(fruit3); //NodeList(2) [li.fruit, li.fruit]
+// - The following code will return only the last item in the food list:
+const carrot = document.querySelector("ul#food li:last-child");
+console.log(carrot); //<li class="veg"><span>🥕</span>Carrot</li>
