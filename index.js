@@ -2345,14 +2345,33 @@ console.log(
 //as a child node.
 //The following ex will add the melon element we created above to
 //  the end of food list:
-const melon = document.createElement("li");
-melon.innerHTML = "<span>🍉</span>Melon";
-melon.textContent = "🍉Melon";
-food.appendChild(melon);
-console.log(food);
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// console.log(food);
 // <ul id="food">
 // <li class="fruit"><span>🍏</span>Apple</li>
 // <li class="fruit"><span>🍌</span>Banana</li>
 // <li class="veg"><span>🥕</span>Carrot</li>
 // <li>🍉Melon</li>
 // </ul>
+
+//Building-Elements-Node-By-Node
+const melon = document.createElement("li");
+melon.innerHTML = "<span>🍉</span>Melon";
+melon.textContent = "🍉Melon";
+food.appendChild(melon);
+//An alternative to using innerHTML to populate the content of an element
+// is to build each node individually and then use the appendChild()
+// method to put them all together
+const brocoli = document.createElement("li");
+const text = document.createTextNode("Brocoli");
+const span = document.createElement("span");
+const emoji = document.createTextNode("🥦");
+//This will create all the nodes and assign variables to them
+//Now we can put them together to form a list item:
+span.appendChild(emoji);
+brocoli.appendChild(span);
+brocoli.appendChild(text);
+//Now we need to insert this new list item into the HTML
