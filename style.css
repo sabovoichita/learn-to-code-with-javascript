@@ -8,3 +8,6 @@ button {
 .complete {
   text-decoration: line-through;
 }
+.destroy {
+  display: none;
+}

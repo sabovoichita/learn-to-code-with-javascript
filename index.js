@@ -2663,15 +2663,40 @@ console.log(
 //Create some dynamic HTML in a new Pen, including at least a heading
 // and paragraph of text, using just JS.
 // There should be nothing in the HTML section
+// const heading = document.createElement("h2");
+// heading.innerHTML = "Learn JavaScript";
+// heading.style.color = "red";
+// document.body.appendChild(heading);
+// const paragraph = document.createElement("p");
+// paragraph.innerHTML = "Let's learn the basics of JavaScript";
+// paragraph.style.backgroundColor = "orange";
+// paragraph.style.color = "white";
+// document.body.appendChild(paragraph);
 
-  const heading = document.createElement("h2");
-  heading.innerHTML = "Learn JavaScript";
-  heading.style.color = "red";
-  document.body.appendChild(heading);
-
-  const paragraph = document.createElement("p");
-  paragraph.innerHTML = "Let's learn the basics of JavaScript";
-  paragraph.style.backgroundColor = "orange";
-  paragraph.style.color = "white";
-  document.body.appendChild(paragraph);
-
+//Challenge-10.2
+//Add a function called destroy to the to-do list that we just wrote.
+//It should remove a task from the list that's provided as an argument
+//Ex:destroy(list.lastChild) should remove the last item in the list
+const list = document.createElement("ul");
+document.body.appendChild(list);
+function add(item) {
+  const li = document.createElement("li");
+  li.innerHTML = item;
+  list.appendChild(li);
+}
+function toggle(item) {
+  item.classList.toggle('complete');
+}
+function destroy(item){
+  item.classList.toggle("destroy")
+}
+function destroy2(item){
+  item.remove()
+}
+add("Bake cake");
+add("Sing song");
+add("Read book");
+toggle(list.firstChild);
+toggle(list.lastChild);
+destroy(list.lastChild)
+destroy2(list.firstChild)
