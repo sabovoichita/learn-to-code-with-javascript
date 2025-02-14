@@ -2572,6 +2572,38 @@ console.log(
 // console.log(apple.classList.contains("veg")); //false
 
 //Doing-It-With-Style
+// const apple = food.children[0];
+// const banana = food.children[1];
+// const carrot = food.children[2];
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+// food.insertBefore(brocoli, apple);
+// carrot.remove();
+// const lemon = document.createElement("li");
+// lemon.innerHTML = `<span>🍋</span>Lemon`;
+// food.replaceChild(lemon, banana);
+// brocoli.setAttribute("class", "veg");
+// melon.className = "fruit";
+//Every element has a style property
+//This can be used to dynamically modify the presentation of any element
+//on a web page
+// apple.style.border = "red 2px solid";
+//!!Any CSS propery names that are separated by hyphens must be written
+//in camelCase notation when referenced in JS
+//So the hyphen is removed and the next letter is capitalized.
+//This is because JS doesn't allow hyphens in property names
+//Ex: background-color becomes backgroundColor, font-size->fontSize
+
+//Being-Classy
 const apple = food.children[0];
 const banana = food.children[1];
 const carrot = food.children[2];
@@ -2593,12 +2625,7 @@ lemon.innerHTML = `<span>🍋</span>Lemon`;
 food.replaceChild(lemon, banana);
 brocoli.setAttribute("class", "veg");
 melon.className = "fruit";
-//Every element has a style property
-//This can be used to dynamically modify the presentation of any element
-//on a web page
-apple.style.border = "red 2px solid";
-//!!Any CSS propery names that are separated by hyphens must be written
-//in camelCase notation when referenced in JS
-//So the hyphen is removed and the next letter is capitalized.
-//This is because JS doesn't allow hyphens in property names
-//Ex: background-color becomes backgroundColor, font-size->fontSize
+//A better alternative is to dynamically change the class of an element
+//and have a different style for each class in the CSS
+apple.classList.add("highlighted");
+//Using classes to update the style of elements is much more DRY aproach

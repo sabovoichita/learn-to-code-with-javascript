@@ -2,3 +2,6 @@ button {
   background-color: black;
   color: whitesmoke;
 }
+.highlighted {
+  border: 2px solid red;
+}
