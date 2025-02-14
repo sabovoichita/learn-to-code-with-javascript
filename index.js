@@ -2538,6 +2538,40 @@ console.log(
 //also overwrite all other classes that have already been set on the element
 
 //The-classList-Property
+// const apple = food.children[0];
+// const banana = food.children[1];
+// const carrot = food.children[2];
+// const melon = document.createElement("li");
+// melon.innerHTML = "<span>🍉</span>Melon";
+// melon.textContent = "🍉Melon";
+// food.appendChild(melon);
+// const brocoli = document.createElement("li");
+// const text = document.createTextNode("Brocoli");
+// const span = document.createElement("span");
+// const emoji = document.createTextNode("🥦");
+// span.appendChild(emoji);
+// brocoli.appendChild(span);
+// brocoli.appendChild(text);
+// food.insertBefore(brocoli, apple);
+// carrot.remove();
+// const lemon = document.createElement("li");
+// lemon.innerHTML = `<span>🍋</span>Lemon`;
+// food.replaceChild(lemon, banana);
+// brocoli.setAttribute("class", "veg");
+// melon.className = "fruit";
+//The classList property is a list of akk the classes an element has.
+//The add() method can be used to add a class to an element without
+//overwriting any classes that already exist.
+// lemon.classList.add("fruit");
+// console.log(lemon); //<li class="fruit"><span>🍋</span>Lemon</li>
+//The remove() method will remove a specific class from an element
+// lemon.classList.remove("fruit");
+// console.log(lemon); //<li class=""><span>🍋</span>Lemon</li>
+//The contains() method will check if  an element has a particular class
+// console.log(apple.classList.contains("fruit")); //true
+// console.log(apple.classList.contains("veg")); //false
+
+//Doing-It-With-Style
 const apple = food.children[0];
 const banana = food.children[1];
 const carrot = food.children[2];
@@ -2559,14 +2593,12 @@ lemon.innerHTML = `<span>🍋</span>Lemon`;
 food.replaceChild(lemon, banana);
 brocoli.setAttribute("class", "veg");
 melon.className = "fruit";
-//The classList property is a list of akk the classes an element has.
-//The add() method can be used to add a class to an element without
-//overwriting any classes that already exist.
-lemon.classList.add("fruit");
-console.log(lemon); //<li class="fruit"><span>🍋</span>Lemon</li>
-//The remove() method will remove a specific class from an element
-lemon.classList.remove("fruit");
-console.log(lemon); //<li class=""><span>🍋</span>Lemon</li>
-//The contains() method will check if  an element has a particular class
-console.log(apple.classList.contains("fruit")); //true
-console.log(apple.classList.contains("veg")); //false
+//Every element has a style property
+//This can be used to dynamically modify the presentation of any element
+//on a web page
+apple.style.border = "red 2px solid";
+//!!Any CSS propery names that are separated by hyphens must be written
+//in camelCase notation when referenced in JS
+//So the hyphen is removed and the next letter is capitalized.
+//This is because JS doesn't allow hyphens in property names
+//Ex: background-color becomes backgroundColor, font-size->fontSize
