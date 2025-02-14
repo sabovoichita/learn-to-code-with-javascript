@@ -2677,26 +2677,53 @@ console.log(
 //Add a function called destroy to the to-do list that we just wrote.
 //It should remove a task from the list that's provided as an argument
 //Ex:destroy(list.lastChild) should remove the last item in the list
-const list = document.createElement("ul");
-document.body.appendChild(list);
-function add(item) {
-  const li = document.createElement("li");
-  li.innerHTML = item;
-  list.appendChild(li);
-}
-function toggle(item) {
-  item.classList.toggle('complete');
-}
-function destroy(item){
-  item.classList.toggle("destroy")
-}
-function destroy2(item){
-  item.remove()
-}
-add("Bake cake");
-add("Sing song");
-add("Read book");
-toggle(list.firstChild);
-toggle(list.lastChild);
-destroy(list.lastChild)
-destroy2(list.firstChild)
+// const list = document.createElement("ul");
+// document.body.appendChild(list);
+// function add(item) {
+//   const li = document.createElement("li");
+//   li.innerHTML = item;
+//   list.appendChild(li);
+// }
+// function toggle(item) {
+//   item.classList.toggle('complete');
+// }
+// function destroy(item){
+//   item.classList.toggle("destroy")
+// }
+// function destroy2(item){
+//   item.remove()
+// }
+// add("Bake cake");
+// add("Sing song");
+// add("Read book");
+// toggle(list.firstChild);
+// toggle(list.lastChild);
+// destroy(list.lastChild)
+// destroy2(list.firstChild)
+
+//The-Main-Event
+//Event-based Programming
+//Event-based programming is a style of coding that reacts to events
+//in a similar way to know how to react to the whistle on the kettle
+//The events in a program are usually user actions, such as pressing a key
+//moving the mouse or tapping the scree, but there are also other things
+//such as a timmer, a notification or a change in a state of the application
+//Event Listeners
+//An event listener is triggered when an event happens.
+//Event listeners work in a similar way to the whistle on the kettle
+//Instead of the program having to constanstly check to see if an event
+//occured, the event listener sits in the background until the event happens
+//and then lets the program know so it can respond immediately.
+//This allows the program to continue with other tasks while waiting for
+//the event to happen 
+//Event Handlers
+//An event handler is a set of instructions on what to do when an event
+//happens.
+//In programming, an event handler usually takes a form of a callback function
+//that's called when the event listener is triggered.
+//For ex: you might want a pop-up notification to appear when a user clicks
+//a button. This would be achieved by setting an event listener that's 
+//triggered when the user clicks the button. 
+//The event listener would then call function that displays the notification.
+//The function would be called every time the event listener is triggered.
+
