@@ -2631,15 +2631,15 @@ console.log(
 //Using classes to update the style of elements is much more DRY aproach
 
 //A-Simple-TO-DO-List
-const list = document.createElement("ul");
-document.body.appendChild(list);
+// const list = document.createElement("ul");
+// document.body.appendChild(list);
 //This created an unordered list(<ul>) and appends it in the <body> tag
 //Next, we'll write a function for adding tasks:
-function add(item) {
-  const li = document.createElement("li");
-  li.innerHTML = item;
-  list.appendChild(li);
-}
+// function add(item) {
+//   const li = document.createElement("li");
+//   li.innerHTML = item;
+//   list.appendChild(li);
+// }
 //This function will create a list item(<li>) tag and append it as a
 //child to the <ul> element we just created.
 //The content of the list item will be whatever is provided to the
@@ -2647,15 +2647,31 @@ function add(item) {
 //HTML to the list element:
 //<li>Read a Book</li>
 //Open up the console and add a few tasks to the list:
-add("Bake cake");
-add("Sing song");
-add("Read book");
+// add("Bake cake");
+// add("Sing song");
+// add("Read book");
 //Now let's write a function that wil toogle a class of complete to an item
 //If the item does't have a class of complete, it will be added
 //and if it already has the class, it will be removed:
-function toggle(item) {
-  item.classList.toggle('complete');
-}
-toggle(list.firstChild);
-toggle(list.lastChild);
+// function toggle(item) {
+//   item.classList.toggle('complete');
+// }
+// toggle(list.firstChild);
+// toggle(list.lastChild);
+
+//Challenge-10.1
+//Create some dynamic HTML in a new Pen, including at least a heading
+// and paragraph of text, using just JS.
+// There should be nothing in the HTML section
+
+  const heading = document.createElement("h2");
+  heading.innerHTML = "Learn JavaScript";
+  heading.style.color = "red";
+  document.body.appendChild(heading);
+
+  const paragraph = document.createElement("p");
+  paragraph.innerHTML = "Let's learn the basics of JavaScript";
+  paragraph.style.backgroundColor = "orange";
+  paragraph.style.color = "white";
+  document.body.appendChild(paragraph);
 
