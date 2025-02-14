@@ -5,3 +5,6 @@ button {
 .highlighted {
   border: 2px solid red;
 }
+.complete {
+  text-decoration: line-through;
+}
