@@ -2876,20 +2876,52 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //Mouse-Over
 //The mouseover event is fired when the mouse pointer moves over an element
 //Let's create a game called Find the Bomb.
-const bomb = document.createElement("div");
-bomb.textContent = "💣";
-bomb.style.position = "absolute";
-bomb.style.top = Math.floor(200 * Math.random()) + "px";
-bomb.style.left = Math.floor(200 * Math.random()) + "px";
-bomb.style.fontSize = "64px";
-document.body.appendChild(bomb);
+// const bomb = document.createElement("div");
+// bomb.textContent = "💣";
+// bomb.style.position = "absolute";
+// bomb.style.top = Math.floor(200 * Math.random()) + "px";
+// bomb.style.left = Math.floor(200 * Math.random()) + "px";
+// bomb.style.fontSize = "64px";
+// document.body.appendChild(bomb);
 //We've created a <div> element that contains a bomb emoji as it's text content
 //It then sets the position propery to absolute which allows us to set
 //the position of the bomb relative to the left side and top of the page
 //using the Left and Top propeties respectively
 //We then set these properties to a random number
 //We use the appendChild to place the bomb on the page
-bomb.addEventListener("mouseover", (e) => {
-  document.body.style.background = "red";
-  document.body.innerHTML = "<h1>BOOOOM!!!</h1>";
-});
+// bomb.addEventListener("mouseover", (e) => {
+//   document.body.style.background = "red";
+//   document.body.innerHTML = "<h1>BOOOOM!!!</h1>";
+// });
+
+//Move-Up-And-Down
+//- The mousedown event fires when the left mouse button is pressed down
+//and the mouseup event fires when it's released
+//- This event can be attached to a particular element, so the event only
+//fire when the mouse pointer is over the element
+//- We can combine these two events with mousemove event to implement
+// a very simple drag-and-drop interface
+//- Add to HTML:
+//<div id="star">⭐</div>;
+//- Add to CSS:
+//#star {
+//font-size: 64px;
+//position: absolute;
+//}
+//- This makes the element a big bigger and sets the position property to
+//absolute, which means that its position can be changed using left and top
+const star = document.querySelector("star");
+star.addEventListener("mousedown", start);
+star.addEventListener("mouseup", stop);
+function start(e) {
+  document.addEventListener("mousemove", move);
+}
+function move(e) {
+  star.style.left = `${e.x}px`;
+  star.style.top = `${e.y}px`;
+}
+//- The move function makes the dragging possible.
+//- It sets the position of the star(star.style.left and star.style.top) 
+// to equal the position of the mouse pointer that's stored in the event
+//object properties of x and y.
+
