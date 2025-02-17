@@ -2813,3 +2813,27 @@ function sayHello(e) {
   e.preventDefault();
   hello.textContent = `Hello, ${form.myName.value}`;
 }
+
+//Keyboard-Events
+//- There are two main events that relate to a user pressing a key:
+//    -keydown: when the key is pressed
+//    -keyup: when it's released
+//The event object for thsese two events contains two properties that can
+//tell us which key was pressed:
+//  -The code property returns a string that relates to the actual
+//   physical key that was pressed.
+//  -The key property returns the actual output that will appear on the page
+//  This can be influenced by special keys being held, such as shift or alt.
+//  the keyboard layout settings, and locale settings(such as current keys)
+//For ex: if you pressed the spacebar, the code property will be Space, but
+//the key property will be (empty space which is what it produces)
+document.addEventListener(
+  "keydown",
+  (e) =>
+    (document.body.innerHTML = `<div>e.code: ${e.code}</div><div>e.key: ${e.key}</div>`)
+);
+//- Every time a key is pressed in the document and update the innerHTML
+//property of the page body to show the value of e.code and e.key.
+//- When pressing down shift key =>
+// e.code:ShiftLeft
+//e.key:Shift
