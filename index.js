@@ -2910,6 +2910,27 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //}
 //- This makes the element a big bigger and sets the position property to
 //absolute, which means that its position can be changed using left and top
+// const star = document.querySelector("star");
+// star.addEventListener("mousedown", start);
+// star.addEventListener("mouseup", stop);
+// function start(e) {
+//   document.addEventListener("mousemove", move);
+// }
+// function move(e) {
+//   star.style.left = `${e.x}px`;
+//   star.style.top = `${e.y}px`;
+// }
+//- The move function makes the dragging possible.
+//- It sets the position of the star(star.style.left and star.style.top)
+// to equal the position of the mouse pointer that's stored in the event
+//object properties of x and y.
+
+//Removing-Event-Listener
+//- Add to HTML: <div id="star">⭐</div>;
+//- Add to CSS: #star {
+//                  font-size: 64px;
+//                  position: absolute;
+//                }
 const star = document.querySelector("star");
 star.addEventListener("mousedown", start);
 star.addEventListener("mouseup", stop);
@@ -2920,8 +2941,18 @@ function move(e) {
   star.style.left = `${e.x}px`;
   star.style.top = `${e.y}px`;
 }
-//- The move function makes the dragging possible.
-//- It sets the position of the star(star.style.left and star.style.top) 
-// to equal the position of the mouse pointer that's stored in the event
-//object properties of x and y.
+//An event listener can be removed using the removeEventListener() method.
+//This will remove an event listener that matches the same parameters.
+// !!You shouldn't use anonymous functions as an argument to addEventListener
+//if you want to remove the event listener later in the program.
+//This is because there needs to be a reference to the same function name
+//in the arguments of the removeEventListener
 
+document.removeEventListener("mousemove", move);
+function stop() {
+  document.removeEventListener("mousemove", move);
+}
+//This will remove the event listener, so the position of the star will stop
+//matching the position of the mouse and so stop moving.
+//If the user clicks on the star again, the event listener will be added
+//once more and the dragging will start again
