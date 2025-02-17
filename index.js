@@ -2859,10 +2859,10 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //Every time the mouse pointer moves, the mousemove event fires
 //Let's write some code that tells us the coordinates of the mouse
 // pointer whenever it moves:
-document.addEventListener("mousemove", showCoords);
-function showCoords(event) {
-  document.body.textContent = `(${event.x},${event.y})`;
-}
+// document.addEventListener("mousemove", showCoords);
+// function showCoords(event) {
+//   document.body.textContent = `(${event.x},${event.y})`;
+// }
 //This function updates the textContent property of the document body
 //to contain the coordinates of the mouse pointer. The x and y properties
 //of the event object tell us the horizontal and vertical position of the
@@ -2872,3 +2872,24 @@ function showCoords(event) {
 //Try moving the mouse pointer on the page and you should see its exact
 //coordinates displayed in the top left corner
 //(162, 48);
+
+//Mouse-Over
+//The mouseover event is fired when the mouse pointer moves over an element
+//Let's create a game called Find the Bomb.
+const bomb = document.createElement("div");
+bomb.textContent = "💣";
+bomb.style.position = "absolute";
+bomb.style.top = Math.floor(200 * Math.random()) + "px";
+bomb.style.left = Math.floor(200 * Math.random()) + "px";
+bomb.style.fontSize = "64px";
+document.body.appendChild(bomb);
+//We've created a <div> element that contains a bomb emoji as it's text content
+//It then sets the position propery to absolute which allows us to set
+//the position of the bomb relative to the left side and top of the page
+//using the Left and Top propeties respectively
+//We then set these properties to a random number
+//We use the appendChild to place the bomb on the page
+bomb.addEventListener("mouseover", (e) => {
+  document.body.style.background = "red";
+  document.body.innerHTML = "<h1>BOOOOM!!!</h1>";
+});
