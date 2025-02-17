@@ -2730,11 +2730,25 @@ console.log(
 //Click-Events
 //In JS, we can atach an event listener to an element of the page by
 //calling the addEventListener() method on the element
-document.addEventListener("click", bang);
+// document.addEventListener("click", bang);
 //The event listener acccepts two arguments:
 //-the first is the event to listen for("click")
 //-the second is the event handler(a callback function)
-function bang() {
-  document.body.style.background = "yellow";
-  document.body.innerHTML = `<h1>BANG!!</h1>`;
-}
+// function bang() {
+//   document.body.style.background = "yellow";
+//   document.body.innerHTML = `<h1>BANG!!</h1>`;
+// }
+
+//Clicking-Events
+//The event listeners that are listening out for clicks on the whole page
+//are called global event listeners
+//We can also attach event listeners to specific elements on the page
+//Let's create a button that changes the page background when it's clicked
+const redButton = document.getElementById("red");
+redButton.addEventListener(
+  "click",
+  (e) => (document.body.style.background = "red")
+);
+//This is a listening click event, but the second parameter, insted of being
+//the name of the function, is a anonymous function that's directed directly
+//inside the event listener
