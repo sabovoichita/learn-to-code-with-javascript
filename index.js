@@ -2782,12 +2782,12 @@ greenButton.addEventListener(
 //</form>
 //<div id="hello"></div>
 //Submitting-A-Form
-const form = document.forms.myForm;
-const hello = document.getElementById("hello");
-form.addEventListener("submit", sayHello);
-function sayHello(e) {
-  hello.textContent = `Hello, ${form.myName.value}`;
-}
+// const form = document.forms.myForm;
+// const hello = document.getElementById("hello");
+// form.addEventListener("submit", sayHello);
+// function sayHello(e) {
+//   hello.textContent = `Hello, ${form.myName.value}`;
+// }
 //This function updates the textContent property of the hello div with ``
 //Inside the ``(template literal) there's reference to form.myName.value
 //This returns a string that matches what's inside the <input> field,
@@ -2798,3 +2798,18 @@ function sayHello(e) {
 //using their name attribute
 // !!Forms have an action attribute that can be used to specify the page
 //you want to submit them on the server
+
+//Preventing-Default-Behavior
+//- Some elements on a page have default behaviours that are built into the browser
+//- Forms get sent to server by default when they're submitted.
+//- The method preventDefault will stop any default behaviour from happening
+///when an event occurs.
+//- We can use it in sayHello function to stop the form from being submitted
+//to the server.
+const form = document.forms.myForm;
+const hello = document.getElementById("hello");
+form.addEventListener("submit", sayHello);
+function sayHello(e) {
+  e.preventDefault();
+  hello.textContent = `Hello, ${form.myName.value}`;
+}
