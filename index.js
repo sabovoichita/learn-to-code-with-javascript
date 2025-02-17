@@ -2715,15 +2715,26 @@ console.log(
 //occured, the event listener sits in the background until the event happens
 //and then lets the program know so it can respond immediately.
 //This allows the program to continue with other tasks while waiting for
-//the event to happen 
+//the event to happen
 //Event Handlers
 //An event handler is a set of instructions on what to do when an event
 //happens.
 //In programming, an event handler usually takes a form of a callback function
 //that's called when the event listener is triggered.
 //For ex: you might want a pop-up notification to appear when a user clicks
-//a button. This would be achieved by setting an event listener that's 
-//triggered when the user clicks the button. 
+//a button. This would be achieved by setting an event listener that's
+//triggered when the user clicks the button.
 //The event listener would then call function that displays the notification.
 //The function would be called every time the event listener is triggered.
 
+//Click-Events
+//In JS, we can atach an event listener to an element of the page by
+//calling the addEventListener() method on the element
+document.addEventListener("click", bang);
+//The event listener acccepts two arguments:
+//-the first is the event to listen for("click")
+//-the second is the event handler(a callback function)
+function bang() {
+  document.body.style.background = "yellow";
+  document.body.innerHTML = `<h1>BANG!!</h1>`;
+}
