@@ -2767,3 +2767,34 @@ greenButton.addEventListener(
 //- The target property points to the element that triggered the event
 //when it was clicked, so the greenButton in this case
 //- The textContent property refers to the text inside this element = "Green"
+
+//Forms
+//Forms are a very common method of interacting with a web page
+//When a form is submitted, it's sent to the server where the information
+//id processed using a "back-end" language such as Python or Ruby
+//It's possible to stop the form from being sent to the server and
+//to instead use JavaScript on the "font end" to process the information
+//HTML code:
+// <p>Enter your name in the box below</p>
+//<form name="myForm">
+//<input type="text" name="myName" />
+//<button type="submit">Submit</button>
+//</form>
+//<div id="hello"></div>
+//Submitting-A-Form
+const form = document.forms.myForm;
+const hello = document.getElementById("hello");
+form.addEventListener("submit", sayHello);
+function sayHello(e) {
+  hello.textContent = `Hello, ${form.myName.value}`;
+}
+//This function updates the textContent property of the hello div with ``
+//Inside the ``(template literal) there's reference to form.myName.value
+//This returns a string that matches what's inside the <input> field,
+//because the <input> tag has a name attribute of myName.
+//So it you write "JS" inside the input box, the hello div will contain
+//the following message "Hello, JS!"
+// !!Any elements inside a form can be referenced as a property of the form
+//using their name attribute
+// !!Forms have an action attribute that can be used to specify the page
+//you want to submit them on the server
