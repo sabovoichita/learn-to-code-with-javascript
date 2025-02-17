@@ -2752,3 +2752,18 @@ redButton.addEventListener(
 //This is a listening click event, but the second parameter, insted of being
 //the name of the function, is a anonymous function that's directed directly
 //inside the event listener
+
+// The-Event-Object
+//- Whenever an event happens, the function that's called is automatically
+//passed an event object as a parameter
+//- The event object contains a large amount of information about the event
+//stored as properties
+//- The target property points to the element that's triggered the event
+const greenButton = document.getElementById("green");
+greenButton.addEventListener(
+  "click",
+  (e) => (document.body.style.background = e.target.textContent)
+);
+//- The target property points to the element that triggered the event
+//when it was clicked, so the greenButton in this case
+//- The textContent property refers to the text inside this element = "Green"
