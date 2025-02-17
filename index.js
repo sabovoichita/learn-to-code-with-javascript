@@ -2853,3 +2853,22 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //it will be by the time the keyup event fires.
 //- This is important because the function inserts whatever's in the input
 //field into the output div by overwriting the textContent property
+
+//Mouse-Events
+//Mouse-Move
+//Every time the mouse pointer moves, the mousemove event fires
+//Let's write some code that tells us the coordinates of the mouse
+// pointer whenever it moves:
+document.addEventListener("mousemove", showCoords);
+function showCoords(event) {
+  document.body.textContent = `(${event.x},${event.y})`;
+}
+//This function updates the textContent property of the document body
+//to contain the coordinates of the mouse pointer. The x and y properties
+//of the event object tell us the horizontal and vertical position of the
+//mouse pointer respectively. We can use a template literal to insert these
+//values into the text content of the document's body every time the mouse
+//moves.
+//Try moving the mouse pointer on the page and you should see its exact
+//coordinates displayed in the top left corner
+//(162, 48);
