@@ -2827,13 +2827,29 @@ function sayHello(e) {
 //  the keyboard layout settings, and locale settings(such as current keys)
 //For ex: if you pressed the spacebar, the code property will be Space, but
 //the key property will be (empty space which is what it produces)
-document.addEventListener(
-  "keydown",
-  (e) =>
-    (document.body.innerHTML = `<div>e.code: ${e.code}</div><div>e.key: ${e.key}</div>`)
-);
+// document.addEventListener(
+//   "keydown",
+//   (e) =>
+//     (document.body.innerHTML = `<div>e.code: ${e.code}</div><div>e.key: ${e.key}</div>`)
+// );
 //- Every time a key is pressed in the document and update the innerHTML
 //property of the page body to show the value of e.code and e.key.
 //- When pressing down shift key =>
 // e.code:ShiftLeft
 //e.key:Shift
+
+//Live-Input
+//- Add to HTML section:
+// <input id="input" />
+//<div id="output"></div>
+const input = document.getElementById("input");
+const output = document.getElementById("output");
+//- Let's attach an event listener to the input element:
+input.addEventListener("keyup", (e) => (output.textContent = input.value));
+//- This contains an anonymous function that will be called when the keyup
+//event is fired. The reason for using keyup instead of keydown is because
+//the character on the key appears inside the input field between these
+//two events, so when the keydown fires, the character isn't there, but
+//it will be by the time the keyup event fires.
+//- This is important because the function inserts whatever's in the input
+//field into the output div by overwriting the textContent property
