@@ -3126,3 +3126,27 @@ function addTask(e) {
 function removeTask(e) {
   e.target.parentNode.removeChild(e.target);
 }
+
+// Going-Loopy-Over-Arrays
+//Spreading-Strings(...)
+//- The spread operator can also be used to spread out all the characters
+// of a string inside an array
+console.log([..."Hello"]);
+console.log([..."Hello"].reverse().join(""));
+//- The code above uses chaining, which is the process of applying
+//one method after another in a chain of method calls.
+//- Each subsequent method is called on the return value of the previous
+//method.
+//- Let's break it down:
+//- The string starts as this:
+//"Hello"
+//- Then the spread operator is applied and returns the following array:
+[..."Hello"];
+console.log([..."Hello"]); // ['H', 'e', 'l', 'l', 'o']
+//- Then the reverse() method is called to return the following array:
+[..."Hello"].reverse();
+console.log([..."Hello"].reverse()); //['o', 'l', 'l', 'e', 'H']
+//- Finally, the join() method is called on the array to change it
+//  back to a string
+[..."Hello"].reverse().join();
+console.log([..."Hello"].reverse().join("")); //olleH
