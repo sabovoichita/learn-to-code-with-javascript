@@ -3332,9 +3332,26 @@ const people = [alphie, betty, gemma, del];
 //true if every item in the array matches the criteria defined in the
 //callback
 //Ex: Check if all the words in the array are longer than a single character
+// console.log(
+//   ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].every(
+//     (word) => word.length > 1
+//   )
+// );
+//false
+
+//Some
+//- The some() method is very similar to the every() method
+//- It also iterates over each item in an array until a given condition
+//defined in the callback returns true.
+//- Once this happens, the iteration stops and the method returns true.
+//- If it reaches the end of the array without any of the items
+// returning true, it returns false.
+//- It's a useful way to find out if at least one item in the array fits
+//a certain criteria.
+//Ex: this checks if any if the words are longer than 7 characters:
 console.log(
-  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].every(
-    (word) => word.length > 1
+  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].some(
+    (word) => word.length > 7
   )
 );
-//false
+//true
