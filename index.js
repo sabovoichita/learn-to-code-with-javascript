@@ -2965,19 +2965,50 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //</form>
 //<ul id="list"></ul>
 //- This gives us a reference to the form and that empty <ul> element
-const list = document.getElementById("list");
-const form1 = document.forms.addTask;
+// const list = document.getElementById("list");
+// const form1 = document.forms.addTask;
 //This attaches an event listener to the form
 //This will call the addTask function when the form is submitted
-form1.addEventListener("submit", addTask);
 //- The first thing this function does is to stop the form from being submitted
 //-We create a new list item <li> that's assigned to the variable task
 //- Next, we make the textContent property equal the text that was entered
 //into the form field, which is stored in form.newTask.value
 //- Last, we use the appendChild() method to add this new element to the bottom
-function addTask(e){
+// function addTask(e) {
+//   e.preventDefault();
+//   const task = document.createElement("li");
+//   task.textContent = form1.newTask.value;
+//   list.appendChild(task);
+// }
+
+//Event-Delegation
+//<form name="addTask">
+//<input type="text" name="newTask" />
+//<button type="submit">ADD</button>
+//</form>
+//<ul id="list"></ul>
+const list = document.getElementById("list");
+const form1 = document.forms.addTask;
+form1.addEventListener("submit", addTask);
+function addTask(e) {
   e.preventDefault();
   const task = document.createElement("li");
   task.textContent = form1.newTask.value;
-  list.appendChild(task)
+  list.appendChild(task);
+}
+//-Let's strike the item out when they're clicked on.
+//-The DRY way is to use event delegation.
+//-The event listener is added to the list, rather than the individual list items.
+//-Then we use the target property of the event object to identify the actual
+//element that was clicked on.
+list.addEventListener("click", strikeTask);
+// function strikeTask(e) {
+//   // alert(e.target.textContent);
+// }
+//-This is the strikeTask function that fires when the list is clicked on.
+//-It includes an alert to show the text content of the element that was clicked
+//on and identified using event.target.
+//-Try using it... once it's working, we'll update the code in the function.
+function strikeTask(e) {
+  e.target.classList.toggle("complete");
 }
