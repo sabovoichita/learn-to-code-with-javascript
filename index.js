@@ -3302,7 +3302,27 @@ const del = {
   hat: false,
 };
 const people = [alphie, betty, gemma, del];
-console.log(people.filter((person) => person.glasses && person.hat));
+// console.log(people.filter((person) => person.glasses && person.hat));
 //{name: 'Betty', glasses: true, hat: true}
-console.log(people.filter((person) => !person.glasses && !person.hat));
+// console.log(people.filter((person) => !person.glasses && !person.hat));
 //{name: 'Alphie', glasses: false, hat: false}
+
+//Find
+//- The find() method works in a similar way to the filter() method, but
+//it returns the first value that matches the criteria defined in the callback.
+//- This returns the first number that's greater than 2:
+//console.log([1, 2, 3, 4].find((x) => x > 2)); //3
+//- This returns the first programing language that begins with letter "J":
+console.log(
+  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].find((word) =>
+    word.startsWith("J")
+  )
+);
+//"JavaScript"
+//- This finds the first person who wears glassses, but not a hat:
+console.log(people.find((person) => person.glasses && !person.hat).name);
+//👴Del
+//!Notice that, because the find() method returns the first matching
+//element- which in this case is an object- we can chain the property
+//of name on the end so that only the value of the property is returned
+//rather than the whole object.
