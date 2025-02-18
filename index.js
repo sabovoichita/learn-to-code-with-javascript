@@ -3131,8 +3131,8 @@ function removeTask(e) {
 //Spreading-Strings(...)
 //- The spread operator can also be used to spread out all the characters
 // of a string inside an array
-console.log([..."Hello"]);
-console.log([..."Hello"].reverse().join(""));
+// console.log([..."Hello"]);
+// console.log([..."Hello"].reverse().join(""));
 //- The code above uses chaining, which is the process of applying
 //one method after another in a chain of method calls.
 //- Each subsequent method is called on the return value of the previous
@@ -3141,12 +3141,35 @@ console.log([..."Hello"].reverse().join(""));
 //- The string starts as this:
 //"Hello"
 //- Then the spread operator is applied and returns the following array:
-[..."Hello"];
-console.log([..."Hello"]); // ['H', 'e', 'l', 'l', 'o']
+// [..."Hello"];
+// console.log([..."Hello"]); // ['H', 'e', 'l', 'l', 'o']
 //- Then the reverse() method is called to return the following array:
-[..."Hello"].reverse();
-console.log([..."Hello"].reverse()); //['o', 'l', 'l', 'e', 'H']
+// [..."Hello"].reverse();
+// console.log([..."Hello"].reverse()); //['o', 'l', 'l', 'e', 'H']
 //- Finally, the join() method is called on the array to change it
 //  back to a string
-[..."Hello"].reverse().join();
-console.log([..."Hello"].reverse().join("")); //olleH
+// [..."Hello"].reverse().join();
+// console.log([..."Hello"].reverse().join("")); //olleH
+
+//Array-Iteration-Methods
+//- Array iteration Methods are methods that allow you to loop over
+//an array and apply an operation on every item in the array.
+//- Every application of the operation to an item in the array is called
+//iteration.
+//forEach
+//- The forEach() method iterates over every item in an array and calls a
+//callback function on every iteration.
+//- The callback function takes three parameters:
+//    -the value of the current item in the array
+//    -the index of the curret item in the array
+//    -a reference of the array itself
+//- If the method doesn't use the index or array references, they don't
+//need to be specified.
+["🍏", "🍌", "🥕"].forEach((item, index, array) =>
+  console.log(
+    `Item at position ${index} is ${item} (there are ${array.length} items in total).`
+  )
+);
+//Item at position 0 is 🍏 (there are 3 items in total).
+//Item at position 1 is 🍌 (there are 3 items in total).
+//Item at position 2 is 🥕 (there are 3 items in total).
