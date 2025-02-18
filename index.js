@@ -3246,11 +3246,36 @@ suits.forEach((suit) =>
 //  -a reference of the array itself;
 //- Most of the time, only the first two parameters are used
 //Ex: add up all the numbers in the array and return the total:
-console.log([1, 2, 3].reduce((acc, value) => acc + value)); //6
+// console.log([1, 2, 3].reduce((acc, value) => acc + value)); //6
 //Let's multiply all the numbers together:
-console.log([1, 2, 3].reduce((acc, value) => acc * value)); //6
+// console.log([1, 2, 3].reduce((acc, value) => acc * value)); //6
 //The reduce() method also accepts an optional second argument
 //that comes after the callback and allows us to set the initial
 //value of the accumulator
 //Ex: add all the numbers in the array, then add 10 to the result:
-console.log([1, 2, 3].reduce((acc, value) => acc + value, 10)); //16
+// console.log([1, 2, 3].reduce((acc, value) => acc + value, 10)); //16
+
+// Filter
+// - The filter() method tests each item in the array to see if they match
+// certain conditions defined in a callback function.
+// - Any item that return a truthy value in the callback are then returned
+// as a new array
+// - Ex: we can filter an array of numbers for numbers bigger than 2:
+// 
+ console.log([1, 2, 3, 4].filter((x) => x > 2)); //[3, 4]
+// - In each iteratioon, the callback checks to see if the item in the array,
+// represented by the parameter x, is greater than 2.
+// - If it is, the callback returns true and the value is left in the new
+// array that's returned.
+// - The filter() method provides a useful way of finding all the truthy
+// values from an array:
+// 
+ console.log([0, 1, "0", false, true, "hello"].filter(Boolean));
+// [1, '0', true, 'hello']
+// - Let's find all the falsy values:
+  // 
+ console.log([0, 1, "0", false, true, "hello"].filter((x) => !x));
+// [0, false]
+// - This uses the not operator(!) to return the complement of a value's
+// Boolean representation. This means that any falsy value will return
+// true and be returned by the filter.
