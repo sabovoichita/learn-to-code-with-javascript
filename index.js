@@ -3313,16 +3313,28 @@ const people = [alphie, betty, gemma, del];
 //- This returns the first number that's greater than 2:
 //console.log([1, 2, 3, 4].find((x) => x > 2)); //3
 //- This returns the first programing language that begins with letter "J":
-console.log(
-  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].find((word) =>
-    word.startsWith("J")
-  )
-);
+// console.log(
+//   ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].find((word) =>
+//     word.startsWith("J")
+//   )
+// );
 //"JavaScript"
 //- This finds the first person who wears glassses, but not a hat:
-console.log(people.find((person) => person.glasses && !person.hat).name);
+// console.log(people.find((person) => person.glasses && !person.hat).name);
 //👴Del
 //!Notice that, because the find() method returns the first matching
 //element- which in this case is an object- we can chain the property
 //of name on the end so that only the value of the property is returned
 //rather than the whole object.
+
+//Every
+//- The every() method iterates over each item in the array and returns
+//true if every item in the array matches the criteria defined in the
+//callback
+//Ex: Check if all the words in the array are longer than a single character
+console.log(
+  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].every(
+    (word) => word.length > 1
+  )
+);
+//false
