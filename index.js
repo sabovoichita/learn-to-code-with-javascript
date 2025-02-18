@@ -3371,9 +3371,9 @@ const rectangle = {
 };
 //We can loop through all the properties of an object using a for-in loop
 //that iterates over every key in the object.
-for (const prop in rectangle) {
-  console.log(`${prop}: ${rectangle[prop]}`);
-}
+// for (const prop in rectangle) {
+//   console.log(`${prop}: ${rectangle[prop]}`);
+// }
 //height: 4
 //length: 5
 //perimeter: perimeter() {
@@ -3385,3 +3385,37 @@ for (const prop in rectangle) {
 //The variable prop is used to reference each property name in
 //each step in the iteration. We can then use rectangle[prop] to look
 //up the value of that property
+
+//Keys-And-Values
+//- The object.keys() method returns an array of all the keys of the
+//object that's provided as an argument:
+console.log(Object.keys(rectangle));
+//['height', 'length', 'perimeter', 'area']
+//- The key of each property is listed as a string in the array
+//The object.values() method returns an array of all the values of
+//each property
+console.log(Object.values(rectangle)); //[4, 5, ƒ, ƒ]
+//Object.entries() method returns an array of key-value pairs
+//These key-value pairs are returned as sub-arrays inside the array:
+console.log(Object.entries(rectangle));
+// [Array(2), Array(2), Array(2), Array(2)]
+//We could use forEach() to log the properties adn their values to console
+console.log(
+  Object.entries(rectangle).forEach((subArray) =>
+    console.log(`${subArray[0]}:${subArray[1]}`)
+  )
+);
+// height:4
+// length:5
+//  perimeter:perimeter() {
+//     return 2 * (this.height + this.length);
+//   }
+// area:area() {
+//     return this.length * this.height;
+//   }
+//OR using destructuring:
+console.log(
+  Object.entries(rectangle).forEach(([prop, value]) =>
+    console.log(`${prop}:${value}`)
+  )
+);
