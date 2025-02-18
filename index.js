@@ -3189,7 +3189,7 @@ const deck = []; //will hold the full deck of cards
 suits.forEach((suit) =>
   values.forEach((value) => deck.push(`${value} of ${suit}`))
 );
-console.log(deck);
+// console.log(deck);
 //['Ace of ♠', '2 of ♠', '3 of ♠', '4 of ♠', '5 of ♠', '6 of ♠',
 //'7 of ♠', '8 of ♠', '9 of ♠', '10 of ♠', 'Jack of ♠', 'Queen of ♠',
 //'King of ♠', 'Ace of ♦', '2 of ♦', '3 of ♦', '4 of ♦', '5 of ♦',
@@ -3199,3 +3199,35 @@ console.log(deck);
 //'Jack of ♣', 'Queen of ♣', 'King of ♣', 'Ace of ♥', '2 of ♥',
 //'3 of ♥', '4 of ♥', '5 of ♥', '6 of ♥', '7 of ♥', '8 of ♥', '9 of ♥',
 //'10 of ♥', 'Jack of ♥', 'Queen of ♥', 'King of ♥']
+
+//Map
+//- The map() method also iterates over an array and uses a callback
+//function as a parameter that's called on each item in the array.
+//In contrast to forEach, map returns a new array that replaces each value
+//with the return value of the callback function.
+//- The callback to the map() method has three parameters as the forEach():
+//    -the value pf the current item in the array
+//    -the index of the current item in the array
+//    -a reference to the array itself
+//Add this to console:
+console.log(["🍎", "🍌", "🥕"].map((value, index, array) => "😀"));
+//['😀', '😀', '😀']
+console.log([1, 2, 3].map((x) => "😁")); //['😁', '😁', '😁']
+//The return value can be based on hte arguments provided to the callback
+//Ex: every number in the array is mapped to the square of itself in a new array
+console.log([1, 2, 3].map((n) => n * n)); //[1, 4, 9]
+//You can use any name for the parameters
+//The following takes an array of items and then returns each item inside <li>
+console.log(["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`));
+//['<li>Apple</li>', '<li>Banana</li>', '<li>Carrot</li>']
+//- We can then chain the join() method with an empty string argument
+//to the end to concatenate all the items into a single string of HTML:
+console.log(
+  ["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`).join("")
+);
+//<li>Apple</li><li>Banana</li><li>Carrot</li>
+//This can be inserted into a <ul> element to make an unordered list
+const list5 = document.getElementById("list5");
+list5.innerHTML = ["Apple", "Banana", "Carrot"]
+  .map((item) => `<li>${item}</li>`)
+  .join("");
