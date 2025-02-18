@@ -3210,24 +3210,47 @@ suits.forEach((suit) =>
 //    -the index of the current item in the array
 //    -a reference to the array itself
 //Add this to console:
-console.log(["🍎", "🍌", "🥕"].map((value, index, array) => "😀"));
+// console.log(["🍎", "🍌", "🥕"].map((value, index, array) => "😀"));
 //['😀', '😀', '😀']
-console.log([1, 2, 3].map((x) => "😁")); //['😁', '😁', '😁']
+// console.log([1, 2, 3].map((x) => "😁")); //['😁', '😁', '😁']
 //The return value can be based on hte arguments provided to the callback
 //Ex: every number in the array is mapped to the square of itself in a new array
-console.log([1, 2, 3].map((n) => n * n)); //[1, 4, 9]
+// console.log([1, 2, 3].map((n) => n * n)); //[1, 4, 9]
 //You can use any name for the parameters
 //The following takes an array of items and then returns each item inside <li>
-console.log(["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`));
+// console.log(["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`));
 //['<li>Apple</li>', '<li>Banana</li>', '<li>Carrot</li>']
 //- We can then chain the join() method with an empty string argument
 //to the end to concatenate all the items into a single string of HTML:
-console.log(
-  ["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`).join("")
-);
+// console.log(
+// ["Apple", "Banana", "Carrot"].map((item) => `<li>${item}</li>`).join("")
+// );
 //<li>Apple</li><li>Banana</li><li>Carrot</li>
 //This can be inserted into a <ul> element to make an unordered list
-const list5 = document.getElementById("list5");
-list5.innerHTML = ["Apple", "Banana", "Carrot"]
-  .map((item) => `<li>${item}</li>`)
-  .join("");
+// const list5 = document.getElementById("list5");
+// list5.innerHTML = ["Apple", "Banana", "Carrot"]
+// .map((item) => `<li>${item}</li>`)
+// .join("");
+
+//Reduce
+//- The reduce() method is another method that iterates over each value of an
+//array, calling a callback function each time.
+//- The main difference is that, instead of returning an array, it combines
+//each result from the callback into a single value
+//- The callback to the reduce() method describes how to combine each value
+//of the array to produce a cumulative running total and has 4 parameters:
+//  -an accumatator that stores the running total.The first final value
+//    will be returned by the method;
+//  -the value of the current item in the array;
+//  -the index of the current item in the array;
+//  -a reference of the array itself;
+//- Most of the time, only the first two parameters are used
+//Ex: add up all the numbers in the array and return the total:
+console.log([1, 2, 3].reduce((acc, value) => acc + value)); //6
+//Let's multiply all the numbers together:
+console.log([1, 2, 3].reduce((acc, value) => acc * value)); //6
+//The reduce() method also accepts an optional second argument
+//that comes after the callback and allows us to set the initial
+//value of the accumulator
+//Ex: add all the numbers in the array, then add 10 to the result:
+console.log([1, 2, 3].reduce((acc, value) => acc + value, 10)); //16
