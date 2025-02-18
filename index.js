@@ -3014,7 +3014,7 @@ function strikeTask(e) {
 }
 
 //Challenge-11.1
-//- The drag-and-drop example 
+//- The drag-and-drop example
 //HTML:   <div id='star'>⭐️</div>
 //		<div id='heart'>❤️</div>
 //CSS: body{
@@ -3033,12 +3033,13 @@ function strikeTask(e) {
 //  left:60px;
 //  top: 60px;
 //}
-function drag(el) { // set to position absolute
+function drag(el) {
+  // set to position absolute
   el.style.position = "absolute";
-// these 2 var need to be available to all the event handler func so need declaring outside their scope
+  // these 2 var need to be available to all the event handler func so need declaring outside their scope
   let offsetX, offsetY; // start the drag and drop
   const start = (e) => {
- // calculate the offset between the mouse position when the click happened and the position of the element
+    // calculate the offset between the mouse position when the click happened and the position of the element
     offsetX = e.pageX - parseInt(getComputedStyle(el).left);
     offsetY = e.pageY - parseInt(getComputedStyle(el).top);
     // add mouse and touch event listeners when the dragging starts
@@ -3046,21 +3047,52 @@ function drag(el) { // set to position absolute
     addEventListener("touchend", stop);
     addEventListener("mousemove", move);
     addEventListener("mouseup", stop);
-  };// set the position of element to be the same as the mouse, taking account of the offset
+  }; // set the position of element to be the same as the mouse, taking account of the offset
   const move = (e) => {
     el.style.left = `${e.pageX - offsetX}px`;
     el.style.top = `${e.pageY - offsetY}px`;
-  };// remove mouse and touch event listeners when the dragging stops
-  const stop = () => { 
+  }; // remove mouse and touch event listeners when the dragging stops
+  const stop = () => {
     removeEventListener("touchmove", move);
     removeEventListener("touchend", stop);
     removeEventListener("mousemove", move);
     removeEventListener("mouseup", stop);
-  };// add event listener to initiate the drag and drop when element is clicked on or touched
+  }; // add event listener to initiate the drag and drop when element is clicked on or touched
   el.addEventListener("touchstart", start);
   el.addEventListener("mousedown", start);
-}// A couple of elements to test 
+} // A couple of elements to test
 const star = document.querySelector("#star");
 drag(star);
 const heart = document.querySelector("#heart");
 drag(heart);
+
+//Challenge-11.2
+//Can you update the simple to-do list code so that the add function clears the input box
+//and gives it focus after an item has been added, insted of the text
+//just remaining there?
+// HTML:
+//<form name='addItem'>
+//  <input type='text' name='item'>
+//  <button type='submit'>ADD</button>
+//</form>
+//<ul id='list1'></ul>
+//CSS: .complete {
+//  text-decoration: line-through;
+//}
+const list1 = document.getElementById("list1");
+const form2 = document.forms.addItem;
+//Add items
+form2.addEventListener("submit", add);
+function add(e) {
+  e.preventDefault();
+  const item = document.createElement("li");
+  item.innerHTML = form2.item.value;
+  list1.appendChild(item);
+  form2.item.value = "";
+  form2.item.focus();
+}
+//Cross items off list
+list1.addEventListener("click", complete);
+function complete(e) {
+  e.target.classList.toggle("complete");
+}
