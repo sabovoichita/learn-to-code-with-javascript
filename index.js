@@ -3261,21 +3261,48 @@ suits.forEach((suit) =>
 // - Any item that return a truthy value in the callback are then returned
 // as a new array
 // - Ex: we can filter an array of numbers for numbers bigger than 2:
-// 
- console.log([1, 2, 3, 4].filter((x) => x > 2)); //[3, 4]
+//
+//  console.log([1, 2, 3, 4].filter((x) => x > 2)); //[3, 4]
 // - In each iteratioon, the callback checks to see if the item in the array,
 // represented by the parameter x, is greater than 2.
 // - If it is, the callback returns true and the value is left in the new
 // array that's returned.
 // - The filter() method provides a useful way of finding all the truthy
 // values from an array:
-// 
- console.log([0, 1, "0", false, true, "hello"].filter(Boolean));
+//
+//  console.log([0, 1, "0", false, true, "hello"].filter(Boolean));
 // [1, '0', true, 'hello']
 // - Let's find all the falsy values:
-  // 
- console.log([0, 1, "0", false, true, "hello"].filter((x) => !x));
+//
+//  console.log([0, 1, "0", false, true, "hello"].filter((x) => !x));
 // [0, false]
 // - This uses the not operator(!) to return the complement of a value's
 // Boolean representation. This means that any falsy value will return
 // true and be returned by the filter.
+
+//Guess-Who-Filter
+const alphie = {
+  name: "🧑Alphie",
+  glasses: false,
+  hat: false,
+};
+const betty = {
+  name: "🤶Betty",
+  glasses: true,
+  hat: true,
+};
+const gemma = {
+  name: "👩‍🍳Gemma",
+  glasses: false,
+  hat: true,
+};
+const del = {
+  name: "👴Del",
+  glasses: true,
+  hat: false,
+};
+const people = [alphie, betty, gemma, del];
+console.log(people.filter((person) => person.glasses && person.hat));
+//{name: 'Betty', glasses: true, hat: true}
+console.log(people.filter((person) => !person.glasses && !person.hat));
+//{name: 'Alphie', glasses: false, hat: false}
