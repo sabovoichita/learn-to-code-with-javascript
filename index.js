@@ -3096,3 +3096,33 @@ list1.addEventListener("click", complete);
 function complete(e) {
   e.target.classList.toggle("complete");
 }
+
+//Challenge-11.3
+//Instead of crossing out the items in the simple to-do list, can you
+//change the functionality so that it removes the items when they're
+//clickd on? use remove()
+//HTML: <form name='addItem4'>
+//        <input type='text' name='item'>
+//       <button type='submit'>ADD</button>
+//    </form>
+//<ul id='list4'></ul>
+//CSS: #list {
+//      cursor: pointer;
+//      }
+const list4 = document.getElementById("list4");
+const form4 = document.forms.addItem4;
+//Event Listeners
+form4.addEventListener("submit", addTask);
+list4.addEventListener("click", removeTask);
+//Functions
+function addTask(e) {
+  e.preventDefault();
+  const item = document.createElement("li");
+  item.innerHTML = form4.item.value;
+  list4.appendChild(item);
+  form4.item.value = "";
+  form4.item.focus();
+}
+function removeTask(e) {
+  e.target.parentNode.removeChild(e.target);
+}
