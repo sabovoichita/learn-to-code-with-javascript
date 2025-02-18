@@ -3165,11 +3165,37 @@ function removeTask(e) {
 //    -a reference of the array itself
 //- If the method doesn't use the index or array references, they don't
 //need to be specified.
-["🍏", "🍌", "🥕"].forEach((item, index, array) =>
-  console.log(
-    `Item at position ${index} is ${item} (there are ${array.length} items in total).`
-  )
-);
+// ["🍏", "🍌", "🥕"].forEach((item, index, array) =>
+//   console.log(
+//     `Item at position ${index} is ${item} (there are ${array.length} items in total).`
+//   )
+// );
 //Item at position 0 is 🍏 (there are 3 items in total).
 //Item at position 1 is 🍌 (there are 3 items in total).
 //Item at position 2 is 🥕 (there are 3 items in total).
+
+//An-Array-Of-Cards
+//- We can use the forEach() method to quickly create an array that
+//represents a deck of cards.
+//- We'll do it by iterating over an array that represents the suits,
+//and another that represents the value of each card in the suit.
+//Open up a console and declare the following:
+const suits = ["♠", "♦", "♣", "♥"];
+const values = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
+const deck = []; //will hold the full deck of cards
+//- Now that er have these set up, we can iterate over the suits array
+//and the values array to combine the elements into a aingle card
+//that can be placed into the deck array using the push() method
+suits.forEach((suit) =>
+  values.forEach((value) => deck.push(`${value} of ${suit}`))
+);
+console.log(deck);
+//['Ace of ♠', '2 of ♠', '3 of ♠', '4 of ♠', '5 of ♠', '6 of ♠',
+//'7 of ♠', '8 of ♠', '9 of ♠', '10 of ♠', 'Jack of ♠', 'Queen of ♠',
+//'King of ♠', 'Ace of ♦', '2 of ♦', '3 of ♦', '4 of ♦', '5 of ♦',
+//'6 of ♦', '7 of ♦', '8 of ♦', '9 of ♦', '10 of ♦', 'Jack of ♦',
+//'Queen of ♦', 'King of ♦', 'Ace of ♣', '2 of ♣', '3 of ♣', '4 of ♣',
+//'5 of ♣', '6 of ♣', '7 of ♣', '8 of ♣', '9 of ♣', '10 of ♣',
+//'Jack of ♣', 'Queen of ♣', 'King of ♣', 'Ace of ♥', '2 of ♥',
+//'3 of ♥', '4 of ♥', '5 of ♥', '6 of ♥', '7 of ♥', '8 of ♥', '9 of ♥',
+//'10 of ♥', 'Jack of ♥', 'Queen of ♥', 'King of ♥']
