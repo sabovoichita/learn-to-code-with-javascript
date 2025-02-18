@@ -2931,16 +2931,16 @@ input.addEventListener("keyup", (e) => (output.textContent = input.value));
 //                  font-size: 64px;
 //                  position: absolute;
 //                }
-const star = document.querySelector("star");
-star.addEventListener("mousedown", start);
-star.addEventListener("mouseup", stop);
-function start(e) {
-  document.addEventListener("mousemove", move);
-}
-function move(e) {
-  star.style.left = `${e.x}px`;
-  star.style.top = `${e.y}px`;
-}
+// const star = document.querySelector("star");
+// star.addEventListener("mousedown", start);
+// star.addEventListener("mouseup", stop);
+// function start(e) {
+//   document.addEventListener("mousemove", move);
+// }
+// function move(e) {
+//   star.style.left = `${e.x}px`;
+//   star.style.top = `${e.y}px`;
+// }
 //An event listener can be removed using the removeEventListener() method.
 //This will remove an event listener that matches the same parameters.
 // !!You shouldn't use anonymous functions as an argument to addEventListener
@@ -2948,11 +2948,36 @@ function move(e) {
 //This is because there needs to be a reference to the same function name
 //in the arguments of the removeEventListener
 
-document.removeEventListener("mousemove", move);
-function stop() {
-  document.removeEventListener("mousemove", move);
-}
+// document.removeEventListener("mousemove", move);
+// function stop() {
+//   document.removeEventListener("mousemove", move);
+// }
 //This will remove the event listener, so the position of the star will stop
 //matching the position of the mouse and so stop moving.
 //If the user clicks on the star again, the event listener will be added
 //once more and the dragging will start again
+
+//Simple-To-Do-List
+//- There is a form with a single input box and submit button + empty <ul>
+//<form name="addTask">
+//<input type="text" name="newTask" />
+//<button type="submit">ADD</button>
+//</form>
+//<ul id="list"></ul>
+//- This gives us a reference to the form and that empty <ul> element
+const list = document.getElementById("list");
+const form1 = document.forms.addTask;
+//This attaches an event listener to the form
+//This will call the addTask function when the form is submitted
+form1.addEventListener("submit", addTask);
+//- The first thing this function does is to stop the form from being submitted
+//-We create a new list item <li> that's assigned to the variable task
+//- Next, we make the textContent property equal the text that was entered
+//into the form field, which is stored in form.newTask.value
+//- Last, we use the appendChild() method to add this new element to the bottom
+function addTask(e){
+  e.preventDefault();
+  const task = document.createElement("li");
+  task.textContent = form1.newTask.value;
+  list.appendChild(task)
+}
