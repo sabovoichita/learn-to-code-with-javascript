@@ -3389,22 +3389,22 @@ const rectangle = {
 //Keys-And-Values
 //- The object.keys() method returns an array of all the keys of the
 //object that's provided as an argument:
-console.log(Object.keys(rectangle));
+// console.log(Object.keys(rectangle));
 //['height', 'length', 'perimeter', 'area']
 //- The key of each property is listed as a string in the array
 //The object.values() method returns an array of all the values of
 //each property
-console.log(Object.values(rectangle)); //[4, 5, ƒ, ƒ]
+// console.log(Object.values(rectangle)); //[4, 5, ƒ, ƒ]
 //Object.entries() method returns an array of key-value pairs
 //These key-value pairs are returned as sub-arrays inside the array:
-console.log(Object.entries(rectangle));
+// console.log(Object.entries(rectangle));
 // [Array(2), Array(2), Array(2), Array(2)]
 //We could use forEach() to log the properties adn their values to console
-console.log(
-  Object.entries(rectangle).forEach((subArray) =>
-    console.log(`${subArray[0]}:${subArray[1]}`)
-  )
-);
+// console.log(
+//   Object.entries(rectangle).forEach((subArray) =>
+//     console.log(`${subArray[0]}:${subArray[1]}`)
+//   )
+// );
 // height:4
 // length:5
 //  perimeter:perimeter() {
@@ -3414,8 +3414,59 @@ console.log(
 //     return this.length * this.height;
 //   }
 //OR using destructuring:
-console.log(
-  Object.entries(rectangle).forEach(([prop, value]) =>
-    console.log(`${prop}:${value}`)
-  )
-);
+// console.log(
+//   Object.entries(rectangle).forEach(([prop, value]) =>
+//     console.log(`${prop}:${value}`)
+//   )
+// );
+
+//To-Do-List-Project
+//The problem is that the items were added directly to the web page
+//and never stored anywhere in the program.
+//This concept is known as state management.
+//One way to manage the state of the to-do list is to store the tasks
+//in an array.
+//We can use the array to find any of the tasks, or calculate how many
+//tasks there are needing to be completed.
+//Let's create an array to store the tasks in
+//Next,the function that adds a task:
+// function addTask(e) {
+//   e.preventDefault();
+//   tasks.push(form.item.value);
+// }
+//This adds tasks to the tasks array when the form is submitted,
+//instead of writing them onto the page.
+//When the user clicks a task, it's removed from the page using
+//removeTask function.
+// function removeTask(e) {
+//   const index = tasks.indexOf(e.target.textContent);
+//   if (index > -1) {
+//     tasks.splice(index, 1);
+//   }
+// }
+const list6 = document.getElementById("list6");
+const form6 = document.forms.form6;
+const count = document.getElementById("count");
+const tasks = [];
+function render() {
+  list6.innerHTML = tasks.map((task) => `<li>${task}</li>`).join("");
+  form6.item.value = "";
+  form6.item.focus();
+  count.innerText = `${tasks.length} task${
+    tasks.length == 1 ? "" : "s"
+  } left to complete`;
+}
+function addTask(e) {
+  e.preventDefault();
+  tasks.push(form6.item.value);
+  render();
+}
+function removeTask(e) {
+  const index = tasks.indexOf(e.target.textContent);
+  if (index > -1) {
+    tasks.splice(index, 1);
+  }
+  render();
+}
+form6.addEventListener("submit", addTask);
+list6.addEventListener("click", removeTask);
