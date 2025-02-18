@@ -3349,9 +3349,39 @@ const people = [alphie, betty, gemma, del];
 //- It's a useful way to find out if at least one item in the array fits
 //a certain criteria.
 //Ex: this checks if any if the words are longer than 7 characters:
-console.log(
-  ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].some(
-    (word) => word.length > 7
-  )
-);
+// console.log(
+//   ["C", "C++", "Ruby", "Python", "JavaScript", "Swift", "Java"].some(
+//     (word) => word.length > 7
+//   )
+// );
 //true
+
+//Iterating-Over-Objects
+//Objects are collections, just like arrays, and it's possible
+//to iterate over an object's properties
+const rectangle = {
+  height: 4,
+  length: 5,
+  perimeter() {
+    return 2 * (this.height + this.length);
+  },
+  area() {
+    return this.length * this.height;
+  },
+};
+//We can loop through all the properties of an object using a for-in loop
+//that iterates over every key in the object.
+for (const prop in rectangle) {
+  console.log(`${prop}: ${rectangle[prop]}`);
+}
+//height: 4
+//length: 5
+//perimeter: perimeter() {
+// return 2 * (this.height + this.length);
+// }
+// area: area() {
+// return this.length * this.height;
+// }
+//The variable prop is used to reference each property name in
+//each step in the iteration. We can then use rectangle[prop] to look
+//up the value of that property
