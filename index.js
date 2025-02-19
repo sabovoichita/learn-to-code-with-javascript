@@ -3585,8 +3585,36 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 }
-console.log(factorial(3)); //6
+// console.log(factorial(3)); //6
 // - This will multiply 3 by the return value of factorial(2), which will
 // multiply 2 by the return number of factorial(1), which will multiply
 // 1 by the return value of factorial(0), which is 1.
 // - Working backwords gives 1 * 1 * 2 * 3 = 6
+
+// Scope
+// - The scope of a variable or function refers to the parts of the program
+// where they can be accessed.
+// - Often placing a variable inside a block will restrict its scope to that block.
+// Global scope covers the entire program. Any variable or function that can be
+// accessed anywhere in the program is said to have global scope.
+// - Local scope refers to a function or a variable that's only available inside 
+// a particular code block. Any function or variable defined insidea block can 
+// only be accessed inside that particular block, when they're "in scope".
+const global = "Hello, Global Scope!";
+function local() {
+  const secret = "Hello from the local scope.";
+}
+console.log(global); //Hello, Global Scope!
+// console.log(secret); //Uncaught ReferenceError: secret is not defined at...
+// - To see how we can get access to the var secret from within the scopeof local
+// function, let's redifine the function to log the secret var to the console:
+function local1() {
+  const secret1 = "Hello from the local scope.";
+  console.log(secret1);
+}
+console.log(local1()); //Hello from the local scope
+// !!It's good practice to keep all variables declarations out of the global scope.
+// - All variables in JS have local scope inside functions, but var only
+// have block scope if they're declared using const and let.
+// - If a var is declared using var, it can be accessed outside the scope of the 
+// block it was defined in.
