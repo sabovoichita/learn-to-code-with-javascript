@@ -3556,3 +3556,20 @@ namedParam2.innerHTML = heading1({
   text: "Hello, World!",
   size: "48px",
 });
+
+// The-Rest-Parameter(...)
+// - There are times when we don't know how many arguments will be provided
+// to a function. The easiest way to deal with a varying number of
+// arguments is to use the rest parameter. This consists of three dots
+// placed in front of the last parameter declaration. It will collect
+// all the arguments together in an array
+// - This function accepts any number of arguments and uses the rest
+// parameter to collect them all together in an array called numbers.
+// - It the applies the reduce() method that we saw in the last chapter
+// to this array and returns the sum of all the numbers that were entered
+// as an argument:
+function add(...numbers) {
+  return numbers.reduce((acc, n) => acc + n);
+}
+console.log(add(2, 3)); //5
+console.log(add(1, 2, 3, 4, 5)); //15
