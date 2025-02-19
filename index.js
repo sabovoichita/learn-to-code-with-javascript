@@ -3500,4 +3500,25 @@ function spanner(string) {
     .map((a) => `<span>${a}</span>`)
     .join("");
 }
-console.log(spanner(string));
+// console.log(spanner(string));
+
+//Challenge-12.3
+//Extend the spanner function to create a coloredLetters function that
+//colors each letter in a different color.
+// It should accept a string and array of colors as parameters and then
+//add a style attribute to each <span> tag.
+const string1 = "Hello-There";
+const arrayOfColours = ["red", "blue", "green", "yellow"];
+
+function coloredLetters(string1, arrayOfColours) {
+  return [...string1]
+    .map(
+      (char, index) =>
+        `<span style="color:${
+          arrayOfColours[index % arrayOfColours.length]
+        }">${char}</span>`
+    )
+    .join("");
+}
+console.log(coloredLetters(string1, arrayOfColours));
+document.body.innerHTML = `<h1>${coloredLetters(string1, arrayOfColours)}</h1>`
