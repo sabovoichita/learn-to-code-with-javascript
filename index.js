@@ -3509,7 +3509,7 @@ function spanner(string) {
 //add a style attribute to each <span> tag.
 const string1 = "Hello-There";
 const arrayOfColours = ["red", "blue", "green", "yellow"];
-
+const namedParam0 = document.getElementById("namedParam0");
 function coloredLetters(string1, arrayOfColours) {
   return [...string1]
     .map(
@@ -3520,6 +3520,7 @@ function coloredLetters(string1, arrayOfColours) {
     )
     .join("");
 }
+namedParam0.innerHTML = coloredLetters(string1, arrayOfColours);
 // console.log(coloredLetters(string1, arrayOfColours));
 // document.body.innerHTML = `<h1>${coloredLetters(string1, arrayOfColours)}</h1>`
 
@@ -3624,7 +3625,7 @@ function local1() {
 // hoisted to the top of a program's scope.
 // - This means that they can be called before they're been defined.
 // function is called at the start of the code
-hoist();
+// hoist();
 //
 //other code...
 //
@@ -3637,8 +3638,8 @@ function hoist() {
 // every function having to be defined defore it's used.
 // - An error will be thrown if you attempt to refer a variable before it has
 // been declared using const and let.
-// - For this reason you should try and declare any variables at the 
+// - For this reason you should try and declare any variables at the
 // beginning of a block so that hoisting isn't necessary.
-// - This means that a function expression(where an anonymous function 
+// - This means that a function expression(where an anonymous function
 // is assigned to a variable) can't be called before it has been declared
 // unlike a function declaration.
