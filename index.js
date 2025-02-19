@@ -3520,5 +3520,39 @@ function coloredLetters(string1, arrayOfColours) {
     )
     .join("");
 }
-console.log(coloredLetters(string1, arrayOfColours));
-document.body.innerHTML = `<h1>${coloredLetters(string1, arrayOfColours)}</h1>`
+// console.log(coloredLetters(string1, arrayOfColours));
+// document.body.innerHTML = `<h1>${coloredLetters(string1, arrayOfColours)}</h1>`
+
+//Lets-Get-Functional
+//Named-Parameters
+const namedParam1 = document.getElementById("namedParam1");
+const namedParam2 = document.getElementById("namedParam2");
+//- When a function has a few parameters, it can be dificult to remember
+//what order to write the arguments in when you call the function
+function heading(text, color, size, bgcolor) {
+  return `<h1 style='color:${color};background-color:${bgcolor};font-size:${size}'>${text}</h1>`;
+}
+//This uses positional parameters, which means that when the function
+//is called, the position the argument is placed in determines which
+//parameters it's assigned to in the function
+//So, if we want a heading of "Hello, World!", sized 48px, colored
+//red on a blue background:
+heading("Hello, Wolrd!", "red", "48px", "blue");
+namedParam1.innerHTML = heading("Hello, World!", "red", "48px", "blue");
+//Let's rewritem the function, with the parameters listed as the
+//  properties of an object literal:
+function heading1({ text, color, size, bgcolor }) {
+  return `<h1 style='color:${color};background-color:${bgcolor};font-size:${size}'>${text}</h1>`;
+}
+heading1({
+  color: "red",
+  bgcolor: "blue",
+  text: "Hello, World!",
+  size: "48px",
+});
+namedParam2.innerHTML = heading1({
+  color: "red",
+  bgcolor: "green",
+  text: "Hello, World!",
+  size: "48px",
+});
