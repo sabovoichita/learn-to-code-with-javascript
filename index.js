@@ -3470,3 +3470,22 @@ function removeTask(e) {
 }
 form6.addEventListener("submit", addTask);
 list6.addEventListener("click", removeTask);
+
+//Challenge-12.1
+//- Write a function that accepts an array of strings as an argument and
+//uses map to return a new array of the same words written in uppercase
+//- Can you get it to return an array with all the words written backwords?
+const arrayOfStrings = ["Ana", "Ioana"];
+
+function arrayToUpperCase(arrayOfStrings) {
+  return arrayOfStrings.map((a) => a.split(" ").join("").toUpperCase());
+}
+console.log(arrayToUpperCase(arrayOfStrings)); //['ANA', 'IOANA']
+
+function reversedArrayToUpperCase(arrayOfStrings) {
+  return arrayOfStrings
+    .map((a) => a.split(" ").join("").toUpperCase())
+    .reverse();
+}
+console.log(reversedArrayToUpperCase(["Ana", "Maria"]));
+["MARIA", "ANA"];
