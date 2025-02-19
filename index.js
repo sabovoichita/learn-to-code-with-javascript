@@ -3571,5 +3571,22 @@ namedParam2.innerHTML = heading1({
 function add(...numbers) {
   return numbers.reduce((acc, n) => acc + n);
 }
-console.log(add(2, 3)); //5
-console.log(add(1, 2, 3, 4, 5)); //15
+// console.log(add(2, 3)); //5
+// console.log(add(1, 2, 3, 4, 5)); //15
+
+// Recursive-Functions
+// - A recursive function is one that calls itself until a certain condition
+// is met
+// - Ex: Calc the factorial of a number:
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(3)); //6
+// - This will multiply 3 by the return value of factorial(2), which will
+// multiply 2 by the return number of factorial(1), which will multiply
+// 1 by the return value of factorial(0), which is 1.
+// - Working backwords gives 1 * 1 * 2 * 3 = 6
