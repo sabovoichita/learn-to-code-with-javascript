@@ -3476,16 +3476,28 @@ list6.addEventListener("click", removeTask);
 //uses map to return a new array of the same words written in uppercase
 //- Can you get it to return an array with all the words written backwords?
 const arrayOfStrings = ["Ana", "Ioana"];
-
 function arrayToUpperCase(arrayOfStrings) {
   return arrayOfStrings.map((a) => a.split(" ").join("").toUpperCase());
 }
-console.log(arrayToUpperCase(arrayOfStrings)); //['ANA', 'IOANA']
-
+// console.log(arrayToUpperCase(arrayOfStrings)); //['ANA', 'IOANA']
 function reversedArrayToUpperCase(arrayOfStrings) {
   return arrayOfStrings
     .map((a) => a.split(" ").join("").toUpperCase())
     .reverse();
 }
-console.log(reversedArrayToUpperCase(["Ana", "Maria"]));
-["MARIA", "ANA"];
+// console.log(reversedArrayToUpperCase(["Ana", "Maria"]));//["MARIA", "ANA"];
+
+//Challenge-12.2
+//- Write a spanner function that accepts a string and returns a string,
+//with each individual character wrapped in a <span> tag using the map()
+//and join() methods.
+//- Ex: spanner ("Hello") should return the string
+//  "<span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>"
+const string = "Hello";
+function spanner(string) {
+  return string
+    .split("")
+    .map((a) => `<span>${a}</span>`)
+    .join("");
+}
+console.log(spanner(string));
