@@ -3597,14 +3597,14 @@ function factorial(n) {
 // - Often placing a variable inside a block will restrict its scope to that block.
 // Global scope covers the entire program. Any variable or function that can be
 // accessed anywhere in the program is said to have global scope.
-// - Local scope refers to a function or a variable that's only available inside 
-// a particular code block. Any function or variable defined insidea block can 
+// - Local scope refers to a function or a variable that's only available inside
+// a particular code block. Any function or variable defined insidea block can
 // only be accessed inside that particular block, when they're "in scope".
 const global = "Hello, Global Scope!";
 function local() {
   const secret = "Hello from the local scope.";
 }
-console.log(global); //Hello, Global Scope!
+// console.log(global); //Hello, Global Scope!
 // console.log(secret); //Uncaught ReferenceError: secret is not defined at...
 // - To see how we can get access to the var secret from within the scopeof local
 // function, let's redifine the function to log the secret var to the console:
@@ -3612,9 +3612,33 @@ function local1() {
   const secret1 = "Hello from the local scope.";
   console.log(secret1);
 }
-console.log(local1()); //Hello from the local scope
+// console.log(local1()); //Hello from the local scope
 // !!It's good practice to keep all variables declarations out of the global scope.
 // - All variables in JS have local scope inside functions, but var only
 // have block scope if they're declared using const and let.
-// - If a var is declared using var, it can be accessed outside the scope of the 
+// - If a var is declared using var, it can be accessed outside the scope of the
 // block it was defined in.
+
+// Hoisting
+// - Functions that are defined using a function declaration are automatically
+// hoisted to the top of a program's scope.
+// - This means that they can be called before they're been defined.
+// function is called at the start of the code
+hoist();
+//
+//other code...
+//
+// function definition is at the end of the code
+function hoist() {
+  console.log("Hoist me!");
+}
+// - This is very useful, as it means that all functions definitions can
+// be placed together, possibly at the end of the program, rather than
+// every function having to be defined defore it's used.
+// - An error will be thrown if you attempt to refer a variable before it has
+// been declared using const and let.
+// - For this reason you should try and declare any variables at the 
+// beginning of a block so that hoisting isn't necessary.
+// - This means that a function expression(where an anonymous function 
+// is assigned to a variable) can't be called before it has been declared
+// unlike a function declaration.
