@@ -3643,3 +3643,40 @@ function hoist() {
 // - This means that a function expression(where an anonymous function
 // is assigned to a variable) can't be called before it has been declared
 // unlike a function declaration.
+
+//Functions-That-Return-Functions
+function returnHello() {
+  return function () {
+    console.log("Hello, Wolrd!");
+  };
+}
+console.log(returnHello()); //ƒ () {
+//console.log("Hello, Wolrd!");
+//}
+//- When the returnHello() function is called all it does is to return
+//another function
+//- Alternatively, arrow functions can be used to make the declaration
+//look neater
+const returnHello1 = () => () => console.log("Hello, World!");
+//- The expression after the first arrow is its return value, which is
+//another arrow function: ()=>console.log("Hello, World!"). So when
+//returnHello is called, it returns its function.
+//- To make use of the function that's returned, we need to assign it to
+// a variable:
+const hello1 = returnHello1();
+//- Now, we can call the function that was returned by placing parentheses
+//after the variable that was assigned to:
+console.log(hello1()); //Hello, World!
+//- Let's create a generic function that returns a function for creating
+//a fragment of HTML using a particular tag that's provided as an argument
+const html = (tag) => (text) => `<${tag}>${text}</${tag}>`;
+//- Now we can use this function to create a function that creates an <h1>
+const h1E1 = html("h1");
+console.log(h1E1("Hello, World!")); //<h1>Hello, World!</h1>
+//- If we also want a function for creating paragraphs, we can use the
+//generic element function to return one for us:
+const paraEl = html("p");
+console.log(paraEl("The quick, brown fox jumped over the lazy dog."));
+//- We can also chain the two functions calls together to create a function
+//and use it in a single call
+console.log(html("h2")("Hello, World!"));
