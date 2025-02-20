@@ -3818,10 +3818,39 @@ function addTask1(task1, list) {
 function removeTask1(task1, list) {
   return list.filter((x) => x !== task1);
 }
-console.log(addTask1("Learn to code", tasks1));
-console.log(tasks1);
-console.log(removeTask1("Read Book", tasks1));
-console.log(tasks1);
+// console.log(addTask1("Learn to code", tasks1));
+// console.log(tasks1);
+// console.log(removeTask1("Read Book", tasks1));
+// console.log(tasks1);
 //If we wanted to remove from task the string "Sing Song":
 tasks1 = removeTask1("Sing Song", tasks1);
-console.log(tasks1);
+// console.log(tasks1);
+
+//Higher-Order-Functions
+//- Are functions that accept another function as an argument, or
+//return another function as a result, or both.
+function multiplier(x) {
+  return function (y) {
+    return x * y;
+  };
+}
+//- The multiplier function returns another function that traps the value
+//of the argument x in closure. This is then available to be used by the
+//returned function.
+doubler = multiplier(2);
+//- This creates a new function called doubler that multiplies an argument
+//by 2
+console.log(doubler(10)); //20
+//- We can use this multiplier function to build other, more specific functions
+//using different arguments.
+//- Ex: an argument of 3 can be used to create a tripler() function:
+tripler = multiplier(3);
+console.log(tripler(10)); //30
+//- This is one of the core tenets of functional programming: it allows
+//generic, higher-order functions to be used to return more specific
+//functions based on specific parameters.
+//!A neat trick to use with higher-order functions is to chain arguments
+//together.
+console.log(multiplier(3)(5)); //
+//- This is because multiplier(3) returns an anonymous function which we
+//immediately call it with an argument of 5 adding parentheses on the end
