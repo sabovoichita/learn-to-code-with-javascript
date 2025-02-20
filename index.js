@@ -3650,7 +3650,7 @@ function returnHello() {
     console.log("Hello, Wolrd!");
   };
 }
-console.log(returnHello()); //ƒ () {
+// console.log(returnHello()); //ƒ () {
 //console.log("Hello, Wolrd!");
 //}
 //- When the returnHello() function is called all it does is to return
@@ -3666,17 +3666,62 @@ const returnHello1 = () => () => console.log("Hello, World!");
 const hello1 = returnHello1();
 //- Now, we can call the function that was returned by placing parentheses
 //after the variable that was assigned to:
-console.log(hello1()); //Hello, World!
+// console.log(hello1()); //Hello, World!
 //- Let's create a generic function that returns a function for creating
 //a fragment of HTML using a particular tag that's provided as an argument
 const html = (tag) => (text) => `<${tag}>${text}</${tag}>`;
 //- Now we can use this function to create a function that creates an <h1>
 const h1E1 = html("h1");
-console.log(h1E1("Hello, World!")); //<h1>Hello, World!</h1>
+// console.log(h1E1("Hello, World!")); //<h1>Hello, World!</h1>
 //- If we also want a function for creating paragraphs, we can use the
 //generic element function to return one for us:
 const paraEl = html("p");
-console.log(paraEl("The quick, brown fox jumped over the lazy dog."));
+// console.log(paraEl("The quick, brown fox jumped over the lazy dog."));
 //- We can also chain the two functions calls together to create a function
 //and use it in a single call
-console.log(html("h2")("Hello, World!"));
+// console.log(html("h2")("Hello, World!"));
+
+//Closures
+//- Closures are one of JS's most powerful features, and they rely on
+//the concept of scope and functions returning other functions.
+//- To demonstrate the concept, let's use this function:
+function local() {
+  const secret = "Top Secret!";
+  console.log(secret);
+}
+//- This function contains a var called secret which, as we saw, only exists
+//within the scope of the function.
+//-A closure is formed when a function can access variables that are declared
+//outisde its scope
+//- In our ex, we can add an anonymous function that references the
+//secret variable:
+function local1() {
+  const secret = "Top Secret!";
+  function a() {
+    console.log(secret);
+  }
+}
+//The anonymous function is said to form a "closure" over the secret
+//variable because, although the variable isn't definded inside the
+//body of the function, the function can still access it.
+//- This on it's own isn't so special, since we could already access
+//the secret variable from within the local function:
+function local2() {
+  const secret = "Top Secret!";
+  return function () {
+    console.log(secret);
+  };
+}
+//- The function that's returned will retain access to the secret variable
+//even after the local function has been called. This forms a closure
+//over a secret variable.
+//- To make use of the closure, we need to assign a variable to the return
+//value of the local() function:
+const notSoSecret = local2();
+//The variable notSoSecret now points to the anonymous function that's
+//returned by the local2() function. This function now has access to the
+//secret variable that was declared in the local function outside the
+//scope of that function. Let's call notSoSecret():
+console.log(notSoSecret()); //Top Secret!
+//Thanks to the closure, we now have access to the secret variable
+//in the closure.
