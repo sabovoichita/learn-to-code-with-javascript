@@ -3869,4 +3869,19 @@ function greenBottles(bottles) {
     greenBottles(bottles);
   }
 }
-greenBottles(10);
+// greenBottles(10);
+
+//Challenge-13.2
+//-Create a higher-order function called exponent that returns another
+//function that will calculate numbers to the power of the argument
+//provided. For ex: exponentBase(2) = exponent(2) should result in a
+//function called exponentBase2 that will return 2 to the power of the
+//argument provided, exponentBase(2)(3) will return 8.
+function exponent(x) {
+  return function (y) {
+    return x ** y;
+  };
+}
+let exponentBase2 = exponent(2);
+console.log(exponentBase2(3)); //8
+console.log(exponent(2)(3)); //8
