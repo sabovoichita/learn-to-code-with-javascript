@@ -3749,6 +3749,41 @@ const count1 = countdown(3);
 //variable i that was created in the scope of the counter() function.
 //- Every time we call the count() function, it will return the value of
 //i and then decreased by 1:
-console.log(count1()); //3
-console.log(count1()); //2
-console.log(count1()); //1
+// console.log(count1()); //3
+// console.log(count1()); //2
+// console.log(count1()); //1
+
+//Functional-Programming
+//Pure-Functions
+//A key aspect of functional porgramming is its use of pure functions.
+//A pure function is one that adheres to the following rules:
+//-The return value of a pure function should only depend on the values
+//provided as arguments; it doesn't rely on values from somewhere else
+//in the program.
+//-There are no side effects: a pure function doesn't change any values
+//or data elsewhere in the program. It only makes non-destructive data
+//transformations and returns new values, rather than altering any of the
+//underlaying data.
+//-A pure function has referential transparecy. Given the same arguments,
+//it should always return the same result.
+//- In order to follow these rules, any pure function must have:
+//-At least one argument: otherwise, the return value must depend on
+//something other than the arguments of the function, breaking the
+//first rule.
+//-A return value: otherwise, there's no point in the function(unless
+//it has changed something else in the program, in which case, it has
+//broken the "no side effects" rule)
+//Impure function:
+let number = 42;
+let result = 0;
+function impureAdd(x) {
+  result = number + x;
+}
+console.log(impureAdd(10)); //undefined
+console.log(result); //52
+//Pure function:
+const number1 = 42;
+function pureAdd(x, y) {
+  return x + y;
+}
+console.log((result = pureAdd(number1, 10))); //52
