@@ -3840,17 +3840,33 @@ function multiplier(x) {
 doubler = multiplier(2);
 //- This creates a new function called doubler that multiplies an argument
 //by 2
-console.log(doubler(10)); //20
+// console.log(doubler(10)); //20
 //- We can use this multiplier function to build other, more specific functions
 //using different arguments.
 //- Ex: an argument of 3 can be used to create a tripler() function:
 tripler = multiplier(3);
-console.log(tripler(10)); //30
+// console.log(tripler(10)); //30
 //- This is one of the core tenets of functional programming: it allows
 //generic, higher-order functions to be used to return more specific
 //functions based on specific parameters.
 //!A neat trick to use with higher-order functions is to chain arguments
 //together.
-console.log(multiplier(3)(5)); //
+// console.log(multiplier(3)(5)); //
 //- This is because multiplier(3) returns an anonymous function which we
 //immediately call it with an argument of 5 adding parentheses on the end
+
+//Challenge-13.1
+//- Write a recursive function that sings the Ten Green Bottles song.
+//- It should take the number of bottles as a parameter, sing one verse
+//then call itself to sing again
+//- For ex: greenBottles(10) would sing the song starting at 10 green bottles
+function greenBottles(bottles) {
+  if (bottles > 0) {
+    let song = `There were ${bottles} bottles hanging on the wall. And if one green
+    bottle should accidentally fall, there'd be ${--bottles} green bottles hanging
+     on the wall`;
+    console.log(song);
+    greenBottles(bottles);
+  }
+}
+greenBottles(10);
