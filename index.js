@@ -3779,11 +3779,49 @@ let result = 0;
 function impureAdd(x) {
   result = number + x;
 }
-console.log(impureAdd(10)); //undefined
-console.log(result); //52
+// console.log(impureAdd(10)); //undefined
+// console.log(result); //52
 //Pure function:
 const number1 = 42;
 function pureAdd(x, y) {
   return x + y;
 }
-console.log((result = pureAdd(number1, 10))); //52
+// console.log((result = pureAdd(number1, 10))); //52
+
+//Pure-Array-Updates
+//- We used push() method to add values to an array, in our to-do list app
+//that was containing the following addTask function:
+function addTask(item) {
+  list.push(item);
+}
+//Let's purify this function by adding the array as a parameter:
+function addTask(task, list) {
+  return [...list, task];
+}
+//impure function:
+function removeTask(task) {
+  const index = list.indexOf(task);
+  if (index > -1) {
+    list.splice(i, 1);
+  }
+  return list;
+}
+//pure function:
+function removeTask(task, list) {
+  return list.filter((x) => x !== task);
+}
+//Let's test in console:
+let tasks1 = ["Bake Cake", "Read Book", "Sing Song"];
+function addTask1(task1, list) {
+  return [...list, task1];
+}
+function removeTask1(task1, list) {
+  return list.filter((x) => x !== task1);
+}
+console.log(addTask1("Learn to code", tasks1));
+console.log(tasks1);
+console.log(removeTask1("Read Book", tasks1));
+console.log(tasks1);
+//If we wanted to remove from task the string "Sing Song":
+tasks1 = removeTask1("Sing Song", tasks1);
+console.log(tasks1);
