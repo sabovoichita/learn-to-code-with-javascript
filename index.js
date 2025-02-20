@@ -3722,6 +3722,33 @@ const notSoSecret = local2();
 //returned by the local2() function. This function now has access to the
 //secret variable that was declared in the local function outside the
 //scope of that function. Let's call notSoSecret():
-console.log(notSoSecret()); //Top Secret!
+// console.log(notSoSecret()); //Top Secret!
 //Thanks to the closure, we now have access to the secret variable
 //in the closure.
+
+//Closure-Countdown
+//- Closures not only have access to variables declared in parent functions's
+//scope, but they can also change the value of these variables. This allow
+//us to do things like create a countdown function that decreases a variable
+//every time it's called.
+function countdown(start) {
+  let i = start;
+  return function () {
+    return i--;
+  };
+}
+//- This function declared a variable i and assigns it to the value of
+//the number provided as an argument. It then returns a function that
+//forms a closure around the variable i, which means it can access the
+//value of i and can also change the value of i. It does this using the
+//-- operator to decrease the value of i by 1 every time it's called.
+//- We can create a counter by assigning the return value of the counter()
+//function to a variable:
+const count1 = countdown(3);
+//- The variable count now points to a function that has full access to the
+//variable i that was created in the scope of the counter() function.
+//- Every time we call the count() function, it will return the value of
+//i and then decreased by 1:
+console.log(count1()); //3
+console.log(count1()); //2
+console.log(count1()); //1
