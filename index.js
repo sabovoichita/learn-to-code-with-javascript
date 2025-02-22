@@ -3883,5 +3883,41 @@ function exponent(x) {
   };
 }
 let exponentBase2 = exponent(2);
-console.log(exponentBase2(3)); //8
-console.log(exponent(2)(3)); //8
+// console.log(exponentBase2(3)); //8
+// console.log(exponent(2)(3)); //8
+
+//Chalenge-13.3
+//- Update the to-do list app so that the add and remove functions are
+//pure functions.
+let tasks7 = [];
+const list7 = document.getElementById("list7");
+const form7 = document.forms.form7;
+const count5 = document.getElementById("count");
+form7.addEventListener("submit", function (e) {
+  e.preventDefault();
+  tasks7 = addTask7(form7.item.value, tasks7);
+  render7(tasks7);
+});
+list7.addEventListener("click", function (e) {
+  tasks7 = removeTask7(e.target.innerText, tasks7);
+  render7(tasks7);
+});
+function addTask7(task, list) {
+  console.log("addhere:", task);
+  const newTask = task.trim();
+  if (newTask === "") return list;
+  return [...list, newTask];
+}
+function removeTask7(task, list) {
+  console.log("rhere");
+  return list.filter((x) => x !== task);
+}
+function render7(list) {
+  console.log("hereRender");
+  list7.innerHTML = list.map((task) => `<li>${task}</li>`).join("");
+  form7.item.value = "";
+  form7.item.focus();
+  count5.innerText = `${list.length} task${
+    list.length == 1 ? "" : "s"
+  } left to complete`;
+}
