@@ -4024,3 +4024,57 @@ const baby = { ...papa, name: "Baby Bear", size: "small" };
 //means that we can take an object that already exists and inherit all
 //its properties and methods. We can then improve on its functionality
 //by adding new properties and methods
+
+//Classes-In-JavaScript
+//- Classes are used to define a blueprint for an object. Objects are then
+//created as an instance of that class and inherit all the properties
+//and methods of the class. In the coffee machine example, the
+//CoffeeMachine class would represent the design, and each machine
+//that's made on the production line, as well as any other models of
+//coffee machine, would be instances of that class.
+const dice = {
+  sides: 6,
+  roll() {
+    return Math.ceil(Math.random() * this.sides);
+  },
+};
+console.log(dice);
+//- Imagine you're creating an online role-playing game.
+//- It will require lots of dice with different numbers of sides to be used.
+//- Instead of creating a separate object for each dice, we can create a
+//Dice class that can be used to create many copies in this object.
+class Dice {
+  constructor(sides = 6) {
+    this.sides = sides;
+  }
+  roll() {
+    return Math.ceil(Math.random() * this.sides);
+  }
+}
+console.log(Dice);
+//- All JavaScript classes have a function called constructor.
+//- This function is called every time a new instance of the class is created
+//- The keyword this represents the object that will be returned by the class
+//- In the Dice class above, we use it to make the sides property equal the
+//argument that's provided to the constructor function, or 6, if no
+//argument is provided. It also adds a method called roll() that returns
+//a random number from 1 up to the number of sides the dice has.
+//We can now create an instance of  the Dice class using the new operator:
+console.log((redDice = new Dice(4))); //Dice {sides: 4}
+//- This calls the constructor function defined in the Dice class and returns
+//an object that was assigned to the variable redDice, which is said to be
+//an instance of the Dice class. This is an object with a sides propery
+//and roll() method.
+//- We can confirm this using the instanceof operator:
+console.log(redDice instanceof Dice); //true
+//- Each new object that's created in this way will have a sides property
+//and roll() method from the class definition, and they're known as
+//instances of the Dice class.
+console.log((blueDice = new Dice(4))); //Dice {sides: 4}
+//!!Parentheses aren't required when initiating a new object using the
+//new operator:
+console.log((greenDice = new Dice())); //Dice {sides: 6}
+//- The parentheses aren't required, however, if any arguments are provided
+//for ex: if we want to create another Dice object with 20 sides, we
+//would have to add 20 as an argument, like so:
+console.log((whiteDice = new Dice(20))); //Dice {sides: 20}
