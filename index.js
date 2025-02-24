@@ -3957,7 +3957,7 @@ mama.name = "Mama Bear";
 // - Now if we want to check the value of the name property of the papa
 // object will  see this:
 papa.name;
-console.log(papa.name); //Mama Bear
+// console.log(papa.name); //Mama Bear
 // - Changing the name property of mama has resulted in the name property
 // of papa changing as well. This happens because both point to the same
 // object in memory.
@@ -3973,10 +3973,10 @@ const mama1 = { ...papa1 };
 mama1.name = "Mama Bear";
 mama1.size = "medium";
 papa1.name;
-console.log(papa1.name); //Mama Bear
-console.log(mama1); //{name: 'Mama Bear',
+// console.log(papa1.name); //Mama Bear
+// console.log(mama1); //{name: 'Mama Bear',
 //  type: 'bear', color: 'brown', food: 'porridge', size: 'medium'}
-console.log(papa1); //{name: 'Papa Bear',
+// console.log(papa1); //{name: 'Papa Bear',
 //  type: 'bear', color: 'brown', food: 'porridge', size: 'large'}
 // !The code above makes a shallow copy of the papa object!
 // - This meanns that only the first level of properties is copied.
@@ -3988,5 +3988,39 @@ console.log(papa1); //{name: 'Papa Bear',
 // - Copying an object and updating some properties can be accomplished
 // in one step by adding a new property at the end of the object literal
 const baby = { ...papa, name: "Baby Bear", size: "small" };
-console.log("baby: ", baby); //{name: 'Baby Bear', type: 'bear',
+// console.log("baby: ", baby); //{name: 'Baby Bear', type: 'bear',
 //  color: 'brown', food: 'porridge', size: 'small'}
+
+//Object-Oriented-Programming (OOP)
+//- is a style of programming that encapsulates related pieces of code
+// in objects that maintain state throughout the life of the program.
+//The objects can then be reused and modified as required.
+//Three key concepts in OOP: encapsulation, polimorphism, inheritance
+//Will use as an example a coffee machine illustrate each of these.
+//    Encapsulation
+//when the coffee machine os turned on, it makes some noices and then,
+//a few minutes later, it produces a steaming cup of hot coffee.
+//You don't need to know how the machine works order to make the perfect
+// cup of coffee; you just press on. This demonstrates the concept of
+//encapsulation: the inner workings are kept hidden inside the object and
+//only the essential functionalities are exposed to the end user, such
+//as the on button. In OOP, this involves keeping all the programming logic
+//inside an object and making methods available to implement the functionality
+// without the outside world needing to know how it's done.
+//    Polymorphism
+//The on button starts a process of brewing in the coffee machine. If there
+//was such a thing as a beer machine, it would also have an on button
+//that starts the process of brewing, the results of that process are very
+//different: one produces coffee and the other beer. This demonstrates the
+// concept of polymorphism, where the same process producess different
+//results in different objects. In OOP, this means that various objects
+//can share the same method, but implement them in different ways.
+//    Inheritance
+//Imagine a super coffee machine isn't that new, improved model capable
+//of making three cups of coffee at once. Even though it has some extra
+//features, it still uses many of the same parts of the original coffee
+//machine. This demonstrates the concept of inheritance, where the features
+//of one object are taken and then new features are added. In OOP, this
+//means that we can take an object that already exists and inherit all
+//its properties and methods. We can then improve on its functionality
+//by adding new properties and methods
