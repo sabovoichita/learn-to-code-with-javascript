@@ -3903,17 +3903,17 @@ list7.addEventListener("click", function (e) {
   render7(tasks7);
 });
 function addTask7(task, list) {
-  console.log("addhere:", task);
+  // console.log("addhere:", task);
   const newTask = task.trim();
   if (newTask === "") return list;
   return [...list, newTask];
 }
 function removeTask7(task, list) {
-  console.log("rhere");
+  // console.log("rhere");
   return list.filter((x) => x !== task);
 }
 function render7(list) {
-  console.log("hereRender");
+  // console.log("hereRender");
   list7.innerHTML = list.map((task) => `<li>${task}</li>`).join("");
   form7.item.value = "";
   form7.item.focus();
@@ -3921,3 +3921,72 @@ function render7(list) {
     list.length == 1 ? "" : "s"
   } left to complete`;
 }
+
+// Copying-Objects-In-JavaScript
+// - In JavaScript object are assigned by reference. This means that,
+// if two variables are assigned to the same object,both variables
+// will point to the same object in memory
+// - For ex: imagine you are creating a weather app and the variable
+// monday is pointing to a sunny object☀. If you assign the variable
+// tuesday to the same object using code const tuesday = monday, both
+// variables will be pointing to the same image object.
+// - If you then update the image object that tuesday is pointing to, it will
+// also change the image object so that monday is pointing to,
+// where tuesday is changed to a rainy image object 🌧 This means that
+// any changes you make to either variable will affect the other,
+// making it impossible to change monday without changing tuesday.
+const papa = {
+  name: "Papa Bear",
+  type: "bear",
+  color: "brown",
+  food: "porridge",
+  size: "large",
+};
+// - Now, if we wanted to create another object to represent Mama Bear,
+// we could start with a copy of the papa object, since a number of the
+// properties are the same. We can then update the properties that need
+// changing.
+// - A common mistake is to think that this copy can be made like so:
+const mama = papa;
+// - The variable mama will have all the properties as the papa object
+// - The problem is that we haven't actually copied the papa object;
+// the variables mama and papa both reference to the same object!
+// - We can see this if we try to make a change to the name property of
+// mama:
+mama.name = "Mama Bear";
+// - Now if we want to check the value of the name property of the papa
+// object will  see this:
+papa.name;
+console.log(papa.name); //Mama Bear
+// - Changing the name property of mama has resulted in the name property
+// of papa changing as well. This happens because both point to the same
+// object in memory.
+// - The solution is  to apply the spread operator to the object we want to copy
+const papa1 = {
+  name: "Papa Bear",
+  type: "bear",
+  color: "brown",
+  food: "porridge",
+  size: "large",
+};
+const mama1 = { ...papa1 };
+mama1.name = "Mama Bear";
+mama1.size = "medium";
+papa1.name;
+console.log(papa1.name); //Mama Bear
+console.log(mama1); //{name: 'Mama Bear',
+//  type: 'bear', color: 'brown', food: 'porridge', size: 'medium'}
+console.log(papa1); //{name: 'Papa Bear',
+//  type: 'bear', color: 'brown', food: 'porridge', size: 'large'}
+// !The code above makes a shallow copy of the papa object!
+// - This meanns that only the first level of properties is copied.
+// - If any of the properties contained nested objects, these objects
+// would still be copied by reference.
+// - A deep copy involves making a copy of every property, including
+// nested objects.
+// use .cloneDeep method used by the Lodash Library!
+// - Copying an object and updating some properties can be accomplished
+// in one step by adding a new property at the end of the object literal
+const baby = { ...papa, name: "Baby Bear", size: "small" };
+console.log("baby: ", baby); //{name: 'Baby Bear', type: 'bear',
+//  color: 'brown', food: 'porridge', size: 'small'}
