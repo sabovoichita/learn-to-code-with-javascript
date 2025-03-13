@@ -4103,48 +4103,98 @@ class Dice {
 
 //Inheriance-in-JavaScript
 //In JS, a class inherits from another class using the extends keyword.
-class Notice {
-  constructor(message = "Hello, World") {
-    this.element = document.createElement("div");
-    this.element.textContent = message;
-    this.css = `background:silver;border:3px gray solid;color:gray;font:18px
-    sans-serif;padding:8px;margin:10px`;
-    this.element.style.cssText = this.css;
-  }
-  render(element) {
-    element.appendChild(this.element);
-  }
-}
+// class Notice {
+//   constructor(message = "Hello, World") {
+//     this.element = document.createElement("div");
+//     this.element.textContent = message;
+//     this.css = `background:silver;border:3px gray solid;color:gray;font:18px
+//     sans-serif;padding:8px;margin:10px`;
+//     this.element.style.cssText = this.css;
+//   }
+//   render(element) {
+//     element.appendChild(this.element);
+//   }
+// }
 
-class Warning extends Notice {
-  constructor(message = "WARNING!") {
-    super(message);
-    this.element.style.background = "pink";
-    this.element.style.color = "red";
-    this.element.style.borderColor = "red";
-  }
-}
-const warning = new Warning("Warning!");
-warning.render(document.body);
+// class Warning extends Notice {
+//   constructor(message = "WARNING!") {
+//     super(message);
+//     this.element.style.background = "pink";
+//     this.element.style.color = "red";
+//     this.element.style.borderColor = "red";
+//   }
+// }
+// const warning = new Warning("Warning!");
+// warning.render(document.body);
 
-class Success extends Notice {
-  constructor(message = "Success!") {
-    super(message);
-    this.element.style.background = "palegreen";
-    this.element.style.color = "green";
-    this.element.style.borderColor = "green";
-  }
-}
-const success = new Success();
-success.render(document.body);
+// class Success extends Notice {
+//   constructor(message = "Success!") {
+//     super(message);
+//     this.element.style.background = "palegreen";
+//     this.element.style.color = "green";
+//     this.element.style.borderColor = "green";
+//   }
+// }
+// const success = new Success();
+// success.render(document.body);
 
-class Info extends Notice {
-  constructor(message = "Information!") {
-    super(message);
-    this.element.style.background = "powderblue";
-    this.element.style.color = "blue";
-    this.element.style.borderColor = "blue";
+// class Info extends Notice {
+//   constructor(message = "Information!") {
+//     super(message);
+//     this.element.style.background = "powderblue";
+//     this.element.style.color = "blue";
+//     this.element.style.borderColor = "blue";
+//   }
+// }
+// const info = new Info();
+// info.render(document.body);
+
+// The-Pet-Unicorn-Game
+class Unicorn {
+  constructor(name = "Sparkle") {
+    this.name = name;
+    this.food = 3;
+    this.fun = 3;
+    this.energy = 5;
+    console.log(`Your new pet unicorn, ${this.name}, is born!`);
+  }
+  eat() {
+    console.log(`${this.name} gobbles up some glitter.`);
+    this.food += 3;
+    this.fun -= 1;
+    this.timeGoesBy();
+  }
+  play() {
+    console.log(`${this.name} frolics in the meadow.`);
+    this.fun += 2;
+    this.energy -= 2;
+    this.timeGoesBy();
+  }
+  sleep() {
+    console.log(`${this.name} falls asleep, dreaming of stars & rainbows.`);
+    this.energy += 5;
+    this.fun -= 2;
+    this.food -= 3;
+    this.timeGoesBy();
+  }
+  timeGoesBy() {
+    if (this.energy < 0) {
+      this.dies("exaustion");
+    }
+    if (this.food < 0) {
+      this.dies("starvation");
+    }
+    if (this.fun < 0) {
+      this.dies("boredom");
+    }
+  }
+  dies(reason) {
+    console.log(`${this.name} dies of ${reason}`);
   }
 }
-const info = new Info();
-info.render(document.body);
+pet = new Unicorn(); //Your new pet unicorn, Sparkle, is born!
+pet.play(); //Sparkle frolics in the meadow.
+pet.play(); //Sparkle frolics in the meadow.
+pet.eat(); //Sparkle gobbles up some glitter.
+pet.play(); //Sparkle frolics in the meadow.
+//Sparkle dies of exaustion
