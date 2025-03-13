@@ -4038,7 +4038,7 @@ const dice = {
     return Math.ceil(Math.random() * this.sides);
   },
 };
-console.log(dice);
+// console.log(dice);
 //- Imagine you're creating an online role-playing game.
 //- It will require lots of dice with different numbers of sides to be used.
 //- Instead of creating a separate object for each dice, we can create a
@@ -4051,7 +4051,7 @@ class Dice {
     return Math.ceil(Math.random() * this.sides);
   }
 }
-console.log(Dice);
+// console.log(Dice);
 //- All JavaScript classes have a function called constructor.
 //- This function is called every time a new instance of the class is created
 //- The keyword this represents the object that will be returned by the class
@@ -4060,21 +4060,43 @@ console.log(Dice);
 //argument is provided. It also adds a method called roll() that returns
 //a random number from 1 up to the number of sides the dice has.
 //We can now create an instance of  the Dice class using the new operator:
-console.log((redDice = new Dice(4))); //Dice {sides: 4}
+// console.log((redDice = new Dice(4))); //Dice {sides: 4}
 //- This calls the constructor function defined in the Dice class and returns
 //an object that was assigned to the variable redDice, which is said to be
 //an instance of the Dice class. This is an object with a sides propery
 //and roll() method.
 //- We can confirm this using the instanceof operator:
-console.log(redDice instanceof Dice); //true
+// console.log(redDice instanceof Dice); //true
 //- Each new object that's created in this way will have a sides property
 //and roll() method from the class definition, and they're known as
 //instances of the Dice class.
-console.log((blueDice = new Dice(4))); //Dice {sides: 4}
+// console.log((blueDice = new Dice(4))); //Dice {sides: 4}
 //!!Parentheses aren't required when initiating a new object using the
 //new operator:
-console.log((greenDice = new Dice())); //Dice {sides: 6}
+// console.log((greenDice = new Dice())); //Dice {sides: 6}
 //- The parentheses aren't required, however, if any arguments are provided
 //for ex: if we want to create another Dice object with 20 sides, we
 //would have to add 20 as an argument, like so:
-console.log((whiteDice = new Dice(20))); //Dice {sides: 20}
+// console.log((whiteDice = new Dice(20))); //Dice {sides: 20}
+
+// Classy Components
+// One use of the classes is to create resable HTML components.
+//This allows you to define a block of HTML in a single class and then reuse
+// it multiple times in a program
+//For example, let's create a class called Notice and then use it to
+//create a <div> element that displays a message on a  web page.
+//Enter this in the JS section:
+class Notice {
+  constructor(message = "Hello, World") {
+    this.element = document.createElement("div");
+    this.element.textContent = message;
+    this.css = `background:silver;border:3px gray solid;color:gray;font:18px
+    sans-serif;padding:8px;margin:10px`;
+    this.element.style.cssText = this.css;
+  }
+  render(element) {
+    element.appendChild(this.element);
+  }
+}
+welcome = new Notice();
+welcome.render(document.body);
