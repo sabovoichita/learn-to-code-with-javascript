@@ -4079,13 +4079,30 @@ class Dice {
 //would have to add 20 as an argument, like so:
 // console.log((whiteDice = new Dice(20))); //Dice {sides: 20}
 
-// Classy Components
+// Classy-Components
 // One use of the classes is to create resable HTML components.
 //This allows you to define a block of HTML in a single class and then reuse
 // it multiple times in a program
 //For example, let's create a class called Notice and then use it to
 //create a <div> element that displays a message on a  web page.
 //Enter this in the JS section:
+// class Notice {
+//   constructor(message = "Hello, World") {
+//     this.element = document.createElement("div");
+//     this.element.textContent = message;
+//     this.css = `background:silver;border:3px gray solid;color:gray;font:18px
+//     sans-serif;padding:8px;margin:10px`;
+//     this.element.style.cssText = this.css;
+//   }
+//   render(element) {
+//     element.appendChild(this.element);
+//   }
+// }
+// welcome = new Notice();
+// welcome.render(document.body);
+
+//Inheriance-in-JavaScript
+//In JS, a class inherits from another class using the extends keyword.
 class Notice {
   constructor(message = "Hello, World") {
     this.element = document.createElement("div");
@@ -4098,5 +4115,36 @@ class Notice {
     element.appendChild(this.element);
   }
 }
-welcome = new Notice();
-welcome.render(document.body);
+
+class Warning extends Notice {
+  constructor(message = "WARNING!") {
+    super(message);
+    this.element.style.background = "pink";
+    this.element.style.color = "red";
+    this.element.style.borderColor = "red";
+  }
+}
+const warning = new Warning("Warning!");
+warning.render(document.body);
+
+class Success extends Notice {
+  constructor(message = "Success!") {
+    super(message);
+    this.element.style.background = "palegreen";
+    this.element.style.color = "green";
+    this.element.style.borderColor = "green";
+  }
+}
+const success = new Success();
+success.render(document.body);
+
+class Info extends Notice {
+  constructor(message = "Information!") {
+    super(message);
+    this.element.style.background = "powderblue";
+    this.element.style.color = "blue";
+    this.element.style.borderColor = "blue";
+  }
+}
+const info = new Info();
+info.render(document.body);
