@@ -4220,54 +4220,54 @@ class Unicorn {
     console.log(`Your new pet unicorn, ${this.name}, is born!`);
   }
   eat() {
-    console.log(`${this.name} gobbles up some glitter.`);
+    console.log(`${this.name} gobbles up some glitter 🤤🥗`);
     this.food += randomInt(2, 4);
     this.energy -= randomInt(0, 2);
     this.timeGoesBy();
   }
   play() {
-    console.log(`${this.name} grolics in the meadow.`);
+    console.log(`${this.name} frolics in the meadow. 🤪⛹️‍♀️🏀`);
     this.fun += randomInt(1, 3);
     this.energy -= randomInt(1, 3);
     this.timeGoesBy();
     return;
   }
   sleep() {
-    console.log(`${this.name} falls asleep, dreaming of stars and rainbows.`);
+    console.log(`${this.name} falls asleep, dreaming of angels. 🛏😴`);
     this.energy = +randomInt(3, 5);
     this.fun -= randomInt(1, 3);
     this.food -= randomInt(2, 4);
     this.timeGoesBy();
   }
   timeGoesBy() {
-  if (this.energy > 0 && this.energy <2) {
-    console.log(`${this.name} is tired...`);
-  }
- if (this.food > 0 && this.food < 2) {
-   console.log(`${this.name} is hungry...`);
- }
-  if (this.fun > 0 && this.fun < 2) {
-    console.log(`${this.name} is bored...`);
-  }
+    if (this.energy > 0 && this.energy < 2) {
+      console.log(`${this.name} is tired...🤔`);
+    }
+    if (this.food > 0 && this.food < 2) {
+      console.log(`${this.name} is hungry...🤒🤢`);
+    }
+    if (this.fun > 0 && this.fun < 2) {
+      console.log(`${this.name} is bored...🥱`);
+    }
 
     if (this.energy < 0) {
-      this.dies("exaustion");
+      this.dies("exaustion 🤔");
     }
     if (this.food < 0) {
-      this.dies("starvation");
+      this.dies("starvation 🤒🤢");
     }
     if (this.fun < 0) {
-      this.dies("boredom");
+      this.dies("boredom 🥱");
     }
   }
   dies(reason) {
-    console.log(`${this.name} dies of ${reason}`);
+    console.log(`${this.name} dies of ${reason} ☠`);
   }
 }
 pet = new Unicorn(); //Your new pet unicorn, Sparkle, is born!
-pet.play();  //Sparkle grolics in the meadow.
-pet.eat();   //Sparkle gobbles up some glitter
-pet.sleep(); //Sparkle falls asleep, dreaming of stars and ranbows.
-             //Sparkle is tired...
-pet.play();  //Sparkle grolics in the meadow.
-             //Sparkle dies of exaustion
+pet.play(); //Sparkle frolics in the meadow. 🤪⛹️‍♀️🏀
+pet.eat(); //Sparkle gobbles up some glitter 🤤🥗
+pet.sleep(); //Sparkle falls asleep, dreaming of angels. 🛏😴
+//Sparkle is tired...🤔
+pet.play(); //Sparkle frolics in the meadow. 🤪⛹️‍♀️🏀
+//Sparkle dies of exaustion 🤔 ☠
