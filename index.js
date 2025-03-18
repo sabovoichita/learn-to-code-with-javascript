@@ -4150,6 +4150,60 @@ class Dice {
 // info.render(document.body);
 
 // The-Pet-Unicorn-Game
+// class Unicorn {
+//   constructor(name = "Sparkle") {
+//     this.name = name;
+//     this.food = 3;
+//     this.fun = 3;
+//     this.energy = 5;
+//     console.log(`Your new pet unicorn, ${this.name}, is born!`);
+//   }
+//   eat() {
+//     console.log(`${this.name} gobbles up some glitter.`);
+//     this.food += 3;
+//     this.fun -= 1;
+//     this.timeGoesBy();
+//   }
+//   play() {
+//     console.log(`${this.name} frolics in the meadow.`);
+//     this.fun += 2;
+//     this.energy -= 2;
+//     this.timeGoesBy();
+//   }
+//   sleep() {
+//     console.log(`${this.name} falls asleep, dreaming of stars & rainbows.`);
+//     this.energy += 5;
+//     this.fun -= 2;
+//     this.food -= 3;
+//     this.timeGoesBy();
+//   }
+//   timeGoesBy() {
+//     if (this.energy < 0) {
+//       this.dies("exaustion");
+//     }
+//     if (this.food < 0) {
+//       this.dies("starvation");
+//     }
+//     if (this.fun < 0) {
+//       this.dies("boredom");
+//     }
+//   }
+//   dies(reason) {
+//     console.log(`${this.name} dies of ${reason}`);
+//   }
+// }
+// pet = new Unicorn(); //Your new pet unicorn, Sparkle, is born!
+// pet.play(); //Sparkle frolics in the meadow.
+// pet.play(); //Sparkle frolics in the meadow.
+// pet.eat(); //Sparkle gobbles up some glitter.
+// pet.play(); //Sparkle frolics in the meadow.
+//Sparkle dies of exaustion
+
+// Challenge - 14.1;
+//Add a random element to the Pet Unicorn game that changes the properties
+//slightly different amounts every time a method is called.
+//for ex, instead of sleep() method increased by 5, it could increase
+//by 4, 5 or 6.
 class Unicorn {
   constructor(name = "Sparkle") {
     this.name = name;
@@ -4160,21 +4214,21 @@ class Unicorn {
   }
   eat() {
     console.log(`${this.name} gobbles up some glitter.`);
-    this.food += 3;
-    this.fun -= 1;
+    this.food += Math.ceil(Math.random() * 6);
+    this.energy -= Math.ceil(Math.random() * 2);
     this.timeGoesBy();
   }
   play() {
-    console.log(`${this.name} frolics in the meadow.`);
-    this.fun += 2;
-    this.energy -= 2;
+    console.log(`${this.name} grolics in the meadow.`);
+    this.fun += Math.ceil(Math.random() * 2);
+    this.energy -= Math.ceil(Math.random() * 2);
     this.timeGoesBy();
   }
   sleep() {
-    console.log(`${this.name} falls asleep, dreaming of stars & rainbows.`);
-    this.energy += 5;
-    this.fun -= 2;
-    this.food -= 3;
+    console.log(`${this.name} falls asleep, dreaming of stars and rainbows.`);
+    this.energy = +Math.ceil(Math.random() * 6);
+    this.fun -= Math.ceil(Math.random() * 2);
+    this.food -= Math.ceil(Math.random() * 2);
     this.timeGoesBy();
   }
   timeGoesBy() {
@@ -4193,8 +4247,10 @@ class Unicorn {
   }
 }
 pet = new Unicorn(); //Your new pet unicorn, Sparkle, is born!
-pet.play(); //Sparkle frolics in the meadow.
-pet.play(); //Sparkle frolics in the meadow.
+pet.play(); //Sparkle grolics in the meadow.
+pet.play(); //Sparkle grolics in the meadow.
+pet.eat(); //Sparkle gobbles up some glitter
+pet.sleep(); //Sparkle falls asleep, dreaming of stars and ranbows.
+pet.play(); //Sparkle grolics in the meadow.
 pet.eat(); //Sparkle gobbles up some glitter.
-pet.play(); //Sparkle frolics in the meadow.
-//Sparkle dies of exaustion
+          //Sparkle dies of exaustion
