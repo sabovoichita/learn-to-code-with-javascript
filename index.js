@@ -4234,7 +4234,7 @@ class Unicorn {
   }
   sleep() {
     console.log(`${this.name} falls asleep, dreaming of angels. 🛏😴`);
-    this.energy = +randomInt(3, 5);
+    this.energy += randomInt(3, 5);
     this.fun -= randomInt(1, 3);
     this.food -= randomInt(2, 4);
     this.timeGoesBy();
