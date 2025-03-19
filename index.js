@@ -4426,3 +4426,23 @@ console.log(christmasEve.toString()); //Wed Dec 24 2025 01:00:00 GMT+0100(CEST)
 //- The getTimezoneOffset() method returns the difference, in minutes,
 //between the local time on the computer and UTC.
 console.log(new Date().getTimezoneOffset()); //-60
+
+// Setter-Methods
+// - Most of the gette methods have equivalent setter methods.
+// - These are methods that can be used to change the value of the date
+// held in Date object. Each of these methods takes an argument representing
+// the value to which you update the date. The methods return the
+// timestamp of the updated date object.
+// - Ex: we can change the value of the date stored in the diwali var so it
+// contains the date of Diwali in 2026, which is on Sunday, November 8, 2026
+console.log(diwali.setDate(8)); //1636329600000
+console.log(diwali.setMonth(10)); //1636329600000
+console.log(diwali.setFullYear(2026)); //1794096000000
+console.log(diwali.toString()); //Sun Nov 08 2026 01:00:00 GMT+0100(CEST)
+// - Note that the values returned by these functions is the timestamp
+// representing the milliseconds since the epoch
+// - There are also setHours(), setUTCHours(), setMinutes(), setUTCMinutes()
+// setSeconds(), setUTCSeconds(), setMilliseconds() and setUTCMilliseconds()
+// methods that can be used to edit the time portion of a Date object
+// - Alternatively, if you know the date as a timestamp, use setTime():
+console.log(diwali.setTime(1794096000000)); //1794096000000
