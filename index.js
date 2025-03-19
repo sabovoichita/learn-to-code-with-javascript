@@ -4272,45 +4272,13 @@ class Dice {
 // pet.play(); //Sparkle frolics in the meadow. 🤪⛹️‍♀️🏀
 // //Sparkle dies of exaustion 🤔 ☠
 
-										//  Challenge-14.2
+//  Challenge-14.2-Version2
 // - Add a graphical interface to the Pet Unicorn game.
-// - This could involve the following features: an input box that allows the user 
+// - This could involve the following features: an input box that allows the user
 // to enter the name of an unicorn to create it; a picture of a unicorn with its
 // name that appears in the document when the object is instatiated updates about
 // how the pet is feeling in the document, instead of console.log; and buttons
 // that are pressed to perform each action of eat, sleep, play.
-const inputForm = document.querySelector("#form8Input");
-const welcome = document.querySelector("#welcome");
-const unicornImg = document.querySelector("#unicornImg");
-const timeGoesByReason = document.querySelector("#timeGoesByReason");
-const message = document.querySelector("#message");
-const buttonValue = document.querySelector("#submitName");
-const feedButton = document.querySelector("#feed");
-const sleepButton = document.querySelector("#sleep");
-const playButton = document.querySelector("#play");
-buttonValue.addEventListener("click", (e) => {
-  e.preventDefault();
-  pet = new Unicorn(); //Your new pet unicorn, newName, is born!
-  let newName = inputForm.value.toUpperCase();
-  pet.name = newName;
-  message.innerText = "";
-  welcome.innerText = `Your new pet unicorn, ${pet.name}, is born!`;
-  response.innerText = `Your unicorn, ${newName}, says hello. Do you want to play?`;
-  inputForm.value = "";
-  unicornImg.style.display = "block";
-});
-feedButton.addEventListener("click", () => {
-  response.innerText = "";
-  pet.eat(); //Sparkle gobbles up some glitter 🤪⛹️‍♀️🏀
-});
-sleepButton.addEventListener("click", () => {
-  response.innerText = "";
-  pet.sleep(); //Sparkle falls asleep, dreaming of angels. 🛏😴
-});
-playButton.addEventListener("click", (e) => {
-  response.innerText = "";
-  pet.play(); //Sparkle frolics in the meadow. 🤪⛹️‍♀️🏀
-});
 function randomInt(lower, upper) {
   if (upper === undefined) {
     upper = lower;
@@ -4318,29 +4286,51 @@ function randomInt(lower, upper) {
   }
   return Math.floor(Math.random() * upper - lower + 1) + lower;
 }
+document.forms.create.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const unicorn = new Unicorn(document.forms.create.unicorn.value);
+});
 class Unicorn {
   constructor(name = "Sparkle") {
     this.name = name;
     this.food = 3;
     this.fun = 3;
     this.energy = 5;
-    console.log(`Your new pet unicorn, ${this.name}, is born!`);
+    this.picture = document.createElement("div");
+    this.picture.classList.add("unicorn");
+    this.picture.innerHTML = `<h1>${this.name}</h1>
+    <img src="images/unicorn.jpg" width="100px"/>
+    <div class="buttons">
+        <button class="eat">Eat</button>
+        <button class="play">Play</button>
+        <button class="sleep">Sleep</button>
+    </div>`;
+    document.getElementById("unicorn1").appendChild(this.picture);
+    document.querySelector(".buttons").addEventListener("click", (e) => {
+      this[e.target.className]();
+    });
+  }
+  update(info) {
+    const div = document.createElement("div");
+    div.classList.add("info");
+    div.textContent = info;
+    this.picture.appendChild(div);
   }
   eat() {
-    message.innerText = `${this.name} gobbles up some glitter 🤤🥗`;
+    this.update(`${this.name} gobbles up some glitter 🤤🥗`);
     this.food += randomInt(2, 4);
     this.energy -= randomInt(0, 2);
     this.timeGoesBy();
   }
   play() {
-    message.innerText = `${this.name} frolics in the meadow. 🤪⛹️‍♀️🏀`;
+    this.update(`${this.name} frolics in the meadow. 🤪⛹️‍♀️🏀`);
     this.fun += randomInt(1, 3);
     this.energy -= randomInt(1, 3);
     this.timeGoesBy();
     return;
   }
   sleep() {
-    message.innerText = `${this.name} falls asleep, dreaming of angels. 🛏😴`;
+    this.update(`${this.name} falls asleep, dreaming of angels. 🛏😴`);
     this.energy += randomInt(3, 5);
     this.fun -= randomInt(1, 3);
     this.food -= randomInt(2, 4);
@@ -4348,13 +4338,13 @@ class Unicorn {
   }
   timeGoesBy() {
     if (this.energy > 0 && this.energy < 2) {
-      message.innerText = `${this.name} is tired...🤔`;
+      this.update(`${this.name} is tired...🤔`);
     }
     if (this.food > 0 && this.food < 2) {
-      message.innerText = `${this.name} is hungry...🤒🤢`;
+      this.update(`${this.name} is hungry...🤒🤢`);
     }
     if (this.fun > 0 && this.fun < 2) {
-      message.innerText = `${this.name} is bored...🥱`;
+      this.update(`${this.name} is bored...🥱`);
     }
     if (this.energy < 0) {
       this.dies("exaustion 🤔");
@@ -4367,8 +4357,9 @@ class Unicorn {
     }
   }
   dies(reason) {
-    welcome.innerText = `${this.name} dies of ${reason} ☠!!!`;
-    message.innerText = "";
-    unicornImg.style.display = "none";
+    this.update(`${this.name} dies of ${reason} ☠!!!`);
+    document
+      .querySelectorAll(".buttons button")
+      .forEach((button) => (button.disabled = true));
   }
 }

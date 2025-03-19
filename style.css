@@ -36,7 +36,8 @@ button {
   top: 60px;
 }
 
-#unicorn {
+#unicorn,
+#unicorn1 {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -57,4 +58,14 @@ button {
 }
 #unicornImg {
   display: none;
+}
+.unicorn {
+  font-size: 16px;
+  display: inline-block;
+  /* float:left; */
+}
+.unicorn h1,
+info {
+  font: 18px sans-serif;
+  color: redccapurple;
 }
