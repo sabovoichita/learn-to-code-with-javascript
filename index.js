@@ -4446,3 +4446,32 @@ console.log(diwali.toString()); //Sun Nov 08 2026 01:00:00 GMT+0100(CEST)
 // methods that can be used to edit the time portion of a Date object
 // - Alternatively, if you know the date as a timestamp, use setTime():
 console.log(diwali.setTime(1794096000000)); //1794096000000
+
+//What-Day-Will-It-Be?
+//- Let's build a small application to tell you what day will it be
+//in a set number of days
+//- Add to HTML:
+{/* <form name="myFormDay">
+  <input type="number" name="number" value="1" />
+  <button type="submit">Submit</button>
+</form>; */}
+const formDay = document.forms.myFormDay;
+const outputDay = document.getElementById("outputDay");
+const dayNames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+function nameThatDay(e) {
+  e.preventDefault();
+  const numberOfDays = Number(formDay.number.value);
+  const milliseconds = numberOfDays * 24 * 60 * 60 * 1000;
+  const timestamp = Date.now() + milliseconds;
+  const day = new Date(timestamp).getDay();
+  outputDay.textContent = `In ${numberOfDays} days, it will be ${dayNames[day]}`;
+}
+formDay.addEventListener("submit", nameThatDay)
