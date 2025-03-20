@@ -4479,21 +4479,58 @@ function nameThatDay(e) {
 formDay.addEventListener("submit", nameThatDay);
 
 // Timing-Functions
-setTimeout;
+// setTimeout;
 // - The setTimeout() mwthod accepts a callback function as its first
 // parameter and a number of milliseconds as its second parameter.
 // -The callback function that's provided as the first parameter will be
 // called afterr the time given as the second argument.
-console.log(setTimeout(() => alert("Time's up!"), 7000)); //1
-console.log(setTimeout(() => alert("Time's up!"), 7000)); //2
+// console.log(setTimeout(() => alert("Time's up!"), 7000)); //1
+// console.log(setTimeout(() => alert("Time's up!"), 7000)); //2
 // - This shows an alert box after 7 seconds = 7000;
 // - Notice that the method returns an integer. This is the ID to reference
 // that particular timeout
-console.log(clearTimeout(4)); //undefined
+// console.log(clearTimeout(4)); //undefined
 // - If you use the correct ID, the callback will be canceled and the alert
 // will never appear.
 // - Instead of trying to remember the value that's returned when the timeout
 // is set, it's easier to assign a variable to the return value:
-const timer = setTimeout(() => alert("Time is up!"), 7000);
+// const timer = setTimeout(() => alert("Time is up!"), 7000);
 //- This variable can be used to clear the timeout later:
-console.log(clearTimeout(timer));
+// console.log(clearTimeout(timer));
+
+// Asynchronous-Programming
+// -A synchronous program is one that proccesses each line of code in the
+// order it appears.
+// - The problem with this approach is that, if a particular part of the
+// program takes a longer time to complete, it will hold up the rest of the
+// program. This means that time-consuming events will block everything
+// else from happening.
+// - One solution is to start a new thread to run different parts of the program
+// - Another colution is to write asynchronous code, which runs out of order,
+// or asynchronously. Instead of waiting for an operation to finish, a
+// callback(or promise) is created, and the rest of the program continues
+// to run. This ensures that waiting for a process to complete doesn't
+// hold up the execution of other parts of the program. Once the task is
+// complete, the promise is said to be resolved and the callback returns
+// the result back to the program.
+// - JavaScript runs in a single-threaded environment, so it can only process
+// one piece of code at a time, so asynchronous programming is an essentil
+// tool to ensure there aren't any processes blocking the rest of the program
+console.log("Hello");
+setTimeout(() => {
+  console.log("File Downloaded!");
+}, 3000);
+console.log("World!");
+// - JavaScript is an non-blocking language, so the callback doesn't block
+// the rest of the program from happening. This is what it actually happens:
+// -"Hello" is logged to the console
+// -a three-second timeout starts, but the program continues
+// -"World" is logged to the console
+// - after three seconds, "File Downloaded!" is logged to the console.
+console.log("Hello1");
+setTimeout(() => {
+  console.log("File Downloaded!1");
+}, 0);
+console.log("World!1");
+// - Notice that the callback is still logged to the console last, despite
+// the timeout being set to zero milliseconds!
