@@ -4628,3 +4628,64 @@ frog.addEventListener(
   (e) => (frog.style.animation = "jump 700ms 2 alternate")
 );
 frog.addEventListener("animationend", (e) => (frog.style.animation = "none"));
+
+//Cookie-Grabber-Game
+//Add to HTML:<div id="info">
+//   Score:<span id="score"> 0 </span> Time: <span id="clock"> 20 </span>
+//            </div>
+//           <div id="gameCookie"></div>
+//Add to CSS: #gameCookie {
+//   padding: 30px;
+//   border: 3px solid pink;
+//   position: relative;
+//   width: 200px;
+//   height: 200px; }
+// .cookie {
+//   font-size: 32px;
+//   position: absolute;
+//   cursor: grab; }
+// #info {
+//   font: 24px sans-serif; }
+// #score,
+// #clock {
+//   color: pink; }
+const gameCookie = document.getElementById("gameCookie");
+const clock = document.getElementById("clock");
+const scoreboard = document.getElementById("score");
+let timeCookie = 20;
+let scoreCookie = 0;
+let timerCookie = setInterval(gameLoop, 500);
+function gameLoop() {
+  addCookie();
+  timeCookie--;
+  clock.textContent = timeCookie;
+  //check to see if time has run out
+  if (timeCookie <= 0) {
+    clearInterval(timerCookie);
+    gameCookie.removeEventListener("click", grab);
+    gameCookie.innerHTML = "";
+  }
+}
+function addCookie() {
+  const cookie = document.createElement("div");
+  cookie.textContent = "🍪";
+  cookie.className = "cookie";
+  cookie.style.top = `${randomInteger(200)}px`;
+  cookie.style.left = `${randomInteger(200)}px`;
+  gameCookie.appendChild(cookie);
+}
+gameCookie.addEventListener("click", grab);
+function grab(e) {
+  if (e.target.className === "cookie") {
+    scoreCookie++;
+    scoreboard.textContent = scoreCookie;
+    e.target.remove();
+  }
+}
+function randomInteger(lower, upper) {
+  if (upper === undefined) {
+    upper = lower;
+    lower = 1;
+  }
+  return Math.floor(Math.random() * (upper - lower + 1) + lower);
+}
