@@ -4369,26 +4369,26 @@ class Dice {
 //- Date objects contain information about dates and times.Each object
 //represents a single moment in time.
 const today = new Date();
-console.log(today.toString()); //Wed Mar 19 2025 17:49:32 GMT+0100(CEST)
+// console.log(today.toString()); //Wed Mar 19 2025 17:49:32 GMT+0100(CEST)
 //- It is possible to create Date objects for any date by supplying it as
 //an argument to the constructor function. This can be written as a string:
 const christmas = new Date("2025-12-25");
-console.log(christmas.toString()); //Sat Dec 25 2021 01:00:00 GMT+0100(CEST)
+// console.log(christmas.toString()); //Sat Dec 25 2021 01:00:00 GMT+0100(CEST)
 const chanukah = new Date("28 November 2025");
-console.log(chanukah.toString()); //Sun Nov 28 2021 00:00:00 GMT+0100(CEST)
+// console.log(chanukah.toString()); //Sun Nov 28 2021 00:00:00 GMT+0100(CEST)
 const eid = new Date("Wednesday, May 12, 2025");
-console.log(eid.toString()); //Wed May 12 2021 00:00:00 GMT+0200(CEST)
+// console.log(eid.toString()); //Wed May 12 2021 00:00:00 GMT+0200(CEST)
 //- The string passed to the Date constructor can be in a variety of formats
 //- In order to be more consistent, provide each part of the date as a separate
 //argument. The parameters that can be provided are as follows:
 //new Date(year, month, hour, minutes, seconds, milliseconds);
 const halloween = new Date(2025, 9, 31);
-console.log(halloween.toString()); //Sun Oct 31 2021 00:00:00 GMT+0200(CEST)
+// console.log(halloween.toString()); //Sun Oct 31 2021 00:00:00 GMT+0200(CEST)
 //!The numerical value for months starts at 0, so January is 0, Feb is 1...
 //- An alternative is to use a timestamp, which is a single integer argument,
 //that represents the number of milliseconds since the epoch(January 1, 1970)
 const diwali = new Date(1635984000000);
-console.log(diwali.toString()); //Thu Nov 04 2021 01:00:00 GMT+0100(CEST)
+// console.log(diwali.toString()); //Thu Nov 04 2021 01:00:00 GMT+0100(CEST)
 
 //Getter-Methods
 //- The getter methods return information about the date object such as
@@ -4398,34 +4398,34 @@ console.log(diwali.toString()); //Thu Nov 04 2021 01:00:00 GMT+0100(CEST)
 //- The getTime(), getTimeOffset() and getYear() methods don't have UTC equiv
 //- The getDay() and getUTCDay() methods are used to find the day of the week
 //- They return a number, staring at 0 for Sunday, up to 6 for Saturday.
-console.log(diwali.getDay()); //4
+// console.log(diwali.getDay()); //4
 //- The getDate() and getUTCDate() methods return the day of the month.
 //- These values start counting from 1 so they return the actual day of
 //the month.
-console.log(diwali.getDate()); //4
+// console.log(diwali.getDate()); //4
 //- The getMonth() and getUTCMonth() methods can be used to find the month
 //- It returns an integer, they count from 0!
-console.log(diwali.getMonth()); //10
+// console.log(diwali.getMonth()); //10
 //- The getFullYear() and getUTCFullYear() methods return the year of the
 //date object. There's also a getYear() method but isn't Y2K compliant,
 //so shouldnt be used as it returns nonsensical results for dates after
 //the year 2000; EX:
-console.log(diwali.getYear()); //121
+// console.log(diwali.getYear()); //121
 //- This can be fixed if we use getFullYear() method:
-console.log(diwali.getFullYear()); //2021
+// console.log(diwali.getFullYear()); //2021
 //- There is also getHours(), getUTCHours(), getMinutes(), getUTCMinutes(),
 //getSeconds, getUTCSeconds(), getMilliseconds() and getUTCMilliseconds()
 //that return the hours minutes, seconds and milliseconds since midnight.
 //- The getTime() method returns a timstamp representing the number of
 //milliseconds since midnight.
-console.log(diwali.getTime()); //1635984000000
+// console.log(diwali.getTime()); //1635984000000
 //- This can be useful for incrementing dates by a set amount of time.
 //- For ex, a day can be represented by 1000*60*60*24 milliseconds.
 const christmasEve = new Date(christmas.getTime() - 1000 * 60 * 60 * 24);
-console.log(christmasEve.toString()); //Wed Dec 24 2025 01:00:00 GMT+0100(CEST)
+// console.log(christmasEve.toString()); //Wed Dec 24 2025 01:00:00 GMT+0100(CEST)
 //- The getTimezoneOffset() method returns the difference, in minutes,
 //between the local time on the computer and UTC.
-console.log(new Date().getTimezoneOffset()); //-60
+// console.log(new Date().getTimezoneOffset()); //-60
 
 // Setter-Methods
 // - Most of the gette methods have equivalent setter methods.
@@ -4435,26 +4435,28 @@ console.log(new Date().getTimezoneOffset()); //-60
 // timestamp of the updated date object.
 // - Ex: we can change the value of the date stored in the diwali var so it
 // contains the date of Diwali in 2026, which is on Sunday, November 8, 2026
-console.log(diwali.setDate(8)); //1636329600000
-console.log(diwali.setMonth(10)); //1636329600000
-console.log(diwali.setFullYear(2026)); //1794096000000
-console.log(diwali.toString()); //Sun Nov 08 2026 01:00:00 GMT+0100(CEST)
+// console.log(diwali.setDate(8)); //1636329600000
+// console.log(diwali.setMonth(10)); //1636329600000
+// console.log(diwali.setFullYear(2026)); //1794096000000
+// console.log(diwali.toString()); //Sun Nov 08 2026 01:00:00 GMT+0100(CEST)
 // - Note that the values returned by these functions is the timestamp
 // representing the milliseconds since the epoch
 // - There are also setHours(), setUTCHours(), setMinutes(), setUTCMinutes()
 // setSeconds(), setUTCSeconds(), setMilliseconds() and setUTCMilliseconds()
 // methods that can be used to edit the time portion of a Date object
 // - Alternatively, if you know the date as a timestamp, use setTime():
-console.log(diwali.setTime(1794096000000)); //1794096000000
+// console.log(diwali.setTime(1794096000000)); //1794096000000
 
 //What-Day-Will-It-Be?
 //- Let's build a small application to tell you what day will it be
 //in a set number of days
 //- Add to HTML:
-{/* <form name="myFormDay">
+{
+  /* <form name="myFormDay">
   <input type="number" name="number" value="1" />
   <button type="submit">Submit</button>
-</form>; */}
+</form>; */
+}
 const formDay = document.forms.myFormDay;
 const outputDay = document.getElementById("outputDay");
 const dayNames = [
@@ -4474,4 +4476,24 @@ function nameThatDay(e) {
   const day = new Date(timestamp).getDay();
   outputDay.textContent = `In ${numberOfDays} days, it will be ${dayNames[day]}`;
 }
-formDay.addEventListener("submit", nameThatDay)
+formDay.addEventListener("submit", nameThatDay);
+
+// Timing-Functions
+setTimeout;
+// - The setTimeout() mwthod accepts a callback function as its first
+// parameter and a number of milliseconds as its second parameter.
+// -The callback function that's provided as the first parameter will be
+// called afterr the time given as the second argument.
+console.log(setTimeout(() => alert("Time's up!"), 7000)); //1
+console.log(setTimeout(() => alert("Time's up!"), 7000)); //2
+// - This shows an alert box after 7 seconds = 7000;
+// - Notice that the method returns an integer. This is the ID to reference
+// that particular timeout
+console.log(clearTimeout(4)); //undefined
+// - If you use the correct ID, the callback will be canceled and the alert
+// will never appear.
+// - Instead of trying to remember the value that's returned when the timeout
+// is set, it's easier to assign a variable to the return value:
+const timer = setTimeout(() => alert("Time is up!"), 7000);
+//- This variable can be used to clear the timeout later:
+console.log(clearTimeout(timer));
