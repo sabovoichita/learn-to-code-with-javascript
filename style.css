@@ -69,3 +69,12 @@ info {
   font: 18px sans-serif;
   color: redccapurple;
 }
+#stopwatch {
+  border: black 3px solid;
+  width: 200px;
+  text-align: center;
+  color: black;
+  font: 64px monospace;
+  padding: 30px;
+  margin: 0;
+}

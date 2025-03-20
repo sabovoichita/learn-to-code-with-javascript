@@ -4542,17 +4542,69 @@ formDay.addEventListener("submit", nameThatDay);
 // second argument.
 // - The previous example used a anonymous function, but it's also possible
 // to use a named function:
-function helloW() {
-  console.log("Hello, World!");
-}
+// function helloW() {
+//   console.log("Hello, World!");
+// }
 // - Now we can set up the interval and assign it to a variable:
-const interval = setInterval(helloW, 1000);
-console.log(interval);
+// const interval = setInterval(helloW, 1000);
+// console.log(interval);
 // - This will show the message in the console every second(1000millisec)
 // - To stop this, use the clearInterval() method and the variable interval
 // as the argument.
-console.log(clearInterval(interval));
+// console.log(clearInterval(interval));
 // - The setInterval() metjod is particularly used for coding games that
 // require a "game loop" to run at a set interval
 // requestAnimationFrame-can be used for animationd and to run a game loop
 
+//Stopwatch
+//- We'll use the setInterval() method to implement a simple stopwatch:
+//- Add HTML:  <div id="stopwatch">00:00</div>
+//     <button id="start">Start</button>
+//     <button id="stop">Stop</button>
+//     <button id="reset">Reset</button>
+//
+//- Add CSS: #stopwatch {
+//   border: black 3px solid;
+//   width: 200px;
+//   text-align: center;
+//   color: black;
+//   font: 64px monospace;
+//   padding: 30px;
+//   margin: 0;
+// }
+const stopwatch = document.getElementById("stopwatch");
+const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
+const resetButton = document.getElementById("reset");
+let time = 0;
+function start() {
+  timer = setInterval(() => {
+    time++;
+    //hundreths of second
+    let hundreths = time % 100;
+    if (hundreths < 10) {
+      hundreths = "0" + hundreths;
+    }
+    //seconds
+    let seconds = (time - hundreths) / 100;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    //display time
+    stopwatch.textContent = `${seconds}:${hundreths}`;
+  }, 10);
+  startButton.disabled = true;
+  stopButton.disabled = false;
+}
+function stop() {
+  clearInterval(timer);
+  stopButton.disabled = true;
+  startButton.disabled = false;
+}
+function reset() {
+  time = 0;
+  stopwatch.textContent = "00:00";
+}
+startButton.addEventListener("click", start);
+stopButton.addEventListener("click", stop);
+resetButton.addEventListener("click", reset);
