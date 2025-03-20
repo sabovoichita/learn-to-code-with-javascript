@@ -4516,21 +4516,43 @@ formDay.addEventListener("submit", nameThatDay);
 // - JavaScript runs in a single-threaded environment, so it can only process
 // one piece of code at a time, so asynchronous programming is an essentil
 // tool to ensure there aren't any processes blocking the rest of the program
-console.log("Hello");
-setTimeout(() => {
-  console.log("File Downloaded!");
-}, 3000);
-console.log("World!");
+// console.log("Hello");
+// setTimeout(() => {
+//   // console.log("File Downloaded!");
+// }, 3000);
+// console.log("World!");
 // - JavaScript is an non-blocking language, so the callback doesn't block
 // the rest of the program from happening. This is what it actually happens:
 // -"Hello" is logged to the console
 // -a three-second timeout starts, but the program continues
 // -"World" is logged to the console
 // - after three seconds, "File Downloaded!" is logged to the console.
-console.log("Hello1");
-setTimeout(() => {
-  console.log("File Downloaded!1");
-}, 0);
-console.log("World!1");
+// console.log("Hello1");
+// setTimeout(() => {
+//   console.log("File Downloaded!1");
+// }, 0);
+// console.log("World!1");
 // - Notice that the callback is still logged to the console last, despite
 // the timeout being set to zero milliseconds!
+
+// Intervals
+// - The setInterval() method works in a similar way to setTimeout(),
+// except that it will repeatedly call the callback function at regular
+// intervals, based on the number of milliseconds provided as the
+// second argument.
+// - The previous example used a anonymous function, but it's also possible
+// to use a named function:
+function helloW() {
+  console.log("Hello, World!");
+}
+// - Now we can set up the interval and assign it to a variable:
+const interval = setInterval(helloW, 1000);
+console.log(interval);
+// - This will show the message in the console every second(1000millisec)
+// - To stop this, use the clearInterval() method and the variable interval
+// as the argument.
+console.log(clearInterval(interval));
+// - The setInterval() metjod is particularly used for coding games that
+// require a "game loop" to run at a set interval
+// requestAnimationFrame-can be used for animationd and to run a game loop
+
