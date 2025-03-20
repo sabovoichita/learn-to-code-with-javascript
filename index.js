@@ -4608,3 +4608,23 @@ function reset() {
 startButton.addEventListener("click", start);
 stopButton.addEventListener("click", stop);
 resetButton.addEventListener("click", reset);
+
+//Animation-Jumping-Frog
+//-Add to HTML: <div id="frog">🐸</div>
+//-Add to CSS:#frog {
+//   font-size: 64px;
+//   position: absolute;
+//   top: 100px;
+//   /* animation: jump 700ms infinite alternate; */
+// }
+// @keyframes jump {
+//   to {
+//     transform: translateY(-100px);
+//   }
+// }
+const frog = document.getElementById("frog");
+frog.addEventListener(
+  "click",
+  (e) => (frog.style.animation = "jump 700ms 2 alternate")
+);
+frog.addEventListener("animationend", (e) => (frog.style.animation = "none"));
