@@ -4689,3 +4689,37 @@ function randomInteger(lower, upper) {
   }
   return Math.floor(Math.random() * (upper - lower + 1) + lower);
 }
+
+// 						Challenge-15.1
+// - Design a form that allows a user to enter their date of birth and find
+// out the day on which they were born.
+// For ex, entering "1/1/2000"(January 1, 2000) should return "Saturday"
+//  <form name="birthday">
+//   <input type="date" name="birthday" />
+//   <button type="submit">Submit</button>
+//  </form>
+  <div id="outputBirthday"></div>
+const birthdayForm = document.getElementById("birthdayForm");
+const inputBirthday = document.getElementById("inputBirthday");
+const submitBirthday = document.getElementById("submitBirthday");
+const outputBirthday = document.getElementById("outputBirthday");
+const dayName=[
+  "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+]
+function initEventsBirthday() {
+  submitBirthday.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("submited: ", inputBirthday.value);
+    let input = inputBirthday.value;
+    calculateDay(input);
+  });
+}
+function calculateDay(input) {
+  let yourBirthday = new Date(input);
+  let milliseconds = yourBirthday.getTime() - 1000 * 60 * 60 * 24;
+  const timestamp=Date.now()+milliseconds
+  const day=new Date(timestamp).getDay()
+  console.log(yourBirthday, day);
+  return outputBirthday.textContent=`You were born on a ${dayNames[day]}`;
+}
+initEventsBirthday();
